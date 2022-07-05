@@ -4,6 +4,7 @@
         "items": [
             {
                 "data": {
+                    "id":1,
                     "uri": "spotify:album:3j8pZvQNPy8IRK3NsJQxig",
                     "name": "100 % Fun",
                     "price" : 25.00,
@@ -43,6 +44,7 @@
             },
             {
                 "data": {
+                    "id":2,
                     "uri": "spotify:album:3T4tUhGYeRNVUGevb0wThu",
                     "name": "÷ (Deluxe)",
                     "price" : 20.00,
@@ -82,6 +84,7 @@
             },
             {
                 "data": {
+                    "id":3,
                     "uri": "spotify:album:4TutMtpFftwHGcibEmeogS",
                     "name": "40 %",
                     "price" : 15.00,
@@ -121,6 +124,7 @@
             },
             {
                 "data": {
+                    "id":4,
                     "uri": "spotify:album:6lF3xY1CDqokXI5RgPVvB5",
                     "name": "Dirty Vegas",
                     "price" : 25.00,
@@ -160,6 +164,7 @@
             },
             {
                 "data": {
+                    "id":5,
                     "uri": "spotify:album:5VAtcOfdlXP05Cyjzalw9Y",
                     "name": "Konpa Essentials (100 % Haïtian Music)",
                     "price" : 30.00,
@@ -199,6 +204,7 @@
             },
             {
                 "data": {
+                    "id":6,
                     "uri": "spotify:album:17vHPMmoxN5B8cdhCDeMTe",
                     "name": "Selected Ambient Works Volume II",
                     "price" : 25.00,
@@ -238,6 +244,7 @@
             },
             {
                 "data": {
+                    "id":7,
                     "uri": "spotify:album:1mlBiMy6nLtiqMsFdjD73K",
                     "name": "100 % Mexicano",
                     "price" : 25.50,
@@ -277,6 +284,7 @@
             },
             {
                 "data": {
+                    "id":8,
                     "uri": "spotify:album:4LdH6T8L47RAi7YJ1NfMKJ",
                     "name": "Cement City Vol. 1: Housetrapped",
                     "price" : 22.00,
@@ -316,6 +324,7 @@
             },
             {
                 "data": {
+                    "id":9,
                     "uri": "spotify:album:7lVJR9i4BlxMJx7jyecOr2",
                     "name": "100 %",
                     "price" : 20.00,
@@ -355,6 +364,7 @@
             },
             {
                 "data": {
+                    "id":10,
                     "uri": "spotify:album:3WEiXCyMnt06uLuJ6GqizD",
                     "name": "I No Longer Fear the Razor Guarding My Heel (III)",
                     "price" : 32.00,
@@ -394,6 +404,7 @@
             },
             {
                 "data": {
+                    "id":11,
                     "uri": "spotify:album:4dqxt2keMzUCz0XVQuMAz6",
                     "name": "! ! % > ) Drizzle ( < % ! !",
                     "price" : 25.75,
@@ -433,6 +444,7 @@
             },
             {
                 "data": {
+                    "id":12,
                     "uri": "spotify:album:1CfmjMXQtYDHMN3MzkTCkP",
                     "name": "KILL YOURSELF Part IV: The Trill Clinton Saga",
                     "price" : 23.00,
@@ -472,6 +484,7 @@
             },
             {
                 "data": {
+                    "id":13,
                     "uri": "spotify:album:3cdHfH00YEoZXCmMAnT7pr",
                     "name": "! ! % > magnitude < % ! !",
                     "price" : 30.00,
@@ -511,6 +524,7 @@
             },
             {
                 "data": {
+                    "id":14,
                     "uri": "spotify:album:4g8hUhboWsPGn0mzRWtneS",
                     "name": "KILL YOURSELF Part I: The $uicide Saga",
                     "price" : 22.00,
@@ -550,6 +564,7 @@
             },
             {
                 "data": {
+                    "id":15,
                     "uri": "spotify:album:7uAM6JsesTkQYjmR0dukej",
                     "name": "% 2 0",
                     "price" : 27.00,
@@ -589,6 +604,7 @@
             },
             {
                 "data": {
+                    "id":16,
                     "uri": "spotify:album:0nnDPfom0EYbRYphovv0hu",
                     "name": "#doyalike",
                     "price" : 15.00,
@@ -628,6 +644,7 @@
             },
             {
                 "data": {
+                    "id":17,
                     "uri": "spotify:album:7ojULLGJDgCqKqB3oqDQq1",
                     "name": "100 % Zen Musiques",
                     "price" : 25.00,
@@ -667,6 +684,7 @@
             },
             {
                 "data": {
+                    "id":18,
                     "uri": "spotify:album:4aqcDA0Q2UEPInj5a89Cjr",
                     "name": "Hoja en Blanco",
                     "price" : 25.00,
@@ -706,6 +724,7 @@
             },
             {
                 "data": {
+                    "id":19,
                     "uri": "spotify:album:0ZZfK6DHy3WEJYl1LYGSkz",
                     "name": "100 % Corridos",
                     "price" : 15.00,
@@ -745,6 +764,7 @@
             },
             {
                 "data": {
+                    "id":20,
                     "uri": "spotify:album:3uOjCKXJFyF5hbWz7mGYrr",
                     "name": "Gray/Grey",
                     "price" : 28.00,
@@ -784,6 +804,7 @@
             },
             {
                 "data": {
+                    "id":21,
                     "uri": "spotify:album:7keTq7g6MBXnp7qrJ8orDe",
                     "name": "Këngë Të Shpirtit (Live 100 %)",
                     "price" : 31.00,
@@ -823,6 +844,7 @@
             },
             {
                 "data": {
+                    "id":22,
                     "uri": "spotify:album:33C2Ujqsq5tFa93LtafTHN",
                     "name": "Die Young (feat. 347aidan)",
                     "price" : 25.00,
@@ -868,6 +890,7 @@
             },
             {
                 "data": {
+                    "id":23,
                     "uri": "spotify:album:6qf1pDlz58uHpcEZ6f6H20",
                     "name": "100 % Mexicano",
                     "price" : 32.00,
@@ -907,6 +930,7 @@
             },
             {
                 "data": {
+                    "id":24,
                     "uri": "spotify:album:2VrpzWjnsiELWKXOJAFhme",
                     "name": "My Liver Will Handle What My Heart Can't",
                     "price" : 25.00,
@@ -946,6 +970,7 @@
             },
             {
                 "data": {
+                    "id":25,
                     "uri": "spotify:album:0Gfh6psX7JP2SC9zinAqaJ",
                     "name": "100 % Ambiance Peyi",
                     "price" : 10.00,
@@ -985,6 +1010,7 @@
             },
             {
                 "data": {
+                    "id":26,
                     "uri": "spotify:album:0QVoYzGd1p8Z3ohEaM0lsc",
                     "name": "Elvis 30 #1 Hits",
                     "price" : 40.00,
@@ -1024,6 +1050,7 @@
             },
             {
                 "data": {
+                    "id":27,
                     "uri": "spotify:album:4QS1LRB6vz6uJKPoqdnzL2",
                     "name": "! ! % lullabies % ! !",
                     "price" : 25.00,
@@ -1063,6 +1090,7 @@
             },
             {
                 "data": {
+                    "id":28,
                     "uri": "spotify:album:2btiLFlL9jzIIHbId5cufS",
                     "name": "One Step At A Time",
                     "price" : 22.00,
@@ -1102,6 +1130,7 @@
             },
             {
                 "data": {
+                    "id":29,
                     "uri": "spotify:album:6IFUnZhXvqwmq7VeGKanp9",
                     "name": "%making me blue#",
                     "price" : 25.00,
@@ -1141,6 +1170,7 @@
             },
             {
                 "data": {
+                    "id":30,
                     "uri": "spotify:album:2ivOxIKDHxEo6WMD9m3ytn",
                     "name": "I Want to Die In New Orleans",
                     "price" : 31.00,
@@ -1180,6 +1210,7 @@
             },
             {
                 "data": {
+                    "id":31,
                     "uri": "spotify:album:460uoljiQCdMVAXmlMfFvv",
                     "name": "100 % Duranguense",
                     "price" : 25.00,
@@ -1219,6 +1250,7 @@
             },
             {
                 "data": {
+                    "id":32,
                     "uri": "spotify:album:5vwm8dEf7xGTqUAas8zGdC",
                     "name": "Children (Dance Vault Mixes)",
                     "price" : 30.00,
@@ -1258,6 +1290,7 @@
             },
             {
                 "data": {
+                    "id":33,
                     "uri": "spotify:album:1QaZCIAvgVGRqZwjcXaRl9",
                     "name": "Disponim Derin Në Maksimum (Live 100 %)",
                     "price" : 25.00,
@@ -1297,6 +1330,7 @@
             },
             {
                 "data": {
+                    "id":34,
                     "uri": "spotify:album:04uOXDWUgZmTps35RqDBg4",
                     "name": "Let's Skip to the Wedding",
                     "price" : 27.00,
@@ -1336,6 +1370,7 @@
             },
             {
                 "data": {
+                    "id":35,
                     "uri": "spotify:album:7CKrayOIs1WctFIl25XRD1",
                     "name": "%%%?",
                     "price" : 18.00,
@@ -1375,6 +1410,7 @@
             },
             {
                 "data": {
+                    "id":36,
                     "uri": "spotify:album:5v4Vx9loqMQCS3J7OmP9pa",
                     "name": "The Rising Tied",
                     "price" : 25.00,
@@ -1420,6 +1456,7 @@
             },
             {
                 "data": {
+                    "id":37,
                     "uri": "spotify:album:623v4kxr7WCsUtNFhWOVPN",
                     "name": "WHAT?",
                     "price" : 28.00,
@@ -1453,6 +1490,7 @@
                         ]
                     },
                     "date": {
+                        "id":38,
                         "year": 2022
                     }
                 }
@@ -1498,6 +1536,7 @@
             },
             {
                 "data": {
+                    "id":39,
                     "uri": "spotify:album:61kRHDFtulJHhaV9mYPThA",
                     "name": "100 % Mapouka",
                     "price" : 14.00,
@@ -1537,6 +1576,7 @@
             },
             {
                 "data": {
+                    "id":40,
                     "uri": "spotify:album:2Hjcfw8zHN4dJDZJGOzLd6",
                     "name": "MONTERO (Call Me By Your Name)",
                     "price" : 25.00,
@@ -1576,6 +1616,7 @@
             },
             {
                 "data": {
+                    "id":41,
                     "uri": "spotify:album:2UtSWiHKg3CgdbhbolYKNN",
                     "name": "! ! ! % Surfing % ! ! !",
                     "price" : 25.00,
@@ -1615,6 +1656,7 @@
             },
             {
                 "data": {
+                    "id":42,
                     "uri": "spotify:album:4FehFP4tVEFyT75LCTHl7m",
                     "name": "moment",
                     "price" : 15.00,
@@ -1654,6 +1696,7 @@
             },
             {
                 "data": {
+                    "id":43,
                     "uri": "spotify:album:62cmzDCQkT44xHZQCkb9aG",
                     "name": "100 %",
                     "price" : 25.00,
@@ -1693,6 +1736,7 @@
             },
             {
                 "data": {
+                    "id":44,
                     "uri": "spotify:album:3mNoFlD1wsoXfkljfFzExT",
                     "name": "TALKING IS HARD",
                     "price" : 35.00,
@@ -1732,6 +1776,7 @@
             },
             {
                 "data": {
+                    "id":45,
                     "uri": "spotify:album:37MCtTGttD6yoBHKT1YfWG",
                     "name": "! ! % > + Seashore + < % ! !",
                     "price" : 19.00,
@@ -1771,6 +1816,7 @@
             },
             {
                 "data": {
+                    "id":46,
                     "uri": "spotify:album:5OZ8rT5NZcYNxkf8jnIAL0",
                     "name": "ZOMBIES (Original TV Movie Soundtrack)",
                     "price" : 30.00,
@@ -1816,6 +1862,7 @@
             },
             {
                 "data": {
+                    "id":47,
                     "uri": "spotify:album:3iP4POdAEmF8wDApfoL8yq",
                     "name": "HIATUS",
                     "price" : 15.00,
@@ -1855,6 +1902,7 @@
             },
             {
                 "data": {
+                    "id":48,
                     "uri": "spotify:album:1iGIqDBXm5HpTqHCvdc4QP",
                     "name": "The Twilight Saga: Breaking Dawn - Part 1 (Original Motion Picture Soundtrack)",
                     "price" : 25.00,
@@ -1894,6 +1942,7 @@
             },
             {
                 "data": {
+                    "id":49,
                     "uri": "spotify:album:0eqdNUqKdI4JXvItAwuF26",
                     "name": "Na Pegada da Galera (Ao Vivo)",
                     "price" : 30.00,
@@ -1933,6 +1982,7 @@
             },
             {
                 "data": {
+                    "id":50,
                     "uri": "spotify:album:6l9I3pxOUdk6DsvqRgMUSV",
                     "name": "%",
                     "price" : 21.00,

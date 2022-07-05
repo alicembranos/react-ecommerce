@@ -6,7 +6,6 @@ import ShoppingCart from "./components/ShoppingCart/ShoppingCart.jsx";
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);
-  const onAddItem = 
   return (
     <>
       <header>

@@ -34,7 +34,7 @@ const ProductsGallery = () => {
           year={product.data.date.year}
           price={product.data.price}
           image={product.data.coverArt.sources[0].url}
-          key={key}
+          key={product.data.id}
         />
       ))}
     </div>
