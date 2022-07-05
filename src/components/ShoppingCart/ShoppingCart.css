@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --font-family: "Montserrat", sans-serif;
+}
+
+* {
+  font-family: var(--font-family);
+}
+
+.shoppingCart__container {
+  /* display: flex; */
+  width: 40%;
+  position: sticky;
+  top: 100px;
+  align-self: flex-start;
+  color: aliceblue;
+}
+
+.shoppingCart__h2 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.shoppingCart__p {
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: lighter;
+}

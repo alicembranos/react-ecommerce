@@ -1,16 +1,23 @@
-import './App.css';
-import Products from './components/Products';
-// import Article from './components/Article';
+import { useState } from "react";
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar.jsx";
+import ProductsGallery from "./components/ProductsGallery/ProductsGallery.jsx";
+import ShoppingCart from "./components/ShoppingCart/ShoppingCart.jsx";
 
-
-function App(props) {
-
+const App = () => {
+  const [cartItems, setCartItems] = useState([]);
+  const onAddItem = 
   return (
-      // <Article {...props}/>
     <>
-      <Products  />
+      <header>
+        <NavBar />
+      </header>
+      <main className="container__main">
+        <ProductsGallery />
+        <ShoppingCart cartItems={cartItems} />
+      </main>
     </>
   );
-}
+};
 
 export default App;
