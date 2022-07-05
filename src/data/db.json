@@ -1497,6 +1497,7 @@
             },
             {
                 "data": {
+                    "id":38,
                     "uri": "spotify:album:7rKmLxCFlmtIxGpX4HYgs4",
                     "name": "Stop Staring At the Shadows",
                     "price" : 15.00,
