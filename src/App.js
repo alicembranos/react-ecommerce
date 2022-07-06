@@ -1,31 +1,12 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import FetchProducts from "./components/FetchProducts/FetchProducts";
 import NavBar from "./components/NavBar/NavBar.jsx";
-import ProductsGallery from "./components/ProductsGallery/ProductsGallery.jsx";
 import ShoppingCart from "./components/ShoppingCart/ShoppingCart.jsx";
+import useLocalStorage from "./useLocalStorage";
 
 const App = () => {
-  const serverUri = "http://localhost:3000/albums";
-  const [products, setProducts] = useState([]);
-  const [cartItems, setCartItems] = useState([]);
-
-  const getProducts = async () => {
-    try {
-      const request = await fetch(serverUri);
-      if (request.ok) {
-        const response = await request.json();
-        setProducts(response.items);
-      } else {
-        console.log("Network request ok but http response no ok");
-      }
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  useEffect(() => {
-    getProducts();
-  }, []);
+  const [cartItems, setCartItems] = useLocalStorage("userCart", []);
 
   const onAdd = (product) => {
     console.log(product);
@@ -81,7 +62,7 @@ const App = () => {
         <NavBar />
       </header>
       <main className="container__main">
-        <ProductsGallery onAdd={onAdd} products={products} />
+        <FetchProducts onAdd={onAdd} />
         <ShoppingCart
           onAdd={onAdd}
           onRemove={onRemove}

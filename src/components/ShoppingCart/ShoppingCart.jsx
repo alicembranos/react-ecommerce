@@ -1,3 +1,5 @@
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 import "./ShoppingCart.css";
 
 const ShoppingCart = (props) => {
@@ -28,7 +30,7 @@ const ShoppingCart = (props) => {
           </div>
           <div className="cartItem__buttons">
             <button onClick={() => onRemove(item)} className="cartItem__button">
-              -
+              <RemoveIcon/>
             </button>
             <input
               type="text"
@@ -39,7 +41,7 @@ const ShoppingCart = (props) => {
               readOnly
             />
             <button onClick={() => onAdd(item)} className="cartItem__button">
-              +
+              <AddIcon/>
             </button>
           </div>
           <p className="text-right cartItem__price">
