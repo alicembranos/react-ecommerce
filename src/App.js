@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import "./App.css";
 import FetchProducts from "./components/FetchProducts/FetchProducts";
 import NavBar from "./components/NavBar/NavBar.jsx";
