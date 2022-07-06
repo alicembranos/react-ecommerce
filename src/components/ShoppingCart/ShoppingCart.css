@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 
 :root {
   --font-family: "Montserrat", sans-serif;
@@ -28,3 +28,56 @@
   font-style: italic;
   font-weight: lighter;
 }
+
+.cartItem__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.cartItem__buttons{
+display: flex;
+align-items: center;
+}
+
+.cartItem__imageBox {
+  padding: 1rem;
+}
+.cartItem__imageBox img {
+  width: 150px;
+  height: 150px;
+}
+
+.cartItem__qty {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  background-color: #282c34;
+  color: aliceblue;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.cartItem__button{
+  width: 2rem;
+  height: 2rem;
+  background: none;
+  border: none;
+  color: aliceblue;
+  font-size: 2rem;
+  line-height: 0;
+}
+
+.cartItem__button:hover{
+  cursor: pointer;
+  background-color: aliceblue;
+  border-radius: 50%;
+  color: #282c34;
+}
+
+

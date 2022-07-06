@@ -45,6 +45,36 @@ const App = () => {
     }
   };
 
+  const onRemove = (product) => {
+    const exist = cartItems.find(
+      (prodCart) => prodCart.data.id === product.data.id
+    );
+    if (exist.qty === 1) {
+      setCartItems(
+        cartItems.filter((prodCart) => prodCart.data.id !== product.data.id)
+      );
+    } else {
+      setCartItems(
+        cartItems.map((prodCart) =>
+          prodCart.data.id === product.data.id
+            ? { ...exist, qty: exist.qty - 1 }
+            : prodCart
+        )
+      );
+    }
+  };
+
+  const onRemoveAll = (product) => {
+    const exist = cartItems.find(
+      (prodCart) => prodCart.data.id === product.data.id
+    );
+    if (exist) {
+      setCartItems(
+        cartItems.filter((prodCart) => prodCart.data.id !== product.data.id)
+      );
+    }
+  };
+
   return (
     <>
       <header>
@@ -52,7 +82,12 @@ const App = () => {
       </header>
       <main className="container__main">
         <ProductsGallery onAdd={onAdd} products={products} />
-        <ShoppingCart onAdd={onAdd} cartItems={cartItems} />
+        <ShoppingCart
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onRemoveAll={onRemoveAll}
+          cartItems={cartItems}
+        />
       </main>
     </>
   );
