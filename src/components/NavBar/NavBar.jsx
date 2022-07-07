@@ -1,8 +1,11 @@
-import "./NavBar.css";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { addSummaryQuantity } from "../../functions";
+import "./NavBar.css";
 
-const NavBar = () => {
+const NavBar = (props) => {
+  const { cartItems } = props;
+  const total = addSummaryQuantity(cartItems).toString();
   return (
     <div className="container__div">
       <div className="logo__div">
@@ -25,7 +28,9 @@ const NavBar = () => {
           </li>
           <li className="icons__li">
             <a href="https://www.google.fr/">
-              <ShoppingCartIcon fontSize="large" />
+              <span className="numberItems" data-count={total}>
+                <ShoppingCartIcon fontSize="large" />
+              </span>
             </a>
           </li>
         </ul>

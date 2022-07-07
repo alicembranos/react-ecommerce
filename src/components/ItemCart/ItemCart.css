@@ -1,0 +1,84 @@
+
+.cartItem__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .cartItem__info {
+    flex: 3;
+    flex-wrap: wrap;
+  }
+  
+  .cartItem__buttons{
+    flex: 2;
+  }
+  
+  .cartItem__buttons {
+    display: flex;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .cartItem__imageBox {
+    padding: 1rem;
+    flex: 2;
+  }
+  .cartItem__imageBox img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .cartItem__qty {
+    width: 2rem;
+    height: 2rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+    background-color: #282c34;
+    color: aliceblue;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .cartItem__button {
+    width: 1em;
+    height: 1em;
+    background: none;
+    border: none;
+    color: aliceblue;
+    font-size: 2rem;
+    line-height: 0;
+  }
+  
+  .cartItem__button:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+    border-radius: 50%;
+    color: #282c34;
+  }
+  
+  .cartItem__price{
+    display: flex;
+    justify-content: center;
+    flex: 2;
+  }
+  
+  .cartItemDelete__button{
+    display: flex;
+    justify-content: center;
+    flex:1;
+    background: none;
+    border: none;
+    color: #ccc;
+  }
+  
+  .cartItemDelete__button:hover{
+    cursor: pointer;
+    transform: scale(1.5);
+  }

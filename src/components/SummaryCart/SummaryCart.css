@@ -1,0 +1,15 @@
+.cartSummary__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1.5rem;
+}
+
+.cartSummary__p{
+    letter-spacing: 1px;
+}
+
+.cartSummary__qty,.cartSummary__price{
+    font-size: 1.3em;
+    font-weight: 700;
+}

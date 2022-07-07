@@ -27,32 +27,49 @@
   flex: 2;
 }
 
-.navbar__ul{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    list-style: none;
+.navbar__ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }
 
-.navbar__li{
-    padding: 1rem;
-    color: aliceblue;
-    font-weight: 700;
-    font-size: 1.5rem;
+.navbar__li {
+  padding: 1rem;
+  color: aliceblue;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .account__div {
   flex: 1;
 }
 
-.icons__ul{
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
+.icons__ul {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  margin-right: 1rem;
 }
 
 .icons__li a {
-    padding: 1rem;
-    text-decoration: none;
-    color: var(--light-color);
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--light-color);
+}
+
+.numberItems[data-count]:after{
+  position:absolute;
+  right: 40px;
+  top: 43px;
+  content: attr(data-count);
+  font-size:0.8em;
+  padding:0.6em 0.1em;
+  line-height:.75em;
+  color: aliceblue;
+  text-align:center;
+  min-width:2em;
+  font-weight:bold;
+  background: #DF0000;
+  border-radius: 50%;
 }

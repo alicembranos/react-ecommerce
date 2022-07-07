@@ -8,7 +8,6 @@ const App = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
 
   const onAdd = (product) => {
-    console.log(product);
     const exist = cartItems.find(
       (prodCart) => prodCart.data.id === product.data.id
     );
@@ -58,7 +57,7 @@ const App = () => {
   return (
     <>
       <header>
-        <NavBar />
+        <NavBar cartItems={cartItems}/>
       </header>
       <main className="container__main">
         <FetchProducts onAdd={onAdd} />
