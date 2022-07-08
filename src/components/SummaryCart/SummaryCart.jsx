@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { addSummaryPrice, addSummaryQuantity } from "../../functions";
+import { addSummaryPrice, addSummaryQuantity } from "../../store/functions";
 import "./SummaryCart.css";
 
 export const SummaryCart = ({ cartItems }) => {

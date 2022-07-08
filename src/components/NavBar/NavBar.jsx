@@ -1,6 +1,6 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { addSummaryQuantity } from "../../functions";
+import { addSummaryQuantity } from "../../store/functions";
 import "./NavBar.css";
 
 const NavBar = (props) => {
