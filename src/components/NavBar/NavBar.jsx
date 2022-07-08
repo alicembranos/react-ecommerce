@@ -1,6 +1,7 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { addSummaryQuantity } from "../../store/functions";
+import logo from "../../assets/img/gallery/logo.png";
 import "./NavBar.css";
 
 const NavBar = (props) => {
@@ -9,7 +10,7 @@ const NavBar = (props) => {
   return (
     <div className="container__div">
       <div className="logo__div">
-        <img className="logo__img" src="" alt="Logo" />
+        <img className="logo__img" src={logo} alt="Logo" />
         <p className="logo__p"></p>
       </div>
       <nav className="navbar__nav">

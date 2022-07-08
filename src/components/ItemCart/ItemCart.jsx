@@ -1,10 +1,7 @@
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
+import { setPrice } from "../../store/functions";
 import "./ItemCart.css";
-
-const setPrice = (qty, price) => {
-  return qty * price;
-};
 
 const ItemCart = (props) => {
   const { item, onAdd, onRemove, onRemoveAll } = props;

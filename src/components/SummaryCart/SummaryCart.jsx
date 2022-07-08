@@ -17,12 +17,17 @@ export const SummaryCart = ({ cartItems }) => {
 
   return (
     <div className="cartSummary__container">
-      <p className="cartSummary__p">
-        Total Items: <span className="cartSummary__qty">{totalQuantity}</span>
-      </p>
-      <p className="cartSummary__p">
-        Subtotal: <span className="cartSummary__price">{totalPrice} €</span>
-      </p>
+      {cartItems.length > 0 && (
+        <>
+          <p className="cartSummary__p">
+            Total Items:{" "}
+            <span className="cartSummary__qty">{totalQuantity}</span>
+          </p>
+          <p className="cartSummary__p">
+            Subtotal: <span className="cartSummary__price">{totalPrice} €</span>
+          </p>
+        </>
+      )}
     </div>
   );
 };

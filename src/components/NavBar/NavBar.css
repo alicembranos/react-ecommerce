@@ -73,3 +73,13 @@
   background: #DF0000;
   border-radius: 50%;
 }
+
+.logo__div{
+  margin-left: 1rem;
+}
+
+.logo__img{
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
