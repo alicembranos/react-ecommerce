@@ -14,7 +14,7 @@
 const addSummaryPrice = (cart) => {
   return cart.reduce((itemA, itemB) => {
       return (
-      itemA + (itemB.data.price * itemB.qty)
+      itemA + (itemB.price * itemB.qty)
     );
   },0);
 };

@@ -1,20 +1,18 @@
 import "./App.css";
-import FetchProducts from "components/FetchProducts/FetchProducts";
 import NavBar from "components/NavBar/NavBar.jsx";
 import ShoppingCart from "components/ShoppingCart/ShoppingCart.jsx";
 import useLocalStorage from "hooks/useLocalStorage";
+import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 
 const App = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
 
   const onAdd = (product) => {
-    const exist = cartItems.find(
-      (prodCart) => prodCart.data.id === product.data.id
-    );
+    const exist = cartItems.find((prodCart) => prodCart.id === product.id);
     if (exist) {
       setCartItems(
         cartItems.map((prodCart) =>
-          prodCart.data.id === product.data.id
+          prodCart.id === product.id
             ? { ...exist, qty: exist.qty + 1 }
             : prodCart
         )
@@ -25,17 +23,13 @@ const App = () => {
   };
 
   const onRemove = (product) => {
-    const exist = cartItems.find(
-      (prodCart) => prodCart.data.id === product.data.id
-    );
+    const exist = cartItems.find((prodCart) => prodCart.id === product.id);
     if (exist.qty === 1) {
-      setCartItems(
-        cartItems.filter((prodCart) => prodCart.data.id !== product.data.id)
-      );
+      setCartItems(cartItems.filter((prodCart) => prodCart.id !== product.id));
     } else {
       setCartItems(
         cartItems.map((prodCart) =>
-          prodCart.data.id === product.data.id
+          prodCart.id === product.id
             ? { ...exist, qty: exist.qty - 1 }
             : prodCart
         )
@@ -44,23 +38,19 @@ const App = () => {
   };
 
   const onRemoveAll = (product) => {
-    const exist = cartItems.find(
-      (prodCart) => prodCart.data.id === product.data.id
-    );
+    const exist = cartItems.find((prodCart) => prodCart.id === product.id);
     if (exist) {
-      setCartItems(
-        cartItems.filter((prodCart) => prodCart.data.id !== product.data.id)
-      );
+      setCartItems(cartItems.filter((prodCart) => prodCart.id !== product.id));
     }
   };
 
   return (
     <>
       <header>
-        <NavBar cartItems={cartItems}/>
+        <NavBar cartItems={cartItems} />
       </header>
       <main className="container__main">
-        <FetchProducts onAdd={onAdd} />
+        <ProductsGallery onAdd={onAdd} />
         <ShoppingCart
           onAdd={onAdd}
           onRemove={onRemove}

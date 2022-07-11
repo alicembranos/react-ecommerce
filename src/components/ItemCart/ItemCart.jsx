@@ -6,14 +6,14 @@ import "./ItemCart.css";
 const ItemCart = (props) => {
   const { item, onAdd, onRemove, onRemoveAll } = props;
   return (
-    <div key={item.data.id} className="cartItem__row">
+    <div key={item.id} className="cartItem__row">
       <div className="cartItem__imageBox">
-        <img src={item.data.coverArt.sources[0].url} alt={item.data.name} />
+        <img src={item.img} alt={item.album} />
       </div>
       <div className="cartItem__info">
-        <h4 className="cartItem__album">{item.data.name}</h4>
+        <h4 className="cartItem__album">{item.album}</h4>
         <p className="cartItem__artist">
-          {item.data.artists.items[0].profile.name}
+          {item.artist}
         </p>
       </div>
       <div className="cartItem__buttons">
@@ -33,7 +33,7 @@ const ItemCart = (props) => {
         </button>
       </div>
       <p className="text-right cartItem__price">
-        {setPrice(item.qty, item.data.price.toFixed(2)).toFixed(2)}€
+        {setPrice(item.qty, item.price.toFixed(2)).toFixed(2)}€
       </p>
       <button
         onClick={() => onRemoveAll(item)}
