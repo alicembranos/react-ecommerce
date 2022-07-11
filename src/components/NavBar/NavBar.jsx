@@ -1,6 +1,6 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { addSummaryQuantity } from "../../store/functions";
+import { addSummaryQuantity } from "services/functions";
 import logo from "../../assets/img/gallery/logo.png";
 import "./NavBar.css";
 

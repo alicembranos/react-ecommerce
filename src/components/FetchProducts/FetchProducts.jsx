@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import ProductsGallery from "../ProductsGallery/ProductsGallery";
+import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 
 const FetchProducts = (props) => {
   const { onAdd } = props;

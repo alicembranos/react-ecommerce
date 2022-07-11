@@ -1,5 +1,5 @@
-import ItemCart from "../ItemCart/ItemCart";
-import { SummaryCart } from "../SummaryCart/SummaryCart";
+import ItemCart from "components/ItemCart/ItemCart";
+import { SummaryCart } from "components/SummaryCart/SummaryCart";
 import "./ShoppingCart.css";
 
 const ShoppingCart = (props) => {

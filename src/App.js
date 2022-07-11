@@ -1,8 +1,8 @@
 import "./App.css";
-import FetchProducts from "./components/FetchProducts/FetchProducts";
-import NavBar from "./components/NavBar/NavBar.jsx";
-import ShoppingCart from "./components/ShoppingCart/ShoppingCart.jsx";
-import useLocalStorage from "./store/useLocalStorage";
+import FetchProducts from "components/FetchProducts/FetchProducts";
+import NavBar from "components/NavBar/NavBar.jsx";
+import ShoppingCart from "components/ShoppingCart/ShoppingCart.jsx";
+import useLocalStorage from "hooks/useLocalStorage";
 
 const App = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
