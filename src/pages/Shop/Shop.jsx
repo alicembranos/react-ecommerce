@@ -1,12 +1,11 @@
-import NavBar from "components/NavBar/NavBar.jsx";
-import ShoppingCart from "components/ShoppingCart/ShoppingCart.jsx";
-import useLocalStorage from "hooks/useLocalStorage";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
-import "./App.css";
+import ShoppingCart from "components/ShoppingCart/ShoppingCart";
+import useLocalStorage from "hooks/useLocalStorage";
+import { useState } from "react";
 
-
-const App = () => {
-  const [cartItems, setCartItems] = useLocalStorage("userCart", []);
+const Shop = () => {
+    const [cartItems, setCartItems] = useLocalStorage("userCart", []);
+    const [keyword, setKeyword] = useState('');
 
   const onAdd = (product) => {
     const exist = cartItems.find((prodCart) => prodCart.id === product.id);
@@ -47,10 +46,11 @@ const App = () => {
 
   return (
     <>
-      <header>
-        <NavBar cartItems={cartItems} />
-      </header>
-      <main className="container__main">
+      <form>
+        <input type="search" value={keyword} />
+      </form>
+      <section className="container__section">
+        {/* <Route path="/ProductsGallery" component={()=><ProductsGallery onAdd={onAdd}/>}/> */}
         <ProductsGallery onAdd={onAdd} />
         <ShoppingCart
           onAdd={onAdd}
@@ -58,9 +58,9 @@ const App = () => {
           onRemoveAll={onRemoveAll}
           cartItems={cartItems}
         />
-      </main>
+      </section>
     </>
   );
 };
 
-export default App;
+export default Shop;
