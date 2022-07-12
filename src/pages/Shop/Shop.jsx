@@ -1,11 +1,12 @@
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
+import SearchBar from "components/SearchBar/SearchBar";
 import ShoppingCart from "components/ShoppingCart/ShoppingCart";
 import useLocalStorage from "hooks/useLocalStorage";
 import { useState } from "react";
 
 const Shop = () => {
-    const [cartItems, setCartItems] = useLocalStorage("userCart", []);
-    const [keyword, setKeyword] = useState('');
+  const [cartItems, setCartItems] = useLocalStorage("userCart", []);
+  const [keyword, setKeyword] = useState("");
 
   const onAdd = (product) => {
     const exist = cartItems.find((prodCart) => prodCart.id === product.id);
@@ -44,13 +45,11 @@ const Shop = () => {
     }
   };
 
+
   return (
     <>
-      <form>
-        <input type="search" value={keyword} />
-      </form>
+      <SearchBar></SearchBar>
       <section className="container__section">
-        {/* <Route path="/ProductsGallery" component={()=><ProductsGallery onAdd={onAdd}/>}/> */}
         <ProductsGallery onAdd={onAdd} />
         <ShoppingCart
           onAdd={onAdd}

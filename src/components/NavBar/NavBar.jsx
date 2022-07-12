@@ -1,6 +1,7 @@
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { addSummaryQuantity } from "services/functions";
+import { Link } from "wouter";
 import logo from "../../assets/img/gallery/logo.png";
 import "./NavBar.css";
 
@@ -15,9 +16,9 @@ const NavBar = (props) => {
       </div>
       <nav className="navbar__nav">
         <ul className="navbar__ul">
-          <li className="navbar__li">VOIZZ</li>
-          <li className="navbar__li">SHOP</li>
-          <li className="navbar__li">CONTACT</li>
+          <li><Link className="navbar__li" to={"/"}>VOIZZ</Link></li>
+          <li><Link className="navbar__li" to={"/shop"}>SHOP</Link></li>
+          <li><Link className="navbar__li" to={"/shop"}>CONTACT</Link></li>
         </ul>
       </nav>
       <div className="account__div">
