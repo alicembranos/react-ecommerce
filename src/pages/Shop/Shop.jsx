@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const Shop = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
-  const [keyword, setKeyword] = useState("");
+  // const [keyword, setKeyword] = useState("");
 
   const onAdd = (product) => {
     const exist = cartItems.find((prodCart) => prodCart.id === product.id);

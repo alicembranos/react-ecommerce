@@ -2,8 +2,10 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  background-color: #000000;
-  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%);
+  /* background-color: #000000;
+  background-image: linear-gradient(147deg, #000000 0%, #2c3e50 74%); */
+  background-color: #1b0b21;
+background-image: linear-gradient(147deg, #000000 0%,  #1b0b21 54%);
 }
 
 .container__section{

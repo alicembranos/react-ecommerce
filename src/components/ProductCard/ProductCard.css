@@ -1,102 +1,144 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Questrial");
 
 :root {
   --font-family: "Montserrat", sans-serif;
+  --font-card: "Questrial", sans-serif;
 }
 
-*{
-    font-family: var(--font-family);
+* {
+  font-family: var(--font-family);
 }
 
 .card {
   position: relative;
-  width: 320px;
+  width: 400px;
   height: 450px;
   margin: 2rem;
-  background-color: #233545;
-  border-radius: 20px;
+  background-color: #14051a;
+  border-radius: 5px;
   overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .card:hover {
-    cursor: pointer;
-  }
-
-.card .images__box img{
-    width: 100%;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
-.card .card__body{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 125px;
-    color: aliceblue;
-    transition: 1s;
-    z-index: 90;
+.images__box {
+  background: linear-gradient(rgba(#1b0b21, 0.25), rgba(#2a0736, 0.55));
+  background-repeat: no-repeat;
+  background-size: 300px;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.heart {
+  position: absolute;
+  right: 0;
+  margin: 1rem;
+  background-color: rgba(#1b0b21, 0.9);
+  border-radius: 50%;
+  color: aliceblue;
+  transition: all 0.4s ease;
+}
+
+.heart > svg {
+  font-size: 2rem;
+}
+
+.card__body {
+  height: 165px;
+  width: 100%;
+  position: absolute;
+  bottom: -15px;
+  background: rgba(255, 255, 255, 0.85);
+  transform: translateY(60px);
+  transition: all 0.5s ease-in-out;
+  padding-bottom: 2rem;
 }
 
 .card:hover .card__body {
-    height: 400px;
+  transform: translateY(0px);
 }
 
-.card:hover .images__box img {
-    opacity: 0.2;
+.card__info {
+  height: 70%;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card__title,
+.card__artist {
+  font-family: var(--font-card);
+  text-transform: uppercase;
+  margin: 0;
 }
 
 .card__title {
-    position: relative;
-    padding: 0.5rem;
-    margin-bottom: 3rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-align: center;
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  letter-spacing: 3px;
+  color: #1b0b21;
 }
 
-.card__info{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
-    padding-left: 1rem;
-    padding-bottom: 0.5rem;
+.card__artist {
+  font-size: 0.9em;
+  letter-spacing: 1.5px;
+  color: #240b2d;
+  padding-top: 5px;
+  margin-bottom: 5px;
 }
 
-.card__artist{
-    font-weight: 600;
-    font-size: 1.3rem;
+.card__year {
+  font-style: italic;
+  font-weight: lighter;
+}
+.card__end {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10%;
+  font-size: 0.8em;
+  color: #1b0b21;
+  margin-right: 1.2rem;
+  margin-left: 1.2rem;
+  padding-bottom: 2rem;
 }
 
-.card__year{
-    font-style: italic;
-}
-.card__end{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1.5rem;
+.card__price {
+  font-size: 1.3rem;
 }
 
-.card__price{
-    font-size: 2rem;
+.card__price-span {
+  font-size: 1.7rem;
+  font-weight: 700;
 }
 
-.card__price-span{
-    font-size: 1.7rem;
-    font-weight: 700;
+.card__buttons {
+  display: flex;
+  justify-content: space-between;
 }
 
-.card__button{
-    background: none;
-    border: none;
-    color:aliceblue ;
+.card__button {
+  background: none;
+  border: none;
+  color: #14051a;
+  margin-right: 0.5rem;
+}
+.card__button > svg {
+  line-height: normal;
 }
 
-.card__button:hover{
-    width: 50px;
-    height: 50px;
-    background-color: aliceblue;
-    border-radius: 50%;
-    color: #233545;
-    cursor: pointer;
+.card__button:hover {
+  transform: rotate(6deg);
+  color: #233545;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: "all 1s";
 }

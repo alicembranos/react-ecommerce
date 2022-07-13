@@ -1,27 +1,37 @@
-import React from "react";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./ProductCard.css";
 
 const ProductCard = (props) => {
   const { product, onAdd } = props;
   return (
     <div className="card">
-      <div className="images__box">
-        <img src={product.img} alt="" />
-      </div>
+      <div
+        className="images__box"
+        style={{
+          backgroundImage: "url(" + product.img + ") ",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
+      ></div>
       <section className="card__body">
-        <h2 className="card__title">{product.title}</h2>
-        <div className="card__info">
-          <h3 className="card__artist">{product.artist}</h3>
-          <p className="card__year">Year: {product.year}</p>
+        <div class="card__info">
+          <h2 class="card__title">{product.title}</h2>
+          <h3 class="card__artist">{product.artist}<span className="card__year"> ({product.year})</span></h3>
         </div>
         <div className="card__end">
           <p className="card__price">
             <span className="card__price-span">{product.price}</span>€
           </p>
-          <button className="card__button" onClick={() => onAdd(product)}>
-            <ShoppingCartOutlinedIcon fontSize="large" />
-          </button>
+          <div className="card_buttons">
+            <button className="card__button">
+              <FavoriteIcon fontSize="large" />
+            </button>
+            <button className="card__button" onClick={() => onAdd(product)}>
+              <ShoppingCartOutlinedIcon fontSize="large" />
+            </button>
+          </div>
         </div>
       </section>
     </div>
