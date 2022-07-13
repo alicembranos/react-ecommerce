@@ -21,7 +21,7 @@ const SearchBar = () => {
   };
   return (
     <FormControl>
-      <InputLabel htmlFor="component-outlined">Name</InputLabel>
+      <InputLabel htmlFor="component-outlined" style={{color:'aliceblue'}}>Search</InputLabel>
       <OutlinedInput
         id="component-outlined"
         value={setValue}

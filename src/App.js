@@ -1,4 +1,3 @@
-import NavBar from "components/NavBar/NavBar.jsx";
 import useLocalStorage from "hooks/useLocalStorage";
 import { Route, Switch } from "wouter";
 import Home from "pages/Home/Home";
@@ -6,14 +5,12 @@ import Shop from "pages/Shop/Shop";
 import Cart from "pages/Cart/Cart";
 import DetailProduct from "pages/DetailProduct/DetailProduct";
 
+
 const App = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
 
   return (
     <>
-      <header>
-        <NavBar cartItems={cartItems} />
-      </header>
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/shop" component={Shop} />

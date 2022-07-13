@@ -1,3 +1,4 @@
+import NavBar from "components/NavBar/NavBar";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 import SearchBar from "components/SearchBar/SearchBar";
 import ShoppingCart from "components/ShoppingCart/ShoppingCart";
@@ -45,9 +46,11 @@ const Shop = () => {
     }
   };
 
-
   return (
     <>
+      <header>
+        <NavBar cartItems={cartItems} />
+      </header>
       <SearchBar></SearchBar>
       <section className="container__section">
         <ProductsGallery onAdd={onAdd} />
