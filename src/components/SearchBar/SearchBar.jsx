@@ -1,11 +1,6 @@
 import SearchIcon from "@mui/icons-material/Search";
-import {
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  TextField,
-} from "@mui/material";
 import { useState } from "react";
+import "./SearchBar.css";
 
 const SearchBar = () => {
   const [value, setValue] = useState("");
@@ -20,15 +15,19 @@ const SearchBar = () => {
     setValue(e.target.value);
   };
   return (
-    <FormControl>
-      <InputLabel htmlFor="component-outlined" style={{color:'aliceblue'}}>Search</InputLabel>
-      <OutlinedInput
-        id="component-outlined"
-        value={setValue}
-        onChange={handleChange}
-        label="Name"
+    <form className="search__form" onSubmit={(e) => handleSubmit(e)}>
+      <input
+        id="search"
+        type="search"
+        placeholder="Search..."
+        autoFocus
+        onChange={(e) => handleChange(e)}
+        className="search__input"
       />
-    </FormControl>
+      <button type="submit" className="search__button">
+        <SearchIcon fontSize="large"></SearchIcon>
+      </button>
+    </form>
   );
 };
 

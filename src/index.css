@@ -14,3 +14,9 @@ background-image: linear-gradient(147deg, #000000 0%,  #1b0b21 54%);
   height: 100%;
   padding: 1rem;
 }
+
+
+.searchContainer__section{
+  display: flex;
+  justify-content: center;
+}

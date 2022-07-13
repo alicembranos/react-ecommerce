@@ -51,7 +51,7 @@ const Shop = () => {
       <header>
         <NavBar cartItems={cartItems} />
       </header>
-      <SearchBar></SearchBar>
+      <section className="searchContainer__section"><SearchBar></SearchBar></section>
       <section className="container__section">
         <ProductsGallery onAdd={onAdd} />
         <ShoppingCart

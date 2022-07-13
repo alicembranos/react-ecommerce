@@ -16,9 +16,9 @@ const ProductCard = (props) => {
         }}
       ></div>
       <section className="card__body">
-        <div class="card__info">
-          <h2 class="card__title">{product.title}</h2>
-          <h3 class="card__artist">{product.artist}<span className="card__year"> ({product.year})</span></h3>
+        <div className="card__info">
+          <h2 className="card__title">{product.title}</h2>
+          <h3 className="card__artist">{product.artist}<span className="card__year"> ({product.year})</span></h3>
         </div>
         <div className="card__end">
           <p className="card__price">
