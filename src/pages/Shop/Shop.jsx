@@ -49,7 +49,8 @@ const Shop = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //update
+    const value = document.getElementById("search").value;
+    setKeyword(value);
   };
 
   const handleChange = (e) => {
