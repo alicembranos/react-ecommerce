@@ -1,5 +1,5 @@
 import NavBar from "components/NavBar/NavBar";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import useLocalStorage from "hooks/useLocalStorage";
 import useAlbums from "hooks/useAlbums";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
@@ -8,8 +8,9 @@ import SearchBar from "components/SearchBar/SearchBar";
 const Shop = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
   const [keyword, setKeyword] = useState("");
-  const { loading, albums, search } = useAlbums({ keyword });
-
+  const { loading, albums, search, match } = useAlbums({ keyword });
+  console.log(albums);
+  console.log(search);
   const onAdd = (product) => {
     const exist = cartItems.find((prodCart) => prodCart.id === product.id);
     if (exist) {
@@ -47,15 +48,15 @@ const Shop = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = useCallback((e) => {
     e.preventDefault();
     const value = document.getElementById("search").value;
     setKeyword(value);
-  };
+  }, []);
 
-  const handleChange = (e) => {
+  const handleChange = useCallback((e) => {
     setKeyword(e.target.value);
-  };
+  }, []);
 
   return (
     <>
@@ -68,11 +69,11 @@ const Shop = () => {
         ></SearchBar>
         {search.length > 0 ? (
           <ProductsGallery onAdd={onAdd} albums={search} loading={loading} />
-        ) : search?.noMatch ? (
+        ) : !match ? (
           <ProductsGallery
             onAdd={onAdd}
             albums={search}
-            noMatch={search.noMatch}
+            match={match}
             loading={loading}
           />
         ) : (

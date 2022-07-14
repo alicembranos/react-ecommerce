@@ -3,19 +3,17 @@ import Spinner from "components/Spinner/Spinner";
 import "./ProductsGallery.css";
 
 const ProductsGallery = (props) => {
-  const { onAdd, loading, albums, noMatch = false } = props;
+  const { onAdd, loading, albums, match = true } = props;
 
-  console.log('se está renderizando este');
-  
   if (loading) return <Spinner />;
 
   return (
     <>
       <section className="galleryProducts__container">
-        {albums.length === 0 && !noMatch && (
+        {albums.length === 0 && match && (
           <p className="shoppingCart__p">No products to show</p>
         )}
-        {noMatch ? (
+        {!match ? (
           <p className="shoppingCart__p">No results founded</p>
         ) : (
           albums.map((album) => (

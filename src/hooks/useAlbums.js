@@ -5,6 +5,7 @@ const useAlbums = ({ keyword }) => {
   const [loading, setLoading] = useState(false);
   const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState([]);
+  const [match, setMatch] = useState(true);
 
   useEffect(() => {
     setLoading(true);
@@ -15,6 +16,11 @@ const useAlbums = ({ keyword }) => {
   }, []);
 
   useEffect(() => {
+    if (keyword==="") {
+      setSearch([]);
+      setMatch(true);
+      return;
+    }
     const getSearchAlbums = (keyword) =>
       albums.filter(
         (album) =>
@@ -28,13 +34,17 @@ const useAlbums = ({ keyword }) => {
             .includes(keyword.toLowerCase().replace(/\s/g, ""))
       );
     const searchedAlbums = getSearchAlbums(keyword);
-    searchedAlbums.length > 0
-      ? setSearch(searchedAlbums)
-      : setSearch({ noMatch: true });
+    if (searchedAlbums.length > 0) {
+      setSearch(searchedAlbums);
+      setMatch(true)
+      return;
+    }
+    setSearch([]);
+    setMatch(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyword]);
 
-  return { loading, albums, search };
+  return { loading, albums, search, match};
 };
 
 export default useAlbums;
