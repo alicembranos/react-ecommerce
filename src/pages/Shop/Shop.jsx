@@ -9,8 +9,7 @@ const Shop = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
   const [keyword, setKeyword] = useState("");
   const { loading, albums, search, match } = useAlbums({ keyword });
-  console.log(albums);
-  console.log(search);
+
   const onAdd = (product) => {
     const exist = cartItems.find((prodCart) => prodCart.id === product.id);
     if (exist) {
