@@ -1,13 +1,14 @@
 import NavBar from "components/NavBar/NavBar";
+import { useState } from "react";
+import useLocalStorage from "hooks/useLocalStorage";
+import useAlbums from "hooks/useAlbums";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 import SearchBar from "components/SearchBar/SearchBar";
-import ShoppingCart from "components/ShoppingCart/ShoppingCart";
-import useLocalStorage from "hooks/useLocalStorage";
-import { useState } from "react";
 
 const Shop = () => {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
-  // const [keyword, setKeyword] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const { loading, albums, search } = useAlbums({ keyword });
 
   const onAdd = (product) => {
     const exist = cartItems.find((prodCart) => prodCart.id === product.id);
@@ -46,21 +47,43 @@ const Shop = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    //update
+  };
+
+  const handleChange = (e) => {
+    setKeyword(e.target.value);
+  };
+
   return (
     <>
-      <header>
-        <NavBar cartItems={cartItems} />
-      </header>
-      <section className="searchContainer__section"><SearchBar></SearchBar></section>
-      <section className="container__section">
-        <ProductsGallery onAdd={onAdd} />
-        <ShoppingCart
+      <NavBar cartItems={cartItems} />
+      <div className="container__gallery">
+        <SearchBar
+          keyword={keyword}
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+        ></SearchBar>
+        {search.length > 0 ? (
+          <ProductsGallery onAdd={onAdd} albums={search} loading={loading} />
+        ) : search?.noMatch ? (
+          <ProductsGallery
+            onAdd={onAdd}
+            albums={search}
+            noMatch={search.noMatch}
+            loading={loading}
+          />
+        ) : (
+          <ProductsGallery onAdd={onAdd} albums={albums} loading={loading} />
+        )}
+      </div>
+      {/* <ShoppingCart
           onAdd={onAdd}
           onRemove={onRemove}
           onRemoveAll={onRemoveAll}
           cartItems={cartItems}
-        />
-      </section>
+        /> */}
     </>
   );
 };

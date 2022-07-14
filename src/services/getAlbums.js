@@ -17,12 +17,12 @@ const apiResponseToAlbums = (apiResponse) => {
 
 const getAlbums = async () => {
   try {
-        const res = await fetch(API_URL);
-        const apiResponse = await res.json();
-        return apiResponseToAlbums(apiResponse);
-    } catch (error) {
-        return console.log(error);
-    }
+    const res = await fetch(API_URL);
+    const apiResponse = await res.json();
+    return apiResponseToAlbums(apiResponse);
+  } catch (error) {
+    return console.log(error);
+  }
 };
 
 export default getAlbums;
