@@ -1,1 +1,1 @@
-export const API_URL = 'http://localhost:3000/albums';
+export const API_URL = 'http://localhost:3001/albums';

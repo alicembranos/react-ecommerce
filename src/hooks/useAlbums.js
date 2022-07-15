@@ -1,9 +1,10 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import getAlbums from "services/getAlbums";
+import AlbumsContext from "context/AlbumsContext";
 
 const useAlbums = ({ keyword }) => {
   const [loading, setLoading] = useState(false);
-  const [albums, setAlbums] = useState([]);
+  const { albums, setAlbums } = useContext(AlbumsContext);
   const [search, setSearch] = useState([]);
   const [match, setMatch] = useState(true);
 
@@ -13,7 +14,7 @@ const useAlbums = ({ keyword }) => {
       setAlbums(albums);
       setLoading(false);
     });
-  }, []);
+  }, [setAlbums]);
 
   useEffect(() => {
     if (keyword==="") {

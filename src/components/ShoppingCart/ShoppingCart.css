@@ -10,7 +10,7 @@
 
 .shoppingCart__container {
   /* display: flex; */
-  width: 40%;
+  width: 60%;
   position: sticky;
   top: 100px;
   height: 80vh;
@@ -21,14 +21,14 @@
 
 .shoppingCart__h2 {
   font-size: 2rem;
-  text-align: center;
 }
 
 .shoppingCart__p {
-  padding-left: 1rem;
+  margin-top: 7rem;
   font-size: 1.5rem;
   font-style: italic;
   font-weight: lighter;
+  text-align: center;
 }
 
 

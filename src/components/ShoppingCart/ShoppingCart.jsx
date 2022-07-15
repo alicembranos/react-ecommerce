@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import CartContext from "context/CartContext";
 import ItemCart from "components/ItemCart/ItemCart";
 import { SummaryCart } from "components/SummaryCart/SummaryCart";
 import "./ShoppingCart.css";
 
-const ShoppingCart = (props) => {
-  const { cartItems, onAdd, onRemove, onRemoveAll } = props;
-
+const ShoppingCart = () => {
+  const { cartItems, onAdd, onRemove, onRemoveAll } =
+    useContext(CartContext);
+console.log(cartItems);
   return (
     <aside className="shoppingCart__container">
       <h2 className="shoppingCart__h2">Shopping Cart</h2>

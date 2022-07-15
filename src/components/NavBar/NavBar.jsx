@@ -1,12 +1,14 @@
+import { useContext } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { addSummaryQuantity } from "services/functions";
 import { Link } from "wouter";
+import CartContext from "context/CartContext";
 import logo from "../../assets/img/gallery/logo.png";
 import "./NavBar.css";
 
-const NavBar = (props) => {
-  const { cartItems } = props;
+const NavBar = () => {
+  const { cartItems } = useContext(CartContext);
   const total = addSummaryQuantity(cartItems).toString();
   return (
     <header>
@@ -42,11 +44,11 @@ const NavBar = (props) => {
               </a>
             </li>
             <li className="icons__li">
-              <a href="https://www.google.fr/">
+              <Link to={"/cart"}>
                 <span className="numberItems" data-count={total}>
                   <ShoppingCartIcon fontSize="large" />
                 </span>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

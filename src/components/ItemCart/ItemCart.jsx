@@ -5,6 +5,7 @@ import "./ItemCart.css";
 
 const ItemCart = (props) => {
   const { item, onAdd, onRemove, onRemoveAll } = props;
+
   return (
     <div key={item.id} className="cartItem__row">
       <div className="cartItem__imageBox">
@@ -12,9 +13,7 @@ const ItemCart = (props) => {
       </div>
       <div className="cartItem__info">
         <h4 className="cartItem__album">{item.album}</h4>
-        <p className="cartItem__artist">
-          {item.artist}
-        </p>
+        <p className="cartItem__artist">{item.artist}</p>
       </div>
       <div className="cartItem__buttons">
         <button onClick={() => onRemove(item)} className="cartItem__button">

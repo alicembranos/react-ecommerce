@@ -1,4 +1,12 @@
+.searchContainer__section {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 1rem;
+  padding-bottom: 2rem;
+}
+
 .search__box {
+  display: flex;
   height: 50px;
   width: 600px;
   z-index:1;
@@ -44,7 +52,7 @@
   width: 40px;
   border: none;
   background: none;
-  transform: translateX(-60px);
+  transform: translateX(550px);
   line-height: 75px;
   color: #57025e;
   cursor: pointer;
