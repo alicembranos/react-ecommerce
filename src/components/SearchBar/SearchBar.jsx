@@ -16,7 +16,7 @@ const SearchBar = ({ handleSubmit, handleChange, keyword }) => {
             className="search__input"
           />
           <button type="submit" className="search__button">
-            <SearchIcon fontSize="large"></SearchIcon>
+            <SearchIcon fontSize="medium"></SearchIcon>
           </button>
         </div>
       </form>

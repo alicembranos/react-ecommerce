@@ -35,12 +35,12 @@ const ItemMedia = styled(Box)(() => ({
 const SocialMedia = () => {
   return (
     <Container
-      sx={{ top: "60%", position: "fixed", right: "0", width: "fit-content" }}
+      sx={{ top: "70%", position: "fixed", right: "0", width: "fit-content" }}
     >
       <Stack
         direction="column"
         spacing={1.5}
-        sx={{ padding: "0px", transform: "translate(275px, 0)" }}
+        sx={{ padding: "0px", transform: "translate(265px, 0)" }}
       >
         <ItemMedia>
           <a className="links" href="https://www.facebook.com/">

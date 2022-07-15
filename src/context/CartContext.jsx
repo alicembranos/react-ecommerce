@@ -5,7 +5,6 @@ export const CartContext = React.createContext({});
 
 export function CartContextProvider({ children }) {
   const [cartItems, setCartItems] = useLocalStorage("userCart", []);
-  console.log(cartItems);
 
   /**
    * If the product exists in the cart, then increase the quantity by 1, otherwise add the product to

@@ -9,47 +9,43 @@
 }
 
 .shoppingCart__container {
-  /* display: flex; */
+  height: 100%;
   width: 60%;
-  position: sticky;
-  top: 100px;
-  height: 80vh;
+  padding-top: 3rem;
   align-self: flex-start;
   color: aliceblue;
-  overflow-y: auto;
 }
 
 .shoppingCart__h2 {
   font-size: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
 }
 
-.shoppingCart__p {
-  margin-top: 7rem;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: lighter;
-  text-align: center;
+.listItems__container {
+  margin: 1rem;
+  height: 70%;
+  overflow-y: scroll;
 }
-
 
 /* ===== Scrollbar CSS ===== */
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: #233545 #3c4043;
-  }
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1b0b21 #3c4043;
+}
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 9px;
-  }
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 5px;
+}
 
-  *::-webkit-scrollbar-track {
-    background: #3c4043;
-  }
+*::-webkit-scrollbar-track {
+  background: #303234;
+}
 
-  *::-webkit-scrollbar-thumb {
-    background-color: #233545;
-    border-radius: 0px;
-    border: 21px none #ffffff;
-  }
+*::-webkit-scrollbar-thumb {
+  background-color: #1b0b21;
+  border-radius: 0px;
+  border: 21px none #ffffff;
+}

@@ -1,32 +1,31 @@
 import { useContext } from "react";
 import CartContext from "context/CartContext";
-import ItemCart from "components/ItemCart/ItemCart";
-import { SummaryCart } from "components/SummaryCart/SummaryCart";
+import ButtonsGroup from "components/ButtonsGroup/ButtonsGroup";
+import DisplayItems from "components/DisplayCart/DisplayItems";
+import DisplayInfo from "components/DisplayInfo/DisplayInfo";
 import "./ShoppingCart.css";
 
 const ShoppingCart = () => {
-  const { cartItems, onAdd, onRemove, onRemoveAll } =
-    useContext(CartContext);
-console.log(cartItems);
+  const { cartItems, onAdd, onRemove, onRemoveAll } = useContext(CartContext);
+
+  const display =
+    cartItems.length > 0 ? (
+      <DisplayItems
+        cartItems={cartItems}
+        onAdd={onAdd}
+        onRemove={onRemove}
+        onRemoveAll={onRemoveAll}
+      />
+    ) : (
+      <DisplayInfo text="Cart is empty" />
+    );
+
   return (
-    <aside className="shoppingCart__container">
+    <section className="shoppingCart__container">
       <h2 className="shoppingCart__h2">Shopping Cart</h2>
-      <div>
-        {cartItems.length === 0 && (
-          <p className="shoppingCart__p">Cart is empty</p>
-        )}
-      </div>
-      {cartItems.map((item) => (
-        <ItemCart
-          key={item.id}
-          item={item}
-          onAdd={onAdd}
-          onRemove={onRemove}
-          onRemoveAll={onRemoveAll}
-        />
-      ))}
-      <SummaryCart cartItems={cartItems} />
-    </aside>
+      {display}
+      <ButtonsGroup />
+    </section>
   );
 };
 

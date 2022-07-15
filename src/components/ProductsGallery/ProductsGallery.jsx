@@ -11,10 +11,10 @@ const ProductsGallery = (props) => {
     <>
       <section className="galleryProducts__container">
         {albums.length === 0 && match && (
-          <p className="shoppingCart__p">No products to show</p>
+          <p className="displayInfo__p">No products to show</p>
         )}
         {!match ? (
-          <p className="shoppingCart__p">No results founded</p>
+          <p className="displayInfo__p">No results founded</p>
         ) : (
           albums.map((album) => (
             <ProductCard key={album.id} product={album} onAdd={onAdd} />

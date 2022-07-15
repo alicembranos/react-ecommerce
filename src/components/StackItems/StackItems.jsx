@@ -3,15 +3,22 @@ import { styled } from "@mui/material/styles";
 import { Link } from "wouter";
 import "./StackItems.css";
 
-const slideTop = keyframes`
+const lineUp = keyframes`
 0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  100% {
-    -webkit-transform: translateY(-300%);
-            transform: translateY(-300%);
-  }`;
+  opacity: 0;
+  transform: translateY(120%);
+}
+20% {
+  opacity: 0;
+}
+50% {
+  opacity: 1;
+  transform: translateY(0%);
+}
+100% {
+  opacity: 1;
+  transform: translateY(0%);
+}`;
 
 const Item = styled(Box)(() => ({
   position: "relative",
@@ -32,9 +39,8 @@ const StackItems = () => {
         position: "absolute",
         top: "40%",
         left: "10%",
-        animation: `${slideTop} 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both`,
-        WebkitAnimation:
-          "-webkit-animation: slide-top 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) reverse both",
+        animation: `${lineUp} 3s ease-out`,
+        WebkitAnimation: `-webkit-animation: ${lineUp} 5s ease-out `,
       }}
     >
       <Item>

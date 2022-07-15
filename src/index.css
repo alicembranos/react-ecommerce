@@ -35,9 +35,9 @@ body {
 .container__gallery {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  min-height: 100vh;
   height: 100%;
-  margin: 2rem;
+  margin: 1rem;
   padding: 1rem;
   overflow: auto;
 }
@@ -45,7 +45,7 @@ body {
 .container__cart {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
 }
 
