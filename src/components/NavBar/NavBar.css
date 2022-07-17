@@ -55,17 +55,12 @@
 
 .icons__li {
   cursor: pointer;
-}
-
-.icons__li a {
-  padding: 1rem;
-  text-decoration: none;
-  color: var(--light-color);
+  padding-right: 1rem;
 }
 
 .numberItems[data-count]:after {
   position: absolute;
-  right: 25px;
+  right: 40px;
   top: 43px;
   content: attr(data-count);
   font-size: 0.8em;

@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import { createContext, useState } from "react";
 
-export  const AlbumsContext = React.createContext({});
+export  const AlbumsContext = createContext({});
 
 export function AlbumsContextProvider({ children }) {
   const [albums, setAlbums] = useState([]);

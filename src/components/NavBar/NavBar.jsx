@@ -1,16 +1,34 @@
 import { useContext } from "react";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import { addSummaryQuantity } from "services/functions";
 import { Link } from "wouter";
+
 import CartContext from "context/CartContext";
+
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import LogoutIcon from "@mui/icons-material/Logout";
 import logo from "../../assets/img/gallery/logo.png";
+import useUser from "hooks/useUser";
+
 import "./NavBar.css";
 
 const NavBar = () => {
   const { cartItems } = useContext(CartContext);
   const total = addSummaryQuantity(cartItems).toString();
-  const isLogged = false;
+  const { isLogged } = useUser();
+
+  const renderLoginButtons = () => {
+    return isLogged ? (
+      <Link to={"/logout"}>
+        <LogoutIcon fontSize="large" />
+      </Link>
+    ) : (
+      <Link to={"/login"}>
+        <AccountCircleIcon fontSize="large" />
+      </Link>
+    );
+  };
+
   return (
     <header>
       <div className="container__div">
@@ -39,11 +57,7 @@ const NavBar = () => {
         </nav>
         <div className="account__div">
           <ul className="icons__ul">
-            <li className="icons__li">
-              <a href="https://www.google.fr/">
-                <AccountCircleIcon fontSize="large" />
-              </a>
-            </li>
+            <li className="icons__li">{renderLoginButtons()}</li>
             <li className="icons__li">
               <Link to={"/cart"}>
                 <span className="numberItems" data-count={total}>
