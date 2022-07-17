@@ -14,7 +14,7 @@ const ErrorPage = () => {
           The page you are looking for might have been removed had its name
           changed or is temporarily unavailable.
         </p>
-        <Link href="/">
+        <Link to={"/"}>
           <CustomButton value="HOME PAGE" />
         </Link>
       </div>

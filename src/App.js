@@ -1,11 +1,13 @@
 import { Route, Switch } from "wouter";
-import { AlbumsContextProvider } from "context/AlbumsContext";
-import { CartContextProvider } from "context/CartContext";
+
 import Home from "pages/Home/Home";
 import Shop from "pages/Shop/Shop";
 import Cart from "pages/Cart/Cart";
 import DetailProduct from "pages/DetailProduct/DetailProduct";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
+
+import { AlbumsContextProvider } from "context/AlbumsContext";
+import { CartContextProvider } from "context/CartContext";
 
 const App = () => {
   return (

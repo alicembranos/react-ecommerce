@@ -10,6 +10,7 @@ import "./NavBar.css";
 const NavBar = () => {
   const { cartItems } = useContext(CartContext);
   const total = addSummaryQuantity(cartItems).toString();
+  const isLogged = false;
   return (
     <header>
       <div className="container__div">
