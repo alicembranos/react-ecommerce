@@ -1,9 +1,19 @@
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
 
-const CustomButton = ({value}) => {
+const CustomButton = (props) => {
+  const { value, href, onClick } = props;
   return (
-    <Button size="large" variant="outlined" color="secondary">{value}</Button>
-  )
-}
+    <div title={href}>
+      <Button
+        size="large"
+        variant="outlined"
+        color="secondary"
+        onClick={onClick}
+      >
+        {value}
+      </Button>
+    </div>
+  );
+};
 
-export default CustomButton
+export default CustomButton;

@@ -23,7 +23,7 @@ body {
   background-image: var(--backgroundImage);
 }
 
-.cart__container{
+.cart__container, .error__section{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,7 +37,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
   height: 100%;
-  margin: 1rem;
+  margin: 1.5rem;
   padding: 1rem;
   overflow: auto;
 }
@@ -46,7 +46,41 @@ body {
   display: flex;
   justify-content: center;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 
+.error-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 460px;
+  text-align: center;
+  line-height: 1.4;
+}
 
+.notFound-404{
+  height: 158px;
+  line-height: 153px;
+}
+
+.notFound-h1{
+  margin: 0px;
+  color: #222;
+  font-size: 220px;
+  letter-spacing: 10px;
+  font-weight: 700;
+  text-shadow: 2px 2px 0px aliceblue, -2px -2px 0px aliceblue;
+}
+
+.notFound-h1 >span {
+  text-shadow: 2px 2px 0px #8307b9, -2px -2px 0px #8307b9, 0px 0px 8px #550975;
+}
+
+.notFound-message{
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  color: #c9c9c9;
+  font-weight: 400;
+  font-size: 16px;
+}
