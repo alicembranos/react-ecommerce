@@ -58,6 +58,12 @@
   padding-right: 1rem;
 }
 
+.icons__li button{
+  background: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+
 .numberItems[data-count]:after {
   position: absolute;
   right: 40px;

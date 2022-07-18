@@ -15,13 +15,13 @@ import "./NavBar.css";
 const NavBar = () => {
   const { cartItems } = useContext(CartContext);
   const total = addSummaryQuantity(cartItems).toString();
-  const { isLogged } = useUser();
+  const { isLogged, logout } = useUser();
 
   const renderLoginButtons = () => {
     return isLogged ? (
-      <Link to={"/logout"}>
+      <button onClick={logout}>
         <LogoutIcon fontSize="large" />
-      </Link>
+      </button>
     ) : (
       <Link to={"/login"}>
         <AccountCircleIcon fontSize="large" />

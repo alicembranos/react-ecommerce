@@ -1,20 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
+import useUser from "hooks/useUser";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
 import imgLogin from "assets/img/gallery/login.jpg";
-import { Box } from "@mui/material";
 import "./Login.css";
 
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
+  const [, setLocation] = useLocation();
+  const { login, isLogged } = useUser();
 
-  console.log(userForm.email);
+  useEffect(() => {
+    if (isLogged) setLocation("/cart");
+  }, [isLogged, setLocation]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    //logear
+    login();
   };
 
-  const handleChange = ({target}) => {
+  const handleChange = ({ target }) => {
     const { name, value } = target;
     console.log(value);
     setUserForm({ ...userForm, [name]: value });
@@ -51,7 +57,9 @@ const Login = () => {
                 Forgot password?
               </a>
             </div>
-            <button className="btn">Login</button>
+            <button className="btn" type="submit">
+              Login
+            </button>
             <p className="form-text">
               Don't have account?{" "}
               <a href="./">
