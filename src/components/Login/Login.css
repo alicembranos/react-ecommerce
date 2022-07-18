@@ -43,7 +43,7 @@
 
 .form-wrapper::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 0;
   right: 0;
   left: 0;
@@ -147,4 +147,25 @@
   text-decoration: none;
   color: rgba(201, 14, 166, 1);
   padding-left: 5px;
+}
+
+.error-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color: aliceblue;
+  text-align: center;
+  font-size: 1.3rem;
+  margin: 0.7rem;
+  width: 100%;
+}
+
+.form-error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(218, 4, 4);
+  text-align: center;
+  letter-spacing: 0.3px;
 }

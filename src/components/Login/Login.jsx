@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "wouter";
 import useUser from "hooks/useUser";
+import Spinner from "components/Spinner/Spinner";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
+import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import imgLogin from "assets/img/gallery/login.jpg";
 import "./Login.css";
 
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
   const [, setLocation] = useLocation();
-  const { login, isLogged } = useUser();
+  const { login, isLogged, isLogginLoading, hasLoginError } = useUser();
 
   useEffect(() => {
     if (isLogged) setLocation("/cart");
@@ -17,12 +19,11 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login();
+    login({ userForm });
   };
 
   const handleChange = ({ target }) => {
     const { name, value } = target;
-    console.log(value);
     setUserForm({ ...userForm, [name]: value });
   };
 
@@ -33,6 +34,16 @@ const Login = () => {
           className="form-wrapper"
           style={{ backgroundImage: `url(${imgLogin})` }}
         >
+          {isLogginLoading && (
+            <div className="form-loading">
+              <Spinner />
+            </div>
+          )}
+          {hasLoginError && (
+            <p className="form-error">
+              <ErrorOutlineIcon /> Wrong credentials
+            </p>
+          )}
           <div className="form-content">
             <div className="form-group">
               <EmailOutlinedIcon className="login-icons" />
@@ -50,7 +61,7 @@ const Login = () => {
                 type="password"
                 name="password"
                 placeholder="Password"
-                value={userForm.email}
+                value={userForm.password}
                 onChange={handleChange}
               />
               <a href="/" className="form-text">

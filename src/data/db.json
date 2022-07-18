@@ -2030,7 +2030,10 @@
   "users": [
     {
       "email": "olivier@mail.com",
-      "password": "$2a$10$OTfyupewrZBX9vryr0rwL.Va21R6BpKEe7VvI8xx7b.n/FhZPP8Pm",
+      "password": "$2a$10$.CYoElTVhdZ.F3aRG/Bx0uwDO0SwKNVfuNU9Qr9NUDD/XelNX79.O",
+      "firstname": "Olivier",
+      "lastname": "Monge",
+      "age": 32,
       "id": 1
     }
   ]
