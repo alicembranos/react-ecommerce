@@ -8,19 +8,25 @@ import "./Login.css";
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
 
+  console.log(userForm.email);
   const handleSubmit = (e) => {
     e.preventDefault();
     //logear
+  };
+
+  const handleChange = ({target}) => {
+    const { name, value } = target;
+    console.log(value);
+    setUserForm({ ...userForm, [name]: value });
   };
 
   return (
     <section className="form__container">
       <form className="form" onSubmit={handleSubmit}>
         <div
-          className="form-wrapper" style={{ backgroundImage: `url(${imgLogin})` }}
-          
+          className="form-wrapper"
+          style={{ backgroundImage: `url(${imgLogin})` }}
         >
-
           <div className="form-content">
             <div className="form-group">
               <EmailOutlinedIcon className="login-icons" />
@@ -29,24 +35,31 @@ const Login = () => {
                 name="email"
                 placeholder="Email"
                 value={userForm.email}
+                onChange={handleChange}
               />
             </div>
             <div className="form-group">
-              <HttpsOutlinedIcon className="login-icons"/>
+              <HttpsOutlinedIcon className="login-icons" />
               <input
                 type="password"
                 name="password"
                 placeholder="Password"
                 value={userForm.email}
+                onChange={handleChange}
               />
-              <p className="form-text">Forgot Password?</p>
+              <a href="/" className="form-text">
+                Forgot password?
+              </a>
             </div>
-            <button>LOGIN</button>
+            <button className="btn">Login</button>
             <p className="form-text">
-              Don't have account? <span>Sign Up</span>
+              Don't have account?{" "}
+              <a href="./">
+                <span> Sign Up</span>
+              </a>
             </p>
-            </div>
           </div>
+        </div>
       </form>
     </section>
   );
