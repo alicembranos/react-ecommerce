@@ -1,0 +1,7 @@
+.playlist__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    padding: 2rem;
+}

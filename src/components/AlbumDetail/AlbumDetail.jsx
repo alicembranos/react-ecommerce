@@ -10,7 +10,7 @@ const AlbumDetail = ({ product }) => {
   const cartItem = cartItems.find((item) => item.id === Number(product.id));
 
   return (
-    <div className="detail__container">
+    <>
       <section className="album__cover">
         <div className="album__coverImage">
           <img src={product.img} alt={product.title} />
@@ -43,7 +43,7 @@ const AlbumDetail = ({ product }) => {
       <section className="album__content">
         <div className="content__title"></div>
       </section>
-    </div>
+    </>
   );
 };
 

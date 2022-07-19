@@ -4,14 +4,6 @@
   --font-detail: "Noto Sans Mono", monospace;
 }
 
-.detail__container {
-  display: flex;
-  justify-content: space-around;
-  height: 100%;
-  padding: 5rem;
-  color: aliceblue;
-}
-
 .album__stock {
   border: 1px solid #333;
   border-radius: 99em;
@@ -25,31 +17,46 @@
 .album__cover {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  width: 40%;
+  align-items: center;
+  /* width: 40%; */
 }
 
 .album__coverImage {
-  width: 600px;
-  height: 600px;
-  -webkit-box-shadow: 8px 8px 34px 5px #421f40;
-  box-shadow: 8px 8px 34px 5px #421f40;
+text-align: center;
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+
 }
 
 .album__coverImage img {
-  width: 100%;
-  height: 100%;
+  width: 600px;
+  height: 600px;
+  -webkit-box-shadow: 8px 8px 34px 5px black;
+  box-shadow: 8px 8px 34px 5px black;
 }
 
 .album__info {
   width: 100%;
   margin-top: 2rem;
-  padding: 0.5rem;
+  padding: 2rem;
 }
 
 .album__title {
   font-size: 2rem;
   margin-top: 2rem;
+}
+
+.album__title span {
+    animation:blinkingText 0.8s infinite;
+}
+
+@keyframes blinkingText{
+  0%{		color: aliceblue;	}
+  /* 49%{	color: transparent;	} */
+  50%{	color: transparent;	}
+  /* 99%{	color:transparent;	} */
+  100%{	color: aliceblue;	}
 }
 
 .album__price {
@@ -83,23 +90,33 @@
 .action__text{
   margin-right: 1rem;
   padding: 0.7rem 1.3rem;
-  border: 1px solid #421f40;
+  border: 1px solid #6e0469;
   border-radius: 99em;
-  background-color: #421f40;
+  background-color: #6e0469;
   font-family: var(--font-detail);
 }
 
 /*!SMALL DEVICES MEDIA QUERIES */
 @media only screen and (max-width: 963px) {
 }
+
 /*!MEDIUM DEVICES*/
 @media only screen and (max-width: 1300px) {
-  .album__coverImage {
+  .album__coverImage img {
     width: 400px;
     height: 400px;
   }
 }
 
+/*!MEDIUM DEVICES*/
+@media only screen and (max-width: 1800px) {
+  .album__coverImage img {
+    width: 500px;
+    height: 500px;
+  }
+}
+
 /*!EXTRA LARGE DEVICES*/
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 2000px) {
+
 }
