@@ -2,21 +2,21 @@ import { API_URL_USERS } from "./settings";
 
 const login = async ({ ...userForm }) => {
   const { email, password } = userForm;
-  try {
-    const res = await fetch(`${API_URL_USERS}login`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email: email, password: password }),
+  return fetch(`${API_URL_USERS}login`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email: email, password: password }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Bad credentials");
+      return res.json();
+    })
+    .then((data) => {
+      const { accessToken, user } = data;
+      return { jwt: accessToken, user };
     });
-    if (!res.ok) throw new Error("Response is not ok");
-    const apiResponse = await res.json();
-    const { accessToken, user } = apiResponse;
-    return { jwt: accessToken, user };
-  } catch (error) {
-    return console.error(error);
-  }
 };
 
 export default login;

@@ -16,7 +16,7 @@ const useUser = () => {
           setUser(user);
         })
         .catch((err) => {
-          setState({ loading: false, error: false });
+          setState({ loading: false, error: true });
           console.error(err);
         });
     },
