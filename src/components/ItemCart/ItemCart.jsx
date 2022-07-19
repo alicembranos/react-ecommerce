@@ -1,6 +1,6 @@
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import Counter from "components/Counter/Counter";
 import { setPrice } from "services/functions";
+import { Link } from "wouter";
 import "./ItemCart.css";
 
 const ItemCart = (props) => {
@@ -8,28 +8,17 @@ const ItemCart = (props) => {
 
   return (
     <div key={item.id} className="cartItem__row">
-      <div className="cartItem__imageBox">
-        <img src={item.img} alt={item.album} />
-      </div>
+      <Link to={`/detail/${item.id}`}>
+        <div className="cartItem__imageBox">
+          <img src={item.img} alt={item.album} />
+        </div>
+      </Link>
       <div className="cartItem__info">
         <h4 className="cartItem__album">{item.album}</h4>
         <p className="cartItem__artist">{item.artist}</p>
       </div>
       <div className="cartItem__buttons">
-        <button onClick={() => onRemove(item)} className="cartItem__button">
-          <RemoveIcon />
-        </button>
-        <input
-          type="text"
-          name="quantity"
-          id="quantity"
-          className="cartItem__qty"
-          value={item.qty}
-          readOnly
-        />
-        <button onClick={() => onAdd(item)} className="cartItem__button">
-          <AddIcon />
-        </button>
+        <Counter item={item} onAdd={onAdd} onRemove={onRemove} />
       </div>
       <p className="text-right cartItem__price">
         {setPrice(item.qty, item.price.toFixed(2)).toFixed(2)}€

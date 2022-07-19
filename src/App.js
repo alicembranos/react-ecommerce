@@ -19,7 +19,7 @@ const App = () => {
           <Switch>
             <Route component={Home} path="/" />
             <Route component={Shop} path="/shop" />
-            <Route component={DetailProduct} path="/detail/id" />
+            <Route component={DetailProduct} path="/detail/:id" />
             <Route component={Cart} path="/cart" />
             <Route component={LoginPage} path="/login" />
             <Route component={ErrorPage} path="/:rest*" />

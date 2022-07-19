@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@200;400;700&display=swap");
+
+:root {
+  --font-detail: "Noto Sans Mono", monospace;
+}
+
+.detail__container {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  padding: 5rem;
+  color: aliceblue;
+}
+
+.album__stock {
+  border: 1px solid #333;
+  border-radius: 99em;
+  padding: 5px 10px;
+  font-family: var(--font-detail);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+}
+
+.album__cover {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 40%;
+}
+
+.album__coverImage {
+  width: 600px;
+  height: 600px;
+  -webkit-box-shadow: 8px 8px 34px 5px #421f40;
+  box-shadow: 8px 8px 34px 5px #421f40;
+}
+
+.album__coverImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.album__info {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 0.5rem;
+}
+
+.album__title {
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.album__price {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-detail);
+  font-size: 1.3rem;
+}
+
+.album__price span {
+  font-size: 1.7rem;
+}
+
+.album__artist {
+  padding-bottom: 0.7rem;
+  font-size: 1.3rem;
+  font-family: var(--font-detail);
+  color: #cccccc;
+}
+
+.album__artist span {
+  color: aliceblue;
+}
+
+.album__actions {
+  display: flex;
+  margin-top: 1rem;
+  margin-right: 2rem;
+}
+
+.action__text{
+  margin-right: 1rem;
+  padding: 0.7rem 1.3rem;
+  border: 1px solid #421f40;
+  border-radius: 99em;
+  background-color: #421f40;
+  font-family: var(--font-detail);
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 963px) {
+}
+/*!MEDIUM DEVICES*/
+@media only screen and (max-width: 1300px) {
+  .album__coverImage {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1800px) {
+}

@@ -6,13 +6,13 @@ const DisplayItems = ({ cartItems, onAdd, onRemove, onRemoveAll }) => {
     <>
       <div className="listItems__container">
         {cartItems.map((item) => (
-          <ItemCart
-            key={item.id}
-            item={item}
-            onAdd={onAdd}
-            onRemove={onRemove}
-            onRemoveAll={onRemoveAll}
-          />
+            <ItemCart
+              key={item.id}
+              item={item}
+              onAdd={onAdd}
+              onRemove={onRemove}
+              onRemoveAll={onRemoveAll}
+            />
         ))}
       </div>
       <SummaryCart cartItems={cartItems} />

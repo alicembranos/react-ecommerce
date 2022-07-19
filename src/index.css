@@ -49,6 +49,15 @@ body {
   overflow: auto;
 }
 
+.detail__section{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  background-color: var(--backgroundColor);
+  background-image: var(--backgroundImage);
+}
+
 .error-wrapper {
   position: absolute;
   left: 50%;
