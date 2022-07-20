@@ -3,31 +3,33 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40%;
     margin: 0 2rem;
     padding: 2rem;
+    width: 50%;
 }
 
 .playlist__title{
-    font-size: 2rem;
+    margin-bottom: 15px;
+    font-size: 30px;
     font-family: var(--font-detail);
 }
 
 .playlist__list{
     width: 100%;
-    margin: 2rem;
+    margin: 1rem;
 }
 
 .playlist__track-text{
     font-family: var(--font-detail);
     color: #cccccc;
+    font-size: 15px;
 }
 
 .playlist__track{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.5rem 2rem;
+    padding: 10px 2rem;
     border-bottom: 1px solid #565151;
 }
 

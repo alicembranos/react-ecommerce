@@ -1,7 +1,7 @@
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import DownloadIcon from "@mui/icons-material/Download";
 import "./Playlist.css";
-import MusicPlayer from "components/MusicPlayer/MusicPlayer";
+import AudioPlayer from "components/AudioPlayer/AudioPlayer";
 
 const Playlist = ({ product }) => {
   return (
@@ -96,9 +96,7 @@ const Playlist = ({ product }) => {
           </a>
         </li>
       </ul>
-      <div className="playlist__audioPlayer">
-        {/* <MusicPlayer /> */}
-      </div>
+        <AudioPlayer/>
     </section>
   );
 };

@@ -35,7 +35,7 @@ export function CartContextProvider({ children }) {
       setCartItems(cartItems.filter((prodCart) => prodCart.id !== product.id));
     } else {
       setCartItems(
-        cartItems.map((prodCart) =>
+        cartItems.map(prodCart =>
           prodCart.id === product.id
             ? { ...exist, qty: exist.qty - 1 }
             : prodCart
