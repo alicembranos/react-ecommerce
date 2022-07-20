@@ -2035,6 +2035,14 @@
       "lastname": "Monge",
       "age": 32,
       "id": 1
+    },
+    {
+      "email": "walber@gmail.com",
+      "password": "$2a$10$BS5IFBkkkSV8STmEFQjBDuC3GBjfqXI.sbaAzXWSUL4EXVCKQBiYa",
+      "firstname": "Walber",
+      "lastname": "Melo",
+      "age": 18,
+      "id": 2
     }
   ]
 }

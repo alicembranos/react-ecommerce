@@ -81,7 +81,7 @@ body {
 
 .detail__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   height: 100%;
   padding: 3rem 8rem;
   color: aliceblue;

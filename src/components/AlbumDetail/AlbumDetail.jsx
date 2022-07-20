@@ -40,9 +40,6 @@ const AlbumDetail = ({ product }) => {
           </div>
         </div>
       </section>
-      <section className="album__content">
-        <div className="content__title"></div>
-      </section>
     </>
   );
 };
