@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 1rem;
   border-bottom: 1px solid #ccc;
 }
 
@@ -20,12 +19,12 @@
 }
 
 .cartItem__imageBox {
-  padding: 1rem;
+  padding: 10px;
   flex: 2;
 }
 .cartItem__imageBox img {
-  width: 150px;
-  height: 150px;
+  width: 125px;
+  height: 125px;
 }
 
 .cartItem__price {

@@ -5,7 +5,7 @@ const CustomButton = (props) => {
   return (
     <div title={href}>
       <Button
-        size="large"
+        size="small"
         variant="outlined"
         color="secondary"
         onClick={onClick}
