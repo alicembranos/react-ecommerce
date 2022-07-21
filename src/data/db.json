@@ -2033,6 +2033,7 @@
       "password": "$2a$10$.CYoElTVhdZ.F3aRG/Bx0uwDO0SwKNVfuNU9Qr9NUDD/XelNX79.O",
       "firstname": "Olivier",
       "lastname": "Monge",
+      "genre": "man",
       "age": 32,
       "id": 1
     },
@@ -2041,6 +2042,7 @@
       "password": "$2a$10$BS5IFBkkkSV8STmEFQjBDuC3GBjfqXI.sbaAzXWSUL4EXVCKQBiYa",
       "firstname": "Walber",
       "lastname": "Melo",
+      "genre": "man",
       "age": 18,
       "id": 2
     }

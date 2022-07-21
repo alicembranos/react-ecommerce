@@ -27,6 +27,11 @@ const useUser = () => {
     setJwt(null);
   }, [setJwt]);
 
+  const register = useCallback(({ userForm }) => {
+    setState({ loading: true, error: false });
+    
+  })
+
   return {
     isLogged: Boolean(jwt),
     isLogginLoading: state.loading,
