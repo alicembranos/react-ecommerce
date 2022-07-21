@@ -5,24 +5,24 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  /* background-color: var(--backgroundColor);
-  background-image: var(--backgroundImage); */
   background: rgb(200, 176, 176);
   background: linear-gradient(
     90deg,
     rgba(200, 176, 176, 1) 0%,
     rgba(105, 73, 112, 1) 100%
   );
+  padding: 1rem;
 }
 
 .form {
   height: 100%;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
+  min-height: 300px;
   width: 100%;
-  max-height: 700px;
+  max-height: 600px;
+  min-height: 500px;
   height: 100%;
-  border: 1px solid rgb(22, 22, 22);
   border-radius: 3rem;
 }
 
@@ -33,8 +33,8 @@
   justify-content: flex-end;
   height: 100%;
   width: 100%;
-  padding: 4rem 4rem 0.5rem 4rem;
-  border-radius: 3rem;
+  padding: 30px 30px 10px 30px;
+  border-radius: 2rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -52,14 +52,14 @@
   -webkit-mask-image: linear-gradient(to bottom, transparent 5%, black 100%);
   mask-image: linear-gradient(to bottom, transparent 5%, black 100%);
   background-color: rgb(44, 42, 42);
-  border-radius: 3rem;
+  border-radius: 2rem;
   z-index: -1;
 }
 
 .form-group {
   position: relative;
   display: block;
-  font-size: 1.2rem;
+  font-size: 10px;
 }
 
 .form input {
@@ -71,7 +71,7 @@
   border-bottom: 1px solid #595260;
   background: none;
   line-height: 2;
-  font-size: 16px;
+  font-size: 12px;
   color: rgb(189, 193, 197);
 }
 
@@ -82,7 +82,7 @@
   margin: 0;
   padding: 0.3rem 0 2rem 0;
   text-decoration: none;
-  font-size: 16px;
+  font-size: 12px;
   color: rgb(189, 193, 197);
 }
 
@@ -119,7 +119,7 @@
     rgba(201, 14, 166, 1) 0%,
     rgba(105, 3, 103, 1) 100%
   );
-  font-size: 1.3rem;
+  font-size: 15px;
   font-weight: 600;
   letter-spacing: 0.5px;
   color: aliceblue;
@@ -132,7 +132,7 @@
 
 .login-icons {
   position: absolute;
-  top: 3px;
+  top: -2px;
   color: rgb(189, 193, 197);
 }
 
@@ -161,7 +161,7 @@
   width: 100%;
 }
 
-.form-error{
+.form-error {
   display: flex;
   justify-content: center;
   align-items: center;

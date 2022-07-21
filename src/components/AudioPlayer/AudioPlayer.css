@@ -1,5 +1,9 @@
 .audioPlayer {
+  margin-top: 20px;
+  margin-bottom: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
 }
 
@@ -10,12 +14,14 @@
   background: none;
   border: none;
   font-family: var(--font-detail);
-  font-size: 16px;
+  font-size: 13px;
+  margin-right: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
 
 .forwardBackward:hover {
-  color: #6e0469;
+  color: #dc05d1;
 }
 
 .playPause {
@@ -25,8 +31,8 @@
   background: #6e0469;
   border: none;
   border-radius: 50%;
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   color: aliceblue;
   cursor: pointer;
 }
@@ -35,14 +41,26 @@
   opacity: 0.7;
 }
 
+.managePlayer{
+display: flex;
+justify-content: space-around;
+align-items: center;
+
+}
+
 .currentTime,
 .duration {
   font-family: var(--font-detail);
-  font-size: 16px;
+  font-size: 13px;
 }
 
 .currentTime {
   margin-left: 25px;
+  margin-right: 20px;
+}
+
+.duration{
+  margin-left: 20px;
 }
 
 .progressBar {
@@ -52,6 +70,7 @@
   --knobby: #3452a5;
   --selectedKnobby: #0a25ee;
 
+  transform: translateY(-1px);
   appearance: none;
   background: var(--bar-bg);
   border-radius: 8px;
@@ -128,7 +147,7 @@
 
 /* knobby - firefox */
 .progressBar::-moz-range-thumb {
-  height: 15px;
+  /* height: 15px;
   width: 15px;
   border-radius: 50%;
   border: transparent;
@@ -136,7 +155,7 @@
   cursor: pointer;
   position: relative;
   z-index: 3;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   opacity:0;
 }
 

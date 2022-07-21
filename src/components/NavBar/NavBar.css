@@ -35,10 +35,10 @@
 }
 
 .navbar__li {
-  padding: 1rem;
+  padding: 10px;
   color: aliceblue;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 20px;
   text-decoration: none;
 }
 
