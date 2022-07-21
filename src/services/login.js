@@ -13,10 +13,7 @@ const login = async ({ ...userForm }) => {
       if (!res.ok) throw new Error("Bad credentials");
       return res.json();
     })
-    .then((data) => {
-      const { accessToken, user } = data;
-      return { jwt: accessToken, user };
-    });
+
 };
 
 export default login;

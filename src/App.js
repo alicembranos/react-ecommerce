@@ -5,6 +5,7 @@ import Shop from "pages/Shop/Shop";
 import Cart from "pages/Cart/Cart";
 import DetailProduct from "pages/DetailProduct/DetailProduct";
 import LoginPage from "pages/LoginPage/LoginPage";
+import SignUpPage from "pages/SignUpPage/SignUpPage";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
 
 import { AlbumsContextProvider } from "context/AlbumsContext";
@@ -22,6 +23,7 @@ const App = () => {
             <Route component={DetailProduct} path="/detail/:id" />
             <Route component={Cart} path="/cart" />
             <Route component={LoginPage} path="/login" />
+            <Route component={SignUpPage} path="/signup" />
             <Route component={ErrorPage} path="/:rest*" />
           </Switch>
         </CartContextProvider>
