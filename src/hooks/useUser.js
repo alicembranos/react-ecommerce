@@ -5,15 +5,22 @@ import UserContext from "context/UserContext";
 const useUser = () => {
   const { jwt, setJwt, setUser } = useContext(UserContext);
   const [state, setState] = useState({ loading: false, error: false });
+  const [message, setMessage] = useState("Bad credentials");
 
   const login = useCallback(
     ({ userForm }) => {
       setState({ loading: true, error: false });
       loginService(userForm)
-        .then((jwt, user) => {
-          setState({ loading: false, error: false });
-          setJwt(jwt);
-          setUser(user);
+        .then((data) => {
+          if (typeof data === "object") {
+            const { accessToken, user } = data;
+            setState({ loading: false, error: false });
+            setJwt(accessToken);
+            setUser(user);
+            return;
+          }
+          setMessage(data);
+          setState({ loading: false, error: true });
         })
         .catch((err) => {
           setState({ loading: false, error: true });
@@ -27,10 +34,9 @@ const useUser = () => {
     setJwt(null);
   }, [setJwt]);
 
-  const register = useCallback(({ userForm }) => {
-    setState({ loading: true, error: false });
-    
-  })
+  // const register = useCallback(({ userForm }) => {
+  //   setState({ loading: true, error: false });
+  // });
 
   return {
     isLogged: Boolean(jwt),
@@ -38,6 +44,7 @@ const useUser = () => {
     hasLoginError: state.error,
     login,
     logout,
+    message,
   };
 };
 

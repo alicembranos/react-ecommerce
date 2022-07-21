@@ -11,7 +11,7 @@ import "./Login.css";
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
   const [, setLocation] = useLocation();
-  const { login, isLogged, isLogginLoading, hasLoginError } = useUser();
+  const { login, isLogged, isLogginLoading, hasLoginError, message } = useUser();
 
   useEffect(() => {
     if (isLogged) setLocation("/cart");
@@ -41,7 +41,7 @@ const Login = () => {
           )}
           {hasLoginError && (
             <p className="form-error">
-              <ErrorOutlineIcon /> Wrong credentials
+              <ErrorOutlineIcon /> {message}
             </p>
           )}
           <div className="form-content">

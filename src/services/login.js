@@ -10,12 +10,10 @@ const login = async ({ ...userForm }) => {
     body: JSON.stringify({ email: email, password: password }),
   })
     .then((res) => {
-      if (!res.ok) throw new Error("Bad credentials");
       return res.json();
     })
     .then((data) => {
-      const { accessToken, user } = data;
-      return { jwt: accessToken, user };
+      return data;
     });
 };
 
