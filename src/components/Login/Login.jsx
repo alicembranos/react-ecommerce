@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import useUser from "hooks/useUser";
 import Spinner from "components/Spinner/Spinner";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -73,9 +73,9 @@ const Login = () => {
             </button>
             <p className="form-text">
               Don't have account?{" "}
-              <a href="./">
+              <Link to="signup">
                 <span> Sign Up</span>
-              </a>
+              </Link>
             </p>
           </div>
         </div>
