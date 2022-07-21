@@ -2045,6 +2045,15 @@
       "genre": "man",
       "age": 18,
       "id": 2
+    },
+    {
+      "email": "pabruli@gmail.com",
+      "password": "$2a$10$wjcdwOn3QpkjMwmFGgldHOB81bfHyU8aL0W7snsY7/YVlAs95tFwS",
+      "firstname": "Paloma",
+      "lastname": "Bruzon",
+      "genre": "",
+      "age": 0,
+      "id": 3
     }
   ]
 }

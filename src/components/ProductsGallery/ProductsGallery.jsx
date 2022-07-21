@@ -7,6 +7,7 @@ const ProductsGallery = (props) => {
 
   if (loading) return <Spinner />;
 
+  console.log(match);
   return (
     <>
       <section className="galleryProducts__container">
