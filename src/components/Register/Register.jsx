@@ -5,12 +5,22 @@ import { Spinner } from "@nextui-org/react";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import imgLogin from "assets/img/gallery/login.jpg";
 
+import "./Register.css";
+
 const Register = () => {
-  const [userForm, setUserForm] = useState({  email:"", password:"", firstname:"", lastname:"", genre:"", age:0, });
+  const [userForm, setUserForm] = useState({
+    email: "",
+    password: "",
+    firstname: "",
+    lastname: "",
+    genre: "",
+    age: 0,
+  });
   const [, setLocation] = useLocation();
-  const { login, isLogged, isLogginLoading, hasLoginError } = useUser();
+  const { register, isLogged, isLogginLoading, hasLoginError, message } = useUser();
 
   useEffect(() => {
     if (isLogged) setLocation("/cart");
@@ -18,7 +28,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    login({ userForm });
+    register({ userForm });
   };
 
   const handleChange = ({ target }) => {
@@ -33,6 +43,7 @@ const Register = () => {
           className="form-wrapper"
           style={{ backgroundImage: `url(${imgLogin})` }}
         >
+          <h6 className="formRegister-title">Hello, I'm new here</h6>
           {isLogginLoading && (
             <div className="form-loading">
               <Spinner />
@@ -40,10 +51,30 @@ const Register = () => {
           )}
           {hasLoginError && (
             <p className="form-error">
-              <ErrorOutlineIcon /> Wrong credentials
+              <ErrorOutlineIcon />{message}
             </p>
           )}
           <div className="form-content">
+            <div className="form-group">
+              <PersonOutlineIcon className="login-icons" />
+              <input
+                type="text"
+                name="firstname"
+                placeholder="First Name"
+                value={userForm.firstname}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group">
+              <PersonOutlineIcon className="login-icons" />
+              <input
+                type="text"
+                name="lastname"
+                placeholder="Last Name"
+                value={userForm.lastname}
+                onChange={handleChange}
+              />
+            </div>
             <div className="form-group">
               <EmailOutlinedIcon className="login-icons" />
               <input
@@ -63,18 +94,34 @@ const Register = () => {
                 value={userForm.password}
                 onChange={handleChange}
               />
-              <a href="/" className="form-text">
-                Forgot password?
-              </a>
+              <p className="form-gender">Select your gender:</p>
+              <div className="formGroup-rb">
+                <input
+                  className="register__rb"
+                  type="radio"
+                  name="gender"
+                  value="woman"
+                  id="woman"
+                />
+                <label htmlFor="woman">Woman</label>
+              </div>
+              <div className="formGroup-rb">
+                <input
+                  className="register__rb"
+                  type="radio"
+                  name="gender"
+                  value="man"
+                  id="man"
+                />
+                <label htmlFor="man">Man</label>
+              </div>
             </div>
-            <button className="btn" type="submit">
-              Login
+            <button className="btnRegister" type="submit">
+              Sign Up
             </button>
-            <p className="form-text">
-              Don't have account?{" "}
-              <a href="./">
-                <span> Sign Up</span>
-              </a>
+            <p className="formRegister-text">
+              By creating an account, you agree to the Terms and Conditions and
+              Privacy Policy of Voizz.
             </p>
           </div>
         </div>

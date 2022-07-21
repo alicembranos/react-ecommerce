@@ -1,5 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import loginService from "services/login";
+import registerService from 'services/register'
 import UserContext from "context/UserContext";
 
 const useUser = () => {
@@ -34,9 +35,28 @@ const useUser = () => {
     setJwt(null);
   }, [setJwt]);
 
-  // const register = useCallback(({ userForm }) => {
-  //   setState({ loading: true, error: false });
-  // });
+  const register = useCallback(
+    ({ userForm }) => {
+      setState({ loading: true, error: false });
+      registerService(userForm)
+        .then((data) => {
+          if (typeof data === "object") {
+            const { accessToken, user } = data;
+            setState({ loading: false, error: false });
+            setJwt(accessToken);
+            setUser(user);
+            return;
+          }
+          setMessage(data);
+          setState({ loading: false, error: true });
+        })
+        .catch((err) => {
+          setState({ loading: false, error: true });
+          console.error(err);
+        });
+    },
+    [setJwt, setUser]
+  );
 
   return {
     isLogged: Boolean(jwt),
@@ -44,6 +64,7 @@ const useUser = () => {
     hasLoginError: state.error,
     login,
     logout,
+    register,
     message,
   };
 };

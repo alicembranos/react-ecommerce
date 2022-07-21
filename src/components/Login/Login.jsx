@@ -11,7 +11,8 @@ import "./Login.css";
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
   const [, setLocation] = useLocation();
-  const { login, isLogged, isLogginLoading, hasLoginError, message } = useUser();
+  const { login, isLogged, isLogginLoading, hasLoginError, message } =
+    useUser();
 
   useEffect(() => {
     if (isLogged) setLocation("/cart");
@@ -73,7 +74,7 @@ const Login = () => {
             </button>
             <p className="form-text">
               Don't have account?{" "}
-              <Link to="signup">
+              <Link to="/signup">
                 <span> Sign Up</span>
               </Link>
             </p>
