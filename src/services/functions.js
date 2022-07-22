@@ -31,4 +31,11 @@ const setPrice = (qty, price) => {
   return qty * price;
 };
 
-export { addSummaryPrice, addSummaryQuantity, setPrice };
+
+const findInArrayById = (array, obj) => {
+  const exist = typeof array !== "undefined" ? array.find(element => element.id === obj.id) : null;
+  // const exist = array.find(element => element.id === obj.id);
+  return Boolean(exist);
+}
+
+export { addSummaryPrice, addSummaryQuantity, setPrice, findInArrayById };

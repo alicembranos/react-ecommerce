@@ -1,13 +1,18 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import "./ProductCard.css";
 import { Link } from "wouter";
+import { findInArrayById } from "services/functions";
+
+import "./ProductCard.css";
 
 const ProductCard = (props) => {
-  const { product, onAdd } = props;
+  const { product, onAdd, cartItems } = props;
+console.log(cartItems)
+  const existInCart = findInArrayById(cartItems, product);
+
   return (
     <div className="card">
-      {product?.added && "added"}
+      {existInCart && <p className="card__text-added"><span class="circle-sketch-highlight">Added</span></p>}
       <Link to={`/detail/${product.id}`}>
         <div
           className="images__box"
