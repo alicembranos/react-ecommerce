@@ -3,7 +3,6 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import "./Counter.css";
 
 const Counter = ({ onRemove, onAdd, item }) => {
-  console.log(item);
   
   return (
     <div className="cartItem__buttons">

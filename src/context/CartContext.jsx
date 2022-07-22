@@ -1,5 +1,6 @@
 import { createContext } from "react";
 import useLocalStorage from "hooks/useLocalStorage";
+import swal from "sweetalert";
 
 export const CartContext = createContext({});
 
@@ -22,6 +23,13 @@ export function CartContextProvider({ children }) {
       );
     } else {
       setCartItems([...cartItems, { ...product, qty: 1 }]);
+      swal({
+        position: "top-end",
+        icon: "success",
+        title: "Album added to your cart",
+        showConfirmButton: false,
+        timer: 1500,
+      });
     }
   };
 
@@ -35,7 +43,7 @@ export function CartContextProvider({ children }) {
       setCartItems(cartItems.filter((prodCart) => prodCart.id !== product.id));
     } else {
       setCartItems(
-        cartItems.map(prodCart =>
+        cartItems.map((prodCart) =>
           prodCart.id === product.id
             ? { ...exist, qty: exist.qty - 1 }
             : prodCart

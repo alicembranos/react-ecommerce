@@ -7,16 +7,15 @@ import Playlist from "components/Playlist/Playlist";
 const DetailProduct = ({ params }) => {
   const { id } = params;
   const [idAlbum, setIdAlbum] = useState(id);
-  console.log(idAlbum);
 
   useEffect(() => {
     setIdAlbum(id);
   }, [id]);
 
   const { albums } = useContext(AlbumsContext);
-  console.log(albums);
+
   const product = albums.find((album) => album.id === Number(idAlbum));
-  console.log(product);
+
   return (
     <section className="detail__section">
       <NavBar />

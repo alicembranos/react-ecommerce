@@ -7,6 +7,7 @@ const ProductCard = (props) => {
   const { product, onAdd } = props;
   return (
     <div className="card">
+      {product?.added && "added"}
       <Link to={`/detail/${product.id}`}>
         <div
           className="images__box"

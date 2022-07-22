@@ -73,9 +73,7 @@ const AudioPlayer = ({ audioTrack, classHide }) => {
    * bar's value, and the player's current time is changed.
    */
   const handleRange = (e) => {
-    console.log(progressBar.current.value);
     audioPlayer.current.currentTime = progressBar.current.value;
-    console.log("es mas 30" + audioPlayer.current.currentTime);
     changePlayerCurrentTime();
   };
 
