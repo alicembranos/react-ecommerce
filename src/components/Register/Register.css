@@ -108,9 +108,10 @@
   border: 1px solid red;
 }
 
-.form .btn {
+.form .btnRegister {
   width: 100%;
   padding: 0.8rem;
+  margin-top: 20px;
   border: none;
   border-radius: 2rem;
   background: rgb(201, 14, 166);
@@ -125,7 +126,7 @@
   color: aliceblue;
 }
 
-.form .btn:hover {
+.form .btnRegister:hover {
   cursor: pointer;
   opacity: 0.9;
 }
@@ -168,4 +169,47 @@
   color: rgb(218, 4, 4);
   text-align: center;
   letter-spacing: 0.3px;
+}
+
+.form-gender{
+    padding: 25px 0 0 0;
+    color: rgb(189, 193, 197);
+    font-size: 12px;
+}
+
+.formGroup-rb {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 0;
+  color: rgb(189, 193, 197);
+}
+
+.formGroup-rb input {
+  margin-top: 0;
+  width: fit-content;
+}
+
+.formGroup-rb label{
+    padding-left: 5px;
+}
+
+.formRegister-title{
+    text-align: center;
+    color: aliceblue;
+}
+
+.formRegister-text{
+    padding: 10px;
+    font-size: 7px;
+    color: rgb(189, 193, 197);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #fff !important;
 }

@@ -10,10 +10,11 @@ const login = async ({ ...userForm }) => {
     body: JSON.stringify({ email: email, password: password }),
   })
     .then((res) => {
-      if (!res.ok) throw new Error("Bad credentials");
       return res.json();
     })
-
+    .then((data) => {
+      return data;
+    });
 };
 
 export default login;

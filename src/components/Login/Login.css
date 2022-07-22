@@ -143,10 +143,15 @@
   color: rgb(189, 193, 197);
 }
 
-.form-text a {
+.form-text span {
   text-decoration: none;
   color: rgba(201, 14, 166, 1);
   padding-left: 5px;
+  cursor: pointer;
+}
+
+.form-text span:hover{
+  text-decoration: underline;
 }
 
 .error-message {

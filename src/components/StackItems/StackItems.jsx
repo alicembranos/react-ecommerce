@@ -26,7 +26,7 @@ const Item = styled(Box)(() => ({
   background: "none",
   color: "aliceblue",
   fontWeight: "700",
-  fontSize: "3rem",
+  fontSize: "30px",
   cursor: "pointer",
 }));
 

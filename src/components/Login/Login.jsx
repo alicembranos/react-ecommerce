@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "wouter";
+import { Link, useLocation } from "wouter";
 import useUser from "hooks/useUser";
 import Spinner from "components/Spinner/Spinner";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -11,7 +11,8 @@ import "./Login.css";
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
   const [, setLocation] = useLocation();
-  const { login, isLogged, isLogginLoading, hasLoginError } = useUser();
+  const { login, isLogged, isLogginLoading, hasLoginError, message } =
+    useUser();
 
   useEffect(() => {
     if (isLogged) setLocation("/cart");
@@ -41,7 +42,7 @@ const Login = () => {
           )}
           {hasLoginError && (
             <p className="form-error">
-              <ErrorOutlineIcon /> Wrong credentials
+              <ErrorOutlineIcon /> {message}
             </p>
           )}
           <div className="form-content">
@@ -73,9 +74,9 @@ const Login = () => {
             </button>
             <p className="form-text">
               Don't have account?{" "}
-              <a href="./">
+              <Link to="/signup">
                 <span> Sign Up</span>
-              </a>
+              </Link>
             </p>
           </div>
         </div>
