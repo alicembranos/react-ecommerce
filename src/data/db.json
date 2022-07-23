@@ -2054,6 +2054,15 @@
       "genre": "",
       "age": 0,
       "id": 3
+    },
+    {
+      "email": "juancarlos@mail.com",
+      "password": "$2a$10$/tIxMyw/KkQy8AZzvStXP.t8TByKvatMnIZi./GZ7UI1Y71mhdZRW",
+      "firstname": "Juan Carlos",
+      "lastname": "Cabello",
+      "genre": "",
+      "age": 0,
+      "id": 4
     }
   ]
 }
