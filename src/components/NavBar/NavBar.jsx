@@ -1,9 +1,7 @@
+import GlobalContext from "context/GlobalContext";
 import { useContext } from "react";
 import { addSummaryQuantity } from "services/functions";
 import { Link } from "wouter";
-
-import CartContext from "context/CartContext";
-
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
@@ -13,8 +11,8 @@ import useUser from "hooks/useUser";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const { cartItems } = useContext(CartContext);
-  const total = addSummaryQuantity(cartItems).toString();
+  const { cartItems } = useContext(GlobalContext);
+  const total = addSummaryQuantity(cartItems).toString(); 
   const { isLogged, logout } = useUser();
 
   const renderLoginButtons = () => {

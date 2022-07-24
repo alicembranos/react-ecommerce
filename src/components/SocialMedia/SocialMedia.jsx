@@ -35,7 +35,7 @@ const ItemMedia = styled(Box)(() => ({
 const SocialMedia = () => {
   return (
     <Container
-      sx={{ top: "70%", position: "fixed", right: "0", width: "fit-content" }}
+      sx={{ top: "60%", position: "fixed", right: "0", width: "fit-content" }}
     >
       <Stack
         direction="column"

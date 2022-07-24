@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-
 import imgBackground from "assets/img/gallery/home-img.jpg";
 import SocialMedia from "components/SocialMedia/SocialMedia";
 import StackItems from "components/StackItems/StackItems";

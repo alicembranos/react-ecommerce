@@ -9,14 +9,16 @@ import Register from "components/Register/Register";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
 
 import { AlbumsContextProvider } from "context/AlbumsContext";
-import { CartContextProvider } from "context/CartContext";
+// import { CartContextProvider } from "context/CartContext";
 import { UserContextProvider } from "context/UserContext";
+import { GlobalContextProvider } from "context/GlobalContext";
 
 const App = () => {
   return (
     <UserContextProvider>
       <AlbumsContextProvider>
-        <CartContextProvider>
+        <GlobalContextProvider>
+        {/* <CartContextProvider> */}
           <Switch>
             <Route component={Home} path="/" />
             <Route component={Shop} path="/shop" />
@@ -26,7 +28,8 @@ const App = () => {
             <Route component={Register} path="/signup"/>
             <Route component={ErrorPage} path="/:rest*" />
           </Switch>
-        </CartContextProvider>
+          {/* </CartContextProvider> */}
+          </GlobalContextProvider>
       </AlbumsContextProvider>
     </UserContextProvider>
   );

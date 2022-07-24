@@ -3,7 +3,15 @@ import Spinner from "components/Spinner/Spinner";
 import "./ProductsGallery.css";
 
 const ProductsGallery = (props) => {
-  const { cartItems, onAdd, loading, albums, match = true } = props;
+  const {
+    cartItems,
+    onAdd,
+    loading,
+    albums,
+    match = true,
+    wishList,
+    toggleFavProductFromWishList,
+  } = props;
   if (loading) return <Spinner />;
 
   return (
@@ -21,6 +29,8 @@ const ProductsGallery = (props) => {
               product={album}
               onAdd={onAdd}
               cartItems={cartItems}
+              wishList={wishList}
+              toggleFavProductFromWishList={toggleFavProductFromWishList}
             />
           ))
         )}

@@ -7,7 +7,7 @@ function getStorageValue(key, defaultValue) {
 }
 
 const useLocalStorage = (key, defaultValue) => {
-  const [value, setValue] = useState(() => {
+  const [value, ] = useState(() => {
     return getStorageValue(key, defaultValue);
   });
 
@@ -15,7 +15,7 @@ const useLocalStorage = (key, defaultValue) => {
     localStorage.setItem(key, JSON.stringify(value));
   }, [key, value]);
 
-  return [value, setValue];
+  return value;
 };
 
 export default useLocalStorage;

@@ -1,11 +1,10 @@
-import CartContext from "context/CartContext";
-import Counter from "components/Counter/Counter";
-
-import "./AlbumDetail.css";
+import GlobalContext from "context/GlobalContext";
 import { useContext } from "react";
+import Counter from "components/Counter/Counter";
+import "./AlbumDetail.css";
 
 const AlbumDetail = ({ product }) => {
-  const { onAdd, onRemove, cartItems } = useContext(CartContext);
+  const { addProductToCart, removeProductFromCart, cartItems, wishList } = useContext(GlobalContext);
 
   const cartItem = cartItems.find((item) => item.id === Number(product.id));
 
@@ -34,8 +33,8 @@ const AlbumDetail = ({ product }) => {
             <p className="action__text">Add to cart</p>
             <Counter
               item={cartItem ? cartItem : product}
-              onAdd={onAdd}
-              onRemove={onRemove}
+              onAdd={addProductToCart}
+              onRemove={removeProductFromCart}
             />
           </div>
         </div>

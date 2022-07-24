@@ -5,7 +5,6 @@ import "./ItemCart.css";
 
 const ItemCart = (props) => {
   const { item, onAdd, onRemove, onRemoveAll } = props;
-
   return (
     <div key={item.id} className="cartItem__row">
       <Link to={`/detail/${item.id}`}>

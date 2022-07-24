@@ -1,20 +1,20 @@
+import GlobalContext from "context/GlobalContext";
 import { useContext } from "react";
-import CartContext from "context/CartContext";
 import ButtonsGroup from "components/ButtonsGroup/ButtonsGroup";
 import DisplayItems from "components/DisplayCart/DisplayItems";
 import DisplayInfo from "components/DisplayInfo/DisplayInfo";
 import "./ShoppingCart.css";
 
 const ShoppingCart = () => {
-  const { cartItems, onAdd, onRemove, onRemoveAll } = useContext(CartContext);
+  const { cartItems, addProductToCart, removeProductFromCart, removeAllProductFromCart } = useContext(GlobalContext);
 
   const display =
     cartItems.length > 0 ? (
       <DisplayItems
         cartItems={cartItems}
-        onAdd={onAdd}
-        onRemove={onRemove}
-        onRemoveAll={onRemoveAll}
+        onAdd={addProductToCart}
+        onRemove={removeProductFromCart}
+        onRemoveAll={removeAllProductFromCart}
       />
     ) : (
       <DisplayInfo text="Cart is empty" />

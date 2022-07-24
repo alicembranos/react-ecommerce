@@ -46,6 +46,16 @@ const findInArrayById = (array, obj) => {
 };
 
 /**
+ * It returns the first element in the array that matches the condition.
+ * @param array - the array you want to search
+ * @param item - the item you want to find
+ * @returns The first element in the array that matches the condition.
+ */
+const findItem = (array, item) => {
+  return array.find((el) => el.id === item.id);
+};
+
+/**
  * It takes an object and an object of new values, and returns a new object with the new values merged
  * in.
  * @param oldObject - The object to be updated.
@@ -63,9 +73,11 @@ const updateObject = (oldObject, newValues) => {
  * @returns The new state object with the updated cartItems array.
  */
 const removeItemCart = (state, action) => {
-  const exist = state.cartItems.find(
-    (prodCart) => prodCart.id === action.payload.id
-  );
+  const exist = findItem(state.cartItems, action.payload);
+
+  //   state.cartItems.find(
+  //   (prodCart) => prodCart.id === action.payload.id
+  // );
   const newArray =
     exist.qty === 1
       ? state.cartItems.filter((prodCart) => prodCart.id !== action.payload.id)
@@ -86,9 +98,12 @@ const removeItemCart = (state, action) => {
  * @returns The newArray is being returned.
  */
 const addItemCart = (state, action) => {
-  const exist = state.cartItems.find(
-    (prodCart) => prodCart.id === action.payload.id
-  );
+
+  const exist = findItem(state.cartItems, action.payload);
+
+  // const exist = state.cartItems.find(
+  //   (prodCart) => prodCart.id === action.payload.id
+  // );
   const newArray = exist
     ? state.cartItems.map((prodCart) =>
         prodCart.id === action.payload.id
@@ -107,9 +122,10 @@ const addItemCart = (state, action) => {
  * @returns The newArray is being returned.
  */
 const removeAllItemCart = (state, action) => {
-  const exist = state.cartItems.find(
-    (prodCart) => prodCart.id === action.payload.id
-  );
+  const exist = findItem(state.cartItems, action.payload);
+  // const exist = state.cartItems.find(
+  //   (prodCart) => prodCart.id === action.payload.id
+  // );
   const newArray =
     exist &&
     state.cartItems.filter((prodCart) => prodCart.id !== action.payload.id);
@@ -117,18 +133,43 @@ const removeAllItemCart = (state, action) => {
   return updateObject(state, { cartItems: newArray });
 };
 
+/**
+ * If the item exists in the wishlist, remove it, otherwise add it.
+ * @param state - the current state of the reducer
+ * @param action - {type: "TOGGLE_ITEM_WISHLIST", payload: {id: 1, name: "item1"}}
+ * @returns The newArray is being returned.
+ */
 const toggleItemWishList = (state, action) => {
-  const exist = state.wishList.find(
-    (itemWishList) => itemWishList.id === action.payload.id
-  );
+  const exist = findItem(state.wishList, action.payload);
+  // const exist = state.wishList.find(
+  //   (itemWishList) => itemWishList.id === action.payload.id
+  // );
   const newArray = exist
     ? state.wishList.filter(
         (itemWishList) => itemWishList.id !== action.payload.id
       )
     : [...state.wishList, { ...action.payload }];
 
-  return updateObject(state, { cartItems: newArray });
+  return updateObject(state, { wishList: newArray });
 };
+
+/**
+ * It returns the value of the key in localStorage.
+ * @param key - The key to store the value under.
+ * @returns The value of the key in localStorage.
+ */
+function getLocalStorage(key, initialValue) {
+  return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : initialValue;
+}
+
+/**
+ * It sets the local storage item with the key that is passed in.
+ * @param key - The key to store the value under.
+ */
+function setLocalStorage(key, item) {
+  localStorage.setItem(key, JSON.stringify(item));
+}
+
 
 export {
   addSummaryPrice,
@@ -139,4 +180,6 @@ export {
   addItemCart,
   removeAllItemCart,
   toggleItemWishList,
+  getLocalStorage,
+  setLocalStorage
 };

@@ -3,10 +3,15 @@ import NavBar from "components/NavBar/NavBar";
 import useAlbums from "hooks/useAlbums";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 import SearchBar from "components/SearchBar/SearchBar";
-import CartContext from "context/CartContext";
+import GlobalContext from "context/GlobalContext";
 
 const Shop = () => {
-  const { cartItems, onAdd } = useContext(CartContext);
+  const {
+    cartItems,
+    addProductToCart,
+    wishList,
+    toggleFavProductFromWishList,
+  } = useContext(GlobalContext);
   const [keyword, setKeyword] = useState("");
   const { loading, albums, search, match } = useAlbums({ keyword });
 
@@ -30,21 +35,31 @@ const Shop = () => {
           handleChange={handleChange}
         ></SearchBar>
         {search.length > 0 ? (
-          <ProductsGallery onAdd={onAdd} albums={search} loading={loading} />
+          <ProductsGallery
+            onAdd={addProductToCart}
+            albums={search}
+            loading={loading}
+            wishList={wishList}
+            toggleFavProductFromWishList={toggleFavProductFromWishList}
+          />
         ) : !match ? (
           <ProductsGallery
             cartItems={cartItems}
-            onAdd={onAdd}
+            onAdd={addProductToCart}
             albums={search}
             match={match}
             loading={loading}
+            wishList={wishList}
+            toggleFavProductFromWishList={toggleFavProductFromWishList}
           />
         ) : (
           <ProductsGallery
             cartItems={cartItems}
-            onAdd={onAdd}
+            onAdd={addProductToCart}
             albums={albums}
             loading={loading}
+            wishList={wishList}
+            toggleFavProductFromWishList={toggleFavProductFromWishList}
           />
         )}
       </div>
