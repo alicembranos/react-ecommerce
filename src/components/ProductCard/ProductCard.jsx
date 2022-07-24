@@ -10,14 +10,17 @@ const ProductCard = (props) => {
   const { product, onAdd, cartItems, wishList, toggleFavProductFromWishList } =
     props;
   const existInCart = findInArrayById(cartItems, product);
+  const existInWishList = findInArrayById(wishList, product);
 
   const favIcon = useRef(); //ref to fav icon for managing
 
   const manageFavAlbum = (product) => {
     toggleFavProductFromWishList(product);
     const existInWishList = findInArrayById(wishList, product);
-    if (existInWishList) {
-      favIcon.current.setProperty("color", "red");
+    if (!existInWishList) {
+      favIcon.current.style.color = "red";
+    } else {
+      favIcon.current.style.color = "aliceblue";
     }
   };
 
@@ -56,7 +59,7 @@ const ProductCard = (props) => {
               className="card__button"
               onClick={() => manageFavAlbum(product)}
             >
-              <FavoriteIcon ref={favIcon} fontSize="large" />
+              <FavoriteIcon ref={favIcon} fontSize="large" style={existInWishList ? {color:"red"} : {color:""}}/>
             </button>
             <button className="card__button" onClick={() => onAdd(product)}>
               <ShoppingCartOutlinedIcon fontSize="large" />
