@@ -9,6 +9,7 @@
 }
 
 .container__div {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -54,8 +55,9 @@
 }
 
 .icons__li {
-  cursor: pointer;
+  position: relative;
   padding-right: 1rem;
+  cursor: pointer;
 }
 
 .icons__li button {
@@ -66,8 +68,8 @@
 
 .numberItems[data-count]:after {
   position: absolute;
-  right: 40px;
-  top: 43px;
+  right: 10px;
+  top: 20px;
   content: attr(data-count);
   font-size: 0.8em;
   padding: 0.6em 0.1em;
@@ -97,4 +99,20 @@
 
 .navbar__user-text{
   padding-right: 20px;
+}
+
+.navbar__cart{
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  display: flex;
+  width: 450px;
+  height: 450px;
+  border-radius: 20px;
+  background-color: #290232;
+  overflow-y: auto;
+}
+
+.navbar__cart::-webkit-scrollbar {
+  display: none;
 }

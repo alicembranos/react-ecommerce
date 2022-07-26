@@ -1,5 +1,4 @@
 import ItemCart from "components/ItemCart/ItemCart";
-import { SummaryCart } from "components/SummaryCart/SummaryCart";
 
 const DisplayItems = ({ cartItems, onAdd, onRemove, onRemoveAll }) => {
   return (
@@ -16,7 +15,6 @@ const DisplayItems = ({ cartItems, onAdd, onRemove, onRemoveAll }) => {
             />
         ))}
       </div>
-      <SummaryCart cartItems={cartItems} />
     </>
   );
 };

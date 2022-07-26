@@ -1,28 +1,39 @@
+import { useContext, useState } from "react";
 import GlobalContext from "context/GlobalContext";
-import { useContext } from "react";
-import { addSummaryQuantity } from "services/functions";
+import UserContext from "context/UserContext";
 import { Link } from "wouter";
+import { addSummaryQuantity } from "services/functions";
+import DisplayItems from "components/DisplayCart/DisplayItems";
+import useUser from "hooks/useUser";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import LogoutIcon from "@mui/icons-material/Logout";
-import PersonIcon from '@mui/icons-material/Person';
+import PersonIcon from "@mui/icons-material/Person";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 import logo from "../../assets/img/gallery/logo.png";
-import useUser from "hooks/useUser";
 
 import "./NavBar.css";
-import UserContext from "context/UserContext";
 
 const NavBar = () => {
-  const { cartItems } = useContext(GlobalContext);
-  const total = addSummaryQuantity(cartItems).toString();
+  const {
+    wishList,
+    cartItems,
+    addProductToCart,
+    removeProductFromCart,
+    removeAllProductFromCart,
+  } = useContext(GlobalContext);
+  const totalCartItems = addSummaryQuantity(cartItems).toString();
+  const totalWishItems = addSummaryQuantity(wishList).toString();
   const { isLogged, logout } = useUser();
   const { user } = useContext(UserContext);
+  const [isHovering, setIsHovering] = useState(false);
 
   const renderLoginButtons = () => {
     console.log(user);
     return isLogged ? (
       <div className="navbar__user">
-        <p className="navbar__user-text">Hi {user.firstname} {user.lastname}!</p>
+        <p className="navbar__user-text">
+          Hi {user.firstname} {user.lastname}!
+        </p>
         <button onClick={logout}>
           <PersonIcon fontSize="large" />
         </button>
@@ -32,6 +43,14 @@ const NavBar = () => {
         <AccountCircleIcon fontSize="large" />
       </Link>
     );
+  };
+
+  const handleMouseOver = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseOut = () => {
+    setIsHovering(false);
   };
 
   return (
@@ -64,14 +83,42 @@ const NavBar = () => {
           <ul className="icons__ul">
             <li className="icons__li">{renderLoginButtons()}</li>
             <li className="icons__li">
+              <Link to={"/wishlist"}>
+                <span
+                  className="numberItems"
+                  data-count={totalWishItems}
+                >
+                  <FavoriteIcon style={{ margin: "1px" }} fontSize="large" />
+                </span>
+              </Link>
+            </li>
+            <li className="icons__li">
               <Link to={"/cart"}>
-                <span className="numberItems" data-count={total}>
-                  <ShoppingCartIcon style={{margin:'1px'}} fontSize="large" />
+                <span
+                  onMouseOver={handleMouseOver}
+                  onMouseOut={handleMouseOut}
+                  className="numberItems"
+                  data-count={totalCartItems}
+                >
+                  <ShoppingCartIcon
+                    style={{ margin: "1px" }}
+                    fontSize="large"
+                  />
                 </span>
               </Link>
             </li>
           </ul>
         </div>
+        {isHovering && (
+          <div className="navbar__cart">
+            <DisplayItems
+              cartItems={cartItems}
+              onAdd={addProductToCart}
+              onRemove={removeProductFromCart}
+              onRemoveAll={removeAllProductFromCart}
+            />
+          </div>
+        )}
       </div>
     </header>
   );

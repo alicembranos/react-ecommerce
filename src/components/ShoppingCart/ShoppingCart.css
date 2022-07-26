@@ -12,20 +12,20 @@
   height: 100%;
   width: 80%;
   display: flex;
+  justify-content: space-around;
   padding: 20px;
   color: aliceblue;
 }
 
 .shoppingCart__h2 {
-  font-size: 20px;
+  font-size: 30px;
   padding-left: 10px;
   padding-bottom: 30px;
 }
 
 .listItems__container {
-  margin: 20px;
-  margin-right: 50px;
-  width: 70%;
+  padding: 20px;
+  /* width: 60%; */
   /* max-height: 80%; */
   /* overflow-y: auto; */
 }

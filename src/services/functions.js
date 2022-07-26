@@ -4,7 +4,7 @@
 const addSummaryQuantity = (cart) => {
   if (cart) {
     return cart.reduce((itemA, itemB) => {
-      return itemA + itemB.qty;
+      return itemA + (itemB?.qty ?? 1);
     }, 0);
   }
   return 0;
@@ -98,7 +98,6 @@ const removeItemCart = (state, action) => {
  * @returns The newArray is being returned.
  */
 const addItemCart = (state, action) => {
-
   const exist = findItem(state.cartItems, action.payload);
 
   // const exist = state.cartItems.find(
@@ -159,7 +158,9 @@ const toggleItemWishList = (state, action) => {
  * @returns The value of the key in localStorage.
  */
 function getLocalStorage(key, initialValue) {
-  return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : initialValue;
+  return localStorage.getItem(key)
+    ? JSON.parse(localStorage.getItem(key))
+    : initialValue;
 }
 
 /**
@@ -169,7 +170,6 @@ function getLocalStorage(key, initialValue) {
 function setLocalStorage(key, item) {
   localStorage.setItem(key, JSON.stringify(item));
 }
-
 
 export {
   addSummaryPrice,
@@ -181,5 +181,5 @@ export {
   removeAllItemCart,
   toggleItemWishList,
   getLocalStorage,
-  setLocalStorage
+  setLocalStorage,
 };

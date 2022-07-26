@@ -1,0 +1,25 @@
+.favCard__container {
+    position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.favCard__container,
+.favCard__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.favCard__container img {
+  height: 250px;
+  width: 250px;
+}
+
+.favCard__title {
+  padding: 20px 10px 10px 0px;
+}
+
+.fav-btn{
+    position: absolute;
+    padding: 5px;
+}

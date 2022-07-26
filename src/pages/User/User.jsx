@@ -1,7 +1,7 @@
 
 const User = () => {
   return (
-    <div>User</div>
+    <div className="user__container">User</div>
   )
 }
 
