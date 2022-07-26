@@ -23,12 +23,14 @@ const ButtonsGroup = () => {
   return (
     <div className="buttons__container">
       <CustomButton
-        value={"Return to shop"}
-        onClick={navigateToShop}
+        value="Check out"
+        onClick={navigateToLogin}
+        className="btn-dark"
       ></CustomButton>
       <CustomButton
-        value={"Check out"}
-        onClick={navigateToLogin}
+        value="Return to shop"
+        onClick={navigateToShop}
+        className="btn-light"
       ></CustomButton>
     </div>
   );

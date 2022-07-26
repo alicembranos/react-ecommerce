@@ -7,7 +7,7 @@ const Counter = ({ onRemove, onAdd, item }) => {
   return (
     <div className="cartItem__buttons">
       <button onClick={() => onRemove(item)} className="cartItem__button">
-        <RemoveIcon />
+        <RemoveIcon fontSize="small"/>
       </button>
       <input
         type="text"
@@ -18,7 +18,7 @@ const Counter = ({ onRemove, onAdd, item }) => {
         readOnly
       />
       <button onClick={() => onAdd(item)} className="cartItem__button">
-        <AddIcon />
+        <AddIcon fontSize="small"/>
       </button>
     </div>
   );

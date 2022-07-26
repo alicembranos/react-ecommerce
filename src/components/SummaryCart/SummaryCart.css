@@ -1,15 +1,13 @@
-.cartSummary__container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 1.5rem;
+.cartSummary__container {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
 }
 
-.cartSummary__p{
-    letter-spacing: 1px;
-}
-
-.cartSummary__qty,.cartSummary__price{
-    font-size: 15px;
-    font-weight: 700;
+.cartSummary__p {
+  margin: 10px;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: rgb(160, 158, 158);
 }

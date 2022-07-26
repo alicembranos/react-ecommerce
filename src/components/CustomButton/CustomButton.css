@@ -1,0 +1,30 @@
+.btn__div {
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  padding: 15px 0;
+  margin: 10px 0;
+  border: none;
+  background: none;
+  color: aliceblue;
+  font-size: 14px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn-dark{
+  /* background-image: linear-gradient(to right, var(--backgroundColor) 0%, #8307b9 51%, var(--backgroundColor) 100%); */
+  background: #8307b9;
+  color:aliceblue;
+}
+
+.btn-light{
+  background: aliceblue;
+  color:var(--backgroundColor);
+}
+
+.btn-dark:hover, .btn-light:hover{
+  opacity: 0.7;
+}

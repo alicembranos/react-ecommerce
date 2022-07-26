@@ -23,8 +23,8 @@
   flex: 2;
 }
 .cartItem__imageBox img {
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
 }
 
 .cartItem__price {
@@ -44,5 +44,5 @@
 
 .cartItemDelete__button:hover {
   cursor: pointer;
-  transform: scale(1.5);
+  transform: scale(1.2);
 }

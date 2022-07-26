@@ -1,17 +1,15 @@
-import { Button } from "@mui/material";
+import "./CustomButton.css";
 
 const CustomButton = (props) => {
-  const { value, href, onClick } = props;
+  const { value, href, onClick, className } = props;
   return (
-    <div title={href}>
-      <Button
-        size="small"
-        variant="outlined"
-        color="secondary"
+    <div className="btn__div" title={href}>
+      <button
+        className={`btn ${className}`}
         onClick={onClick}
       >
         {value}
-      </Button>
+      </button>
     </div>
   );
 };

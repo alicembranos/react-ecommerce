@@ -1,0 +1,17 @@
+.summaryItem__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px;
+  padding: 10px;
+  color: aliceblue;
+}
+
+.summaryItem__concept {
+  align-self: flex-start;
+}
+
+.summaryItem__total {
+  align-self: flex-end;
+}
+

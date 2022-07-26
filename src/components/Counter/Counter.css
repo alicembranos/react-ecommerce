@@ -7,16 +7,16 @@
 }
 
 .cartItem__qty {
-  width: 2rem;
-  height: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 7px;
   background-color: #1b0b21;
   color: aliceblue;
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 15px;
 }
 
 .cartItem__button {
