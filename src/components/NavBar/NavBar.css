@@ -58,7 +58,7 @@
   padding-right: 1rem;
 }
 
-.icons__li button{
+.icons__li button {
   background: none;
   color: aliceblue;
   cursor: pointer;
@@ -88,4 +88,13 @@
   width: 75px;
   height: 75px;
   border-radius: 50%;
+}
+
+.navbar__user {
+  display: flex;
+  align-items: center;
+}
+
+.navbar__user-text{
+  padding-right: 20px;
 }

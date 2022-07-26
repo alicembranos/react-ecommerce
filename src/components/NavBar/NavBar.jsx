@@ -5,21 +5,28 @@ import { Link } from "wouter";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import LogoutIcon from "@mui/icons-material/Logout";
+import PersonIcon from '@mui/icons-material/Person';
 import logo from "../../assets/img/gallery/logo.png";
 import useUser from "hooks/useUser";
 
 import "./NavBar.css";
+import UserContext from "context/UserContext";
 
 const NavBar = () => {
   const { cartItems } = useContext(GlobalContext);
-  const total = addSummaryQuantity(cartItems).toString(); 
+  const total = addSummaryQuantity(cartItems).toString();
   const { isLogged, logout } = useUser();
+  const { user } = useContext(UserContext);
 
   const renderLoginButtons = () => {
+    console.log(user);
     return isLogged ? (
-      <button onClick={logout}>
-        <LogoutIcon fontSize="large" />
-      </button>
+      <div className="navbar__user">
+        <p className="navbar__user-text">Hi {user.firstname} {user.lastname}!</p>
+        <button onClick={logout}>
+          <PersonIcon fontSize="large" />
+        </button>
+      </div>
     ) : (
       <Link to={"/login"}>
         <AccountCircleIcon fontSize="large" />
@@ -59,7 +66,7 @@ const NavBar = () => {
             <li className="icons__li">
               <Link to={"/cart"}>
                 <span className="numberItems" data-count={total}>
-                  <ShoppingCartIcon fontSize="large" />
+                  <ShoppingCartIcon style={{margin:'1px'}} fontSize="large" />
                 </span>
               </Link>
             </li>
