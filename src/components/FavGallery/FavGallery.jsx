@@ -18,7 +18,7 @@ const FavGallery = () => {
         />
       ))
     ) : (
-      <DisplayInfo text="There aro no items in your bag." />
+      <DisplayInfo text="There aro no favourites added." />
     );
 
   return (
