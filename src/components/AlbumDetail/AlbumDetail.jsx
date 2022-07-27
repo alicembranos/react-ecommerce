@@ -4,7 +4,8 @@ import Counter from "components/Counter/Counter";
 import "./AlbumDetail.css";
 
 const AlbumDetail = ({ product }) => {
-  const { addProductToCart, removeProductFromCart, cartItems, wishList } = useContext(GlobalContext);
+  const { addProductToCart, removeProductFromCart, cartItems } =
+    useContext(GlobalContext);
 
   const cartItem = cartItems.find((item) => item.id === Number(product.id));
 

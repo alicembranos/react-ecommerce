@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { findInArrayById } from "services/functions";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./FavCard.css";
+import { Link } from "wouter";
 
 const FavCard = (props) => {
   const { fav, wishList, toggleFavProductFromWishList } = props;
@@ -20,14 +21,19 @@ const FavCard = (props) => {
   };
   return (
     <div className="favCard__container">
-      <button className="card__button fav-btn" onClick={() => manageFavAlbum(fav)}>
+      <button
+        className="card__button fav-btn"
+        onClick={() => manageFavAlbum(fav)}
+      >
         <FavoriteIcon
           ref={favIcon}
           fontSize="large"
           style={existInWishList ? { color: "red" } : { color: "" }}
         />
       </button>
-      <img src={fav.img} alt={fav.title} />
+      <Link to={`/detail/${fav.id}`}>
+        <img src={fav.img} alt={fav.title} />
+      </Link>
       <div className="favCard__body">
         <h3 className="favCard__title">{fav.title}</h3>
         <p className="favCard__artist">{fav.artist}</p>

@@ -39,8 +39,12 @@
   padding: 10px;
   color: aliceblue;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 15px;
   text-decoration: none;
+}
+
+.navbar__li:hover {
+  opacity: 0.75;
 }
 
 .account__div {
@@ -69,15 +73,14 @@
 .numberItems[data-count]:after {
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 15px;
   content: attr(data-count);
-  font-size: 0.8em;
+  font-size: 10px;
   padding: 0.6em 0.1em;
   line-height: 0.75em;
   color: aliceblue;
   text-align: center;
   min-width: 2em;
-  font-weight: bold;
   background: #df0000;
   border-radius: 50%;
 }
@@ -87,8 +90,8 @@
 }
 
 .logo__img {
-  width: 75px;
-  height: 75px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
 }
 
@@ -97,11 +100,11 @@
   align-items: center;
 }
 
-.navbar__user-text{
+.navbar__user-text {
   padding-right: 20px;
 }
 
-.navbar__cart{
+.navbar__cart {
   position: absolute;
   top: 60px;
   right: 50px;

@@ -35,12 +35,12 @@ const NavBar = () => {
           Hi {user.firstname} {user.lastname}!
         </p>
         <button onClick={logout}>
-          <PersonIcon fontSize="large" />
+          <PersonIcon fontSize="medium" />
         </button>
       </div>
     ) : (
       <Link to={"/login"}>
-        <AccountCircleIcon fontSize="large" />
+        <AccountCircleIcon fontSize="medium" />
       </Link>
     );
   };
@@ -88,7 +88,7 @@ const NavBar = () => {
                   className="numberItems"
                   data-count={totalWishItems}
                 >
-                  <FavoriteIcon style={{ margin: "1px" }} fontSize="large" />
+                  <FavoriteIcon style={{ margin: "1px" }} fontSize="medium" />
                 </span>
               </Link>
             </li>
@@ -102,7 +102,7 @@ const NavBar = () => {
                 >
                   <ShoppingCartIcon
                     style={{ margin: "1px" }}
-                    fontSize="large"
+                    fontSize="medium"
                   />
                 </span>
               </Link>
