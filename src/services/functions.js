@@ -75,9 +75,6 @@ const updateObject = (oldObject, newValues) => {
 const removeItemCart = (state, action) => {
   const exist = findItem(state.cartItems, action.payload);
 
-  //   state.cartItems.find(
-  //   (prodCart) => prodCart.id === action.payload.id
-  // );
   const newArray =
     exist.qty === 1
       ? state.cartItems.filter((prodCart) => prodCart.id !== action.payload.id)

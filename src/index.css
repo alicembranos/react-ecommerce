@@ -24,7 +24,8 @@ body {
 }
 
 .cart__container,
-.error__section {
+.error__section,
+.photos__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,7 +55,8 @@ body {
   background-image: var(--backgroundImage);
 }
 
-.container__cart {
+.container__cart,
+.photos__sliderWrapper {
   display: flex;
   justify-content: center;
   height: 100%;

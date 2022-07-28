@@ -8,6 +8,7 @@ import LoginPage from "pages/LoginPage/LoginPage";
 import Register from "components/Register/Register";
 import User from "pages/User/User";
 import WishList from "pages/WishList/WishList";
+import Photos from "pages/Photos/Photos";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
 
 import { AlbumsContextProvider } from "context/AlbumsContext";
@@ -28,6 +29,7 @@ const App = () => {
             <Route component={Register} path="/signup" />
             <Route component={User} path="/user" />
             <Route component={WishList} path="/wishlist" />
+            <Route component={Photos} path="/photos" />
             <Route component={ErrorPage} path="/:rest*" />
           </Switch>
         </GlobalContextProvider>
