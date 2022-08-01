@@ -1,0 +1,28 @@
+.modal {
+  background-color: rgba(64, 58, 66, 0.8);
+  backdrop-filter: blur(4px);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.modal-content {
+  position: relative;
+  width: 70vw;
+  height: 70vh;
+  padding: 10px 20px;
+  margin: 10vh 20vw;
+  border-radius: 20px;
+  background: rgb(30, 1, 39);
+}
+
+.modal-content button {
+  display: block;
+  margin-bottom: 32px;
+}
