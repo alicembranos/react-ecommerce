@@ -1,11 +1,11 @@
-import { createContext, useState } from "react";
+import useLocalStorage from "hooks/useLocalStorage";
+import { createContext } from "react";
 
 const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
-  const [jwt, setJwt] = useState(null);
-  const [user, setUser] = useState(null);
-
+  const { value: jwt, setValue: setJwt } = useLocalStorage("jwt", null);
+  const { value: user, setValue: setUser } = useLocalStorage("user", null);
   return (
     <UserContext.Provider value={{ jwt, user, setJwt, setUser }}>
       {children}

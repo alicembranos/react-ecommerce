@@ -1,11 +1,11 @@
 import { useContext, useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import AlbumsContext from "context/AlbumsContext";
-import NavBar from "components/NavBar/NavBar";
 import AlbumDetail from "components/AlbumDetail/AlbumDetail";
 import Playlist from "components/Playlist/Playlist";
 
-const DetailProduct = ({ params }) => {
-  const { id } = params;
+const DetailProduct = () => {
+  const { id } = useParams();
   const [idAlbum, setIdAlbum] = useState(id);
 
   useEffect(() => {
@@ -17,13 +17,10 @@ const DetailProduct = ({ params }) => {
   const product = albums.find((album) => album.id === Number(idAlbum));
 
   return (
-    <section className="detail__section">
-      <NavBar />
       <div className="detail__container">
         <AlbumDetail product={product} />
-        <Playlist product={product}/>
+        <Playlist product={product} />
       </div>
-    </section>
   );
 };
 

@@ -1,5 +1,5 @@
 import { useCallback, useContext, useState } from "react";
-import { useLocation } from "wouter";
+import { useNavigate } from "react-router-dom";
 import UserContext from "context/UserContext";
 import CustomButton from "components/CustomButton/CustomButton";
 import Modal from "components/Modal/Modal";
@@ -8,22 +8,23 @@ import ModalPortal from "components/Modal/Modal";
 import PurchaseForm from "components/PurchaseForm/PurchaseForm";
 
 const ButtonsGroup = () => {
-  const [, setLocation] = useLocation();
+  // const [, setLocation] = useLocation();
+  const navigate = useNavigate()
   const { user } = useContext(UserContext);
   const [showModal, setShowModal] = useState(false);
 
   const navigateToShop = useCallback(() => {
-    setLocation("/shop");
-  }, [setLocation]);
+    navigate("/shop");
+  }, [navigate]);
 
   const navigateToBuyProcess = useCallback(() => {
     if (!Boolean(user)) {
-      setLocation("/login");
+      navigate("/login");
     }
     // setLocation("/chekcout");
     setShowModal(true);
     console.log("checkout");
-  }, [setLocation, user]);
+  }, [navigate, user]);
 
   const handleCloseModal = () => {
     setShowModal(false);

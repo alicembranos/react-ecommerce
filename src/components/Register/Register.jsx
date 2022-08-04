@@ -1,13 +1,12 @@
 import useUser from "hooks/useUser";
 import { useEffect, useState } from "react";
-import { useLocation } from "wouter";
+import { useNavigate } from "react-router-dom";
 import { Spinner } from "@nextui-org/react";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import imgLogin from "assets/img/gallery/login.jpg";
-
 import "./Register.css";
 
 const Register = () => {
@@ -19,12 +18,14 @@ const Register = () => {
     genre: "",
     age: 0,
   });
-  const [, setLocation] = useLocation();
-  const { register, isLogged, isLogginLoading, hasLoginError, message } = useUser();
 
+  const { register, isLogged, isLogginLoading, hasLoginError, message } =
+    useUser();
+
+  const navigate = useNavigate();
   useEffect(() => {
-    if (isLogged) setLocation("/cart");
-  }, [isLogged, setLocation]);
+    if (isLogged) navigate("/cart");
+  }, [isLogged, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -51,7 +52,8 @@ const Register = () => {
           )}
           {hasLoginError && (
             <p className="form-error">
-              <ErrorOutlineIcon />{message}
+              <ErrorOutlineIcon />
+              {message}
             </p>
           )}
           <div className="form-content">

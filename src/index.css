@@ -7,8 +7,9 @@
 body {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-height: 100%;
+  /* justify-content: center; */
+  min-height: 100vh;
+  height: 100%;
 }
 
 :root {
@@ -19,17 +20,6 @@ body {
 .shop__container {
   display: flex;
   flex-direction: column;
-  background-color: var(--backgroundColor);
-  background-image: var(--backgroundImage);
-}
-
-.cart__container,
-.error__section,
-.photos__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100vh;
   background-color: var(--backgroundColor);
   background-image: var(--backgroundImage);
 }
@@ -47,20 +37,25 @@ body {
 .wishList__container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 90vh;
   height: 100%;
   width: 100%;
   overflow: auto;
-  background-color: var(--backgroundColor);
-  background-image: var(--backgroundImage);
 }
 
 .container__cart,
-.photos__sliderWrapper {
+.photos__sliderWrapper,
+.detail__container {
   display: flex;
   justify-content: center;
+  min-height: 90vh;
   height: 100%;
   overflow: auto;
+}
+
+.detail__container {
+  padding: 3rem 8rem;
+  color: aliceblue;
 }
 
 .detail__section {
@@ -74,14 +69,6 @@ body {
   background: url("./assets/img/gallery/pexels-aleksandar-pasaric-2078071.jpg")
     center center no-repeat;
   background-size: cover;
-}
-
-.detail__container {
-  display: flex;
-  justify-content: center;
-  height: 100%;
-  padding: 3rem 8rem;
-  color: aliceblue;
 }
 
 .error-wrapper {
@@ -118,11 +105,4 @@ body {
   color: #c9c9c9;
   font-weight: 400;
   font-size: 16px;
-}
-
-.wishList__container {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--backgroundColor);
-  background-image: var(--backgroundImage);
 }

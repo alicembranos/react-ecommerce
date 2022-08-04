@@ -8,12 +8,20 @@
   --duration: 13s;
 }
 
+.main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--backgroundColor);
+  background-image: var(--backgroundImage);
+}
+
 .container__div {
   position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 100px;
+  height: 10vh;
   padding: 20px;
   color: var(--light-color);
 }
@@ -64,7 +72,7 @@
   cursor: pointer;
 }
 
-.icons__li button {
+.icons__li a, .icons__li button {
   background: none;
   color: aliceblue;
   cursor: pointer;
@@ -90,7 +98,7 @@
 }
 
 .logo__img {
-  width: 60px;
+  width: 110px;
   height: 60px;
   border-radius: 50%;
 }

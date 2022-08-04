@@ -1,6 +1,6 @@
 import { Box, Stack, keyframes } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import "./StackItems.css";
 
 const lineUp = keyframes`

@@ -1,6 +1,6 @@
 import { useCallback, useContext, useState } from "react";
 import loginService from "services/login";
-import registerService from 'services/register'
+import registerService from "services/register";
 import UserContext from "context/UserContext";
 
 const useUser = () => {

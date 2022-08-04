@@ -1,6 +1,6 @@
 import Counter from "components/Counter/Counter";
 import { setPrice } from "services/functions";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import "./ItemCart.css";
 
 const ItemCart = (props) => {

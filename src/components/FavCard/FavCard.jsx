@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { findInArrayById } from "services/functions";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import "./FavCard.css";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 
 const FavCard = (props) => {
   const { fav, wishList, toggleFavProductFromWishList } = props;
@@ -31,7 +31,7 @@ const FavCard = (props) => {
           style={existInWishList ? { color: "red" } : { color: "" }}
         />
       </button>
-      <Link to={`/detail/${fav.id}`}>
+      <Link to={`${fav.id}`}>
         <img src={fav.img} alt={fav.title} />
       </Link>
       <div className="favCard__body">

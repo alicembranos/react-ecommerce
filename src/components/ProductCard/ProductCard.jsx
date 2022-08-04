@@ -1,6 +1,6 @@
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 import { findInArrayById } from "services/functions";
 
 import "./ProductCard.css";

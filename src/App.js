@@ -1,5 +1,4 @@
-import { Route, Switch } from "wouter";
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "pages/Home/Home";
 import Shop from "pages/Shop/Shop";
 import Cart from "pages/Cart/Cart";
@@ -10,6 +9,7 @@ import User from "pages/User/User";
 import WishList from "pages/WishList/WishList";
 import Photos from "pages/Photos/Photos";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
+import NavBar from "components/NavBar/NavBar";
 
 import { AlbumsContextProvider } from "context/AlbumsContext";
 import { UserContextProvider } from "context/UserContext";
@@ -20,18 +20,22 @@ const App = () => {
     <UserContextProvider>
       <AlbumsContextProvider>
         <GlobalContextProvider>
-          <Switch>
-            <Route component={Home} path="/" />
-            <Route component={Shop} path="/shop" />
-            <Route component={DetailProduct} path="/detail/:id" />
-            <Route component={Cart} path="/cart" />
-            <Route component={LoginPage} path="/login" />
-            <Route component={Register} path="/signup" />
-            <Route component={User} path="/user" />
-            <Route component={WishList} path="/wishlist" />
-            <Route component={Photos} path="/photos" />
-            <Route component={ErrorPage} path="/:rest*" />
-          </Switch>
+          <BrowserRouter>
+            <Routes>
+              <Route element={<LoginPage />} path="/login" />
+              <Route element={<Register />} path="/signup" />
+              <Route element={<Home />} path="/" />
+              <Route path="/" element={<NavBar />}>
+                <Route element={<Shop />} path="shop" />
+                <Route element={<DetailProduct />} path="detail/:id" />
+                <Route element={<Cart />} path="cart" />
+                <Route element={<User />} path="user" />
+                <Route element={<WishList />} path="wishlist" />
+                <Route element={<Photos />} path="photos" />
+                <Route element={<ErrorPage />} path="*" />
+              </Route>
+            </Routes>
+          </BrowserRouter>
         </GlobalContextProvider>
       </AlbumsContextProvider>
     </UserContextProvider>

@@ -1,5 +1,5 @@
 import CustomButton from "components/CustomButton/CustomButton";
-import { Link } from "wouter";
+import { Link } from "react-router-dom";
 
 const ErrorPage = () => {
   return (
@@ -14,7 +14,7 @@ const ErrorPage = () => {
           The page you are looking for might have been removed had its name
           changed or is temporarily unavailable.
         </p>
-        <Link to={"/"}>
+        <Link replace to={"/"}>
           <CustomButton value="HOME PAGE" />
         </Link>
       </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link, useNavigate } from "react-router-dom";
 import useUser from "hooks/useUser";
 import Spinner from "components/Spinner/Spinner";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -10,13 +10,13 @@ import "./Login.css";
 
 const Login = () => {
   const [userForm, setUserForm] = useState({ email: "", password: "" });
-  const [, setLocation] = useLocation();
+  const navigate = useNavigate();
   const { login, isLogged, isLogginLoading, hasLoginError, message } =
     useUser();
 
   useEffect(() => {
-    if (isLogged) setLocation("/cart");
-  }, [isLogged, setLocation]);
+    if (isLogged) navigate("/cart");
+  }, [isLogged, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();

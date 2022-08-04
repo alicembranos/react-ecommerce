@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import GlobalContext from "context/GlobalContext";
 import UserContext from "context/UserContext";
-import { Link } from "wouter";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { addSummaryQuantity } from "services/functions";
 import DisplayItems from "components/DisplayCart/DisplayItems";
 import useUser from "hooks/useUser";
@@ -26,9 +26,13 @@ const NavBar = () => {
   const { isLogged, logout } = useUser();
   const { user } = useContext(UserContext);
   const [isHovering, setIsHovering] = useState(false);
+  const navigate = useNavigate();
+
+  const navigateToLogin = () => {
+    navigate("/login");
+  };
 
   const renderLoginButtons = () => {
-    console.log(user);
     return isLogged ? (
       <div className="navbar__user">
         <p className="navbar__user-text">
@@ -39,9 +43,9 @@ const NavBar = () => {
         </button>
       </div>
     ) : (
-      <Link to={"/login"}>
+      <button onClick={navigateToLogin}>
         <AccountCircleIcon fontSize="medium" />
-      </Link>
+      </button>
     );
   };
 
@@ -54,73 +58,73 @@ const NavBar = () => {
   };
 
   return (
-    <header>
-      <div className="container__div">
-        <div className="logo__div">
-          <img className="logo__img" src={logo} alt="Logo" />
-          <p className="logo__p"></p>
-        </div>
-        <nav className="navbar__nav">
-          <ul className="navbar__ul">
-            <li>
-              <Link className="navbar__li" to={"/"}>
-                VOIZZ
-              </Link>
-            </li>
-            <li>
-              <Link className="navbar__li" to={"/shop"}>
-                SHOP
-              </Link>
-            </li>
-            <li>
-              <Link className="navbar__li" to={"/shop"}>
-                CONTACT
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="account__div">
-          <ul className="icons__ul">
-            <li className="icons__li">{renderLoginButtons()}</li>
-            <li className="icons__li">
-              <Link to={"/wishlist"}>
-                <span
-                  className="numberItems"
-                  data-count={totalWishItems}
-                >
-                  <FavoriteIcon style={{ margin: "1px" }} fontSize="medium" />
-                </span>
-              </Link>
-            </li>
-            <li className="icons__li">
-              <Link to={"/cart"}>
-                <span
-                  onMouseOver={handleMouseOver}
-                  onMouseOut={handleMouseOut}
-                  className="numberItems"
-                  data-count={totalCartItems}
-                >
-                  <ShoppingCartIcon
-                    style={{ margin: "1px" }}
-                    fontSize="medium"
-                  />
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </div>
-        {isHovering && (
-          <div className="navbar__cart">
-            <DisplayItems
-              cartItems={cartItems}
-              onAdd={addProductToCart}
-              onRemove={removeProductFromCart}
-              onRemoveAll={removeAllProductFromCart}
-            />
+    <main className="main__container">
+      <header>
+        <div className="container__div">
+          <div className="logo__div">
+            <img className="logo__img" src={logo} alt="Logo" />
+            <p className="logo__p"></p>
           </div>
-        )}
-      </div>
-    </header>
+          <nav className="navbar__nav">
+            <ul className="navbar__ul">
+              <li>
+                <Link className="navbar__li" to={"/"}>
+                  VOIZZ
+                </Link>
+              </li>
+              <li>
+                <Link className="navbar__li" to={"/shop"}>
+                  SHOP
+                </Link>
+              </li>
+              <li>
+                <Link className="navbar__li" to={"/shop"}>
+                  CONTACT
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="account__div">
+            <ul className="icons__ul">
+              <li className="icons__li">{renderLoginButtons()}</li>
+              <li className="icons__li">
+                <Link to={"/wishlist"}>
+                  <span className="numberItems" data-count={totalWishItems}>
+                    <FavoriteIcon style={{ margin: "1px" }} fontSize="medium" />
+                  </span>
+                </Link>
+              </li>
+              <li className="icons__li">
+                <Link to={"/cart"}>
+                  <span
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                    className="numberItems"
+                    data-count={totalCartItems}
+                  >
+                    <ShoppingCartIcon
+                      style={{ margin: "1px" }}
+                      fontSize="medium"
+                    />
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+          {isHovering && (
+            <div className="navbar__cart">
+              <DisplayItems
+                cartItems={cartItems}
+                onAdd={addProductToCart}
+                onRemove={removeProductFromCart}
+                onRemoveAll={removeAllProductFromCart}
+              />
+            </div>
+          )}
+        </div>
+      </header>
+      <Outlet />
+    </main>
   );
 };
 
