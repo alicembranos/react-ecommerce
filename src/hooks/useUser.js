@@ -33,6 +33,7 @@ const useUser = () => {
 
   const logout = useCallback(() => {
     setJwt(null);
+    setUser(null);
   }, [setJwt]);
 
   const register = useCallback(
