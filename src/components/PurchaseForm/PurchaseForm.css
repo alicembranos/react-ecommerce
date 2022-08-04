@@ -1,0 +1,28 @@
+.stepper {
+  padding: 18px 10px;
+}
+
+.stepper-label span {
+  color: aliceblue;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form-button {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.form-wrapper {
+  margin: 10px;
+  position: relative;
+}
+
+.form-buttonProgress {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}

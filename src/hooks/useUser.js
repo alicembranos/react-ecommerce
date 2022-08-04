@@ -34,7 +34,7 @@ const useUser = () => {
   const logout = useCallback(() => {
     setJwt(null);
     setUser(null);
-  }, [setJwt]);
+  }, [setJwt, setUser]);
 
   const register = useCallback(
     ({ userForm }) => {
