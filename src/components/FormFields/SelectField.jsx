@@ -1,4 +1,4 @@
-import { useField } from "formik/dist/Field";
+import { useField } from "formik";
 import { at } from "lodash";
 import PropTypes from "prop-types";
 import {
@@ -8,6 +8,8 @@ import {
   MenuItem,
   FormHelperText,
 } from "@mui/material";
+import themeInputForm from "./theme/theme";
+import { ThemeProvider } from "@mui/system";
 
 const SelectField = (props) => {
   const { label, data, ...rest } = props;
@@ -21,17 +23,23 @@ const SelectField = (props) => {
   }
 
   return (
-    <FormControl {...rest} error={isError}>
-      <InputLabel>{label}</InputLabel>
-      <Select {...field} value={selectedValue ? selectedValue : ""}>
-        {data.map((item, index) => (
-          <MenuItem key={index} value={item.value}>
-            {item.label}
-          </MenuItem>
-        ))}
-      </Select>
-      {renderHelperText}
-    </FormControl>
+    <ThemeProvider theme={themeInputForm}>
+      <FormControl {...rest} error={isError}>
+        <InputLabel>{label}</InputLabel>
+        <Select
+          {...field}
+          value={selectedValue ? selectedValue : ""}
+          variant="standard"
+        >
+          {data.map((item, index) => (
+            <MenuItem key={index} value={item.value}>
+              {item.label}
+            </MenuItem>
+          ))}
+        </Select>
+        {renderHelperText()}
+      </FormControl>
+    </ThemeProvider>
   );
 };
 

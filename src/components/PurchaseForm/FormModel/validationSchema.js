@@ -9,7 +9,6 @@ const {
     city,
     zipcode,
     country,
-    useAddressForPaymentDetails,
     nameOnCard,
     cardNumber,
     expiryDate,
@@ -53,6 +52,7 @@ export default [
           const startDate = new Date();
           const endDate = new Date(2050, 12, 31);
           if (moment(val, moment.ISO_8601).isValid()) {
+            console.log(moment(val, moment.ISO_8601));
             return moment(val).isBetween(startDate, endDate);
           }
           return false;
@@ -65,4 +65,3 @@ export default [
       .test("len", `${cvv.invalidErrorMsg}`, (val) => val && val.length === 3),
   }),
 ];
-

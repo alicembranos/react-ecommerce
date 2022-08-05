@@ -9,7 +9,6 @@ import validationSchema from "./FormModel/validationSchema";
 import formInitialValues from "./FormModel/formInitialValues";
 import checkoutFormModel from "./FormModel/checkoutFormModel";
 
-// import useStyles from "./PurcharseFormStyle";
 import "./PurchaseForm.css";
 import {
   Button,
@@ -41,7 +40,7 @@ const renderStepsProcess = (step) => {
 };
 
 const StyledStepLabel = styled(StepLabel)({
-  "& .Mui-active": {
+  "& .MuiStepLabel-label.Mui-active": {
     color: "aliceblue",
   },
 });
@@ -103,7 +102,7 @@ const PurchaseForm = () => {
       ) : (
         <Formik
           initialValues={formInitialValues}
-          validationSchema={validationSchema}
+          validationSchema={currentValidationSchema}
           onSubmit={handleSubmit}
         >
           {({ isSubmitting }) => (
@@ -115,7 +114,7 @@ const PurchaseForm = () => {
                     Back
                   </Button>
                 )}
-                <div className="form-wrapper">
+                <div className="form-checkout__wrapper">
                   <Button
                     disabled={isSubmitting}
                     type="submit"

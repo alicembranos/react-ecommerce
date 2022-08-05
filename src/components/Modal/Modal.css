@@ -16,13 +16,24 @@
   position: relative;
   width: 70vw;
   height: 70vh;
-  padding: 10px 20px;
+  padding: 20px 30px;
   margin: 10vh 20vw;
   border-radius: 20px;
   background: rgb(30, 1, 39);
+  overflow: auto;
 }
 
-.modal-content button {
-  display: block;
-  margin-bottom: 32px;
+.modal-button {
+  position: absolute;
+  right: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  background: none;
+  border: none;
+  text-align: end;
+  cursor: pointer;
+}
+
+.modal-button:hover {
+  transform: scale(1.1);
 }
