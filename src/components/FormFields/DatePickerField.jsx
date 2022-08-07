@@ -1,6 +1,6 @@
 import { useField } from "formik";
 import { Grid, TextField, ThemeProvider } from "@mui/material";
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useState } from "react";
@@ -47,7 +47,6 @@ const DatePickerField = (props) => {
           value={selectedDate}
           onChange={handleChange}
           error={isError}
-          invalidDateMessage={isError && error}
           helperText={isError && error}
           renderInput={(params) => (
             <TextField

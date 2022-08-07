@@ -28,7 +28,6 @@ const PaymentForm = (props) => {
             <InputField
               name={cardNumber.name}
               label={cardNumber.label}
-              fullwidth
             />
           </FormControl>
         </Grid>
@@ -46,7 +45,7 @@ const PaymentForm = (props) => {
         </Grid>
         <Grid item xs={12} md={12}>
           <FormControl fullWidth>
-            <InputField name={cvv.name} label={cvv.label} fullwidth />
+            <InputField name={cvv.name} label={cvv.label} />
           </FormControl>
         </Grid>
       </Grid>

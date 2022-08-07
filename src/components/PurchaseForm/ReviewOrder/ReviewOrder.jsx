@@ -1,7 +1,25 @@
-import React from "react";
+import { Grid, ThemeProvider, Typography } from "@mui/material";
+import { useFormikContext } from "formik";
+import PaymentDetails from "./PaymentDetails";
+import ProductDetail from "./ProductDetail";
+import ShippingDetails from "./ShippingDetails";
+import themeReviewOrder from "./theme/theme";
 
 const ReviewOrder = () => {
-  return <div>ReviewOrder</div>;
+  const { values: formValues } = useFormikContext();
+  console.log(useFormikContext());
+  return (
+    <ThemeProvider theme={themeReviewOrder}>
+      <Typography variant="h6" gutterBottom sx={{textDecoration: 'underline'}}>
+        Order summary
+      </Typography>
+      <ProductDetail />
+      <Grid container spacing={2}>
+        <ShippingDetails formValues={formValues} />
+        <PaymentDetails formValues={formValues} />
+      </Grid>
+    </ThemeProvider>
+  );
 };
 
 export default ReviewOrder;
