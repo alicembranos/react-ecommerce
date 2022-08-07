@@ -50,6 +50,43 @@ const themeInputForm = createTheme({
         root: { color: "aliceblue" },
       },
     },
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: "#7b7b7b",
+        },
+      },
+    },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          ".MuiOutlinedInput-input": {
+            color: "#7b7b7b",
+          },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      styleOverrides: {
+        root: {
+          "& .MuiOutlinedInput-notchedOutline": {
+            borderColor: "#7b7b7b",
+            border: "none",
+            borderBottom: "1px solid #7b7b7b",
+          },
+          "&:hover .MuiOutlinedInput-notchedOutline": {
+            borderColor: "aliceblue",
+          },
+          "&.Mui-focused": {
+            "& .MuiOutlinedInput-notchedOutline": {
+              borderColor: "#c50c91",
+              border: "none",
+              borderBottom: "2px solid #c50c91",
+            },
+          },
+        },
+      },
+    },
   },
 });
 

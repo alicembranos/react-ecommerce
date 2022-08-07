@@ -17,6 +17,7 @@ const {
 } = checkoutFormModel;
 
 const visaRegexp = /^(?:[0-9]{12}(?:[0-9]{3})?)$/;
+const cvcRegexp = /^[0-9]{3}$/;
 
 export default [
   yup.object().shape({
@@ -52,7 +53,6 @@ export default [
           const startDate = new Date();
           const endDate = new Date(2050, 12, 31);
           if (moment(val, moment.ISO_8601).isValid()) {
-            console.log(moment(val, moment.ISO_8601));
             return moment(val).isBetween(startDate, endDate);
           }
           return false;
@@ -62,6 +62,6 @@ export default [
     [cvv.name]: yup
       .string()
       .required(`${cvv.requiredErrorMsg}`)
-      .test("len", `${cvv.invalidErrorMsg}`, (val) => val && val.length === 3),
+      .matches(cvcRegexp, cvv.invalidErrorMsg),
   }),
 ];

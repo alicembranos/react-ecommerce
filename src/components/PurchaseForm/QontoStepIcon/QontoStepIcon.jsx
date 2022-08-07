@@ -1,10 +1,12 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { styled } from "@mui/material/styles";
+import { styled, ThemeProvider } from "@mui/material/styles";
 import Check from "@mui/icons-material/Check";
+import { StepLabel, stepLabelClasses } from "@mui/material";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
+import themeInputForm from "components/FormFields/theme/theme";
 
 export const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -39,7 +41,7 @@ const QontoStepIconRoot = styled("div")(({ theme, ownerState }) => ({
     color: "#c50c91",
   }),
   "& .QontoStepIcon-completedIcon": {
-    color: "#7e08ef",
+    color: "#c50c91",
     zIndex: 1,
     fontSize: 18,
   },
@@ -55,13 +57,15 @@ const QontoStepIcon = (props) => {
   const { active, completed, className } = props;
 
   return (
-    <QontoStepIconRoot ownerState={{ active }} className={className}>
-      {completed ? (
-        <Check className="QontoStepIcon-completedIcon" />
-      ) : (
-        <div className="QontoStepIcon-circle" />
-      )}
-    </QontoStepIconRoot>
+    <ThemeProvider theme={themeInputForm}>
+      <QontoStepIconRoot ownerState={{ active }} className={className}>
+        {completed ? (
+          <Check className="QontoStepIcon-completedIcon" />
+        ) : (
+          <div className="QontoStepIcon-circle" />
+        )}
+      </QontoStepIconRoot>
+    </ThemeProvider>
   );
 };
 

@@ -13,7 +13,6 @@ const useImages = () => {
     });
   }, []);
 
-  console.log(images);
   return { images, isLoading };
 };
 

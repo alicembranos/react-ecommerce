@@ -19,7 +19,9 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import QontoStepIcon from "./QontoStepIcon/QontoStepIcon";
+import QontoStepIcon, {
+  ColorlibStepLabel,
+} from "./QontoStepIcon/QontoStepIcon";
 import { QontoConnector } from "./QontoStepIcon/QontoStepIcon";
 import { styled } from "@mui/material/styles";
 
@@ -42,6 +44,9 @@ const renderStepsProcess = (step) => {
 const StyledStepLabel = styled(StepLabel)({
   "& .MuiStepLabel-label.Mui-active": {
     color: "aliceblue",
+  },
+  "& .MuiStepLabel-label.Mui-completed": {
+    color: "#c50c91",
   },
 });
 

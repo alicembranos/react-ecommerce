@@ -10,7 +10,6 @@ const PlayListItem = ({ index, track, defaultAudio, playlist }) => {
   const [hide, setHide] = useState(true);
 
   const handleTrack = ({ target }) => {
-    console.log(target);
     setAudioTrack(target.dataset.audio);
     setHide(!hide);
   };

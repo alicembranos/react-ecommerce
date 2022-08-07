@@ -1,11 +1,11 @@
 import { useField } from "formik";
-import { Grid } from "@mui/material";
-import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { Grid, TextField, ThemeProvider } from "@mui/material";
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-// import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { KeyboardDatePicker } from "@material-ui/pickers";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useState } from "react";
 import { useEffect } from "react";
+import themeInputForm from "./theme/theme";
 
 const DatePickerField = (props) => {
   const [field, meta, helper] = useField(props);
@@ -22,7 +22,7 @@ const DatePickerField = (props) => {
     }
   }, [value]);
 
-  const onChange = (date) => {
+  const handleChange = (date) => {
     if (date) {
       setSelectedDate(date);
       try {
@@ -37,20 +37,30 @@ const DatePickerField = (props) => {
   };
 
   return (
-    <Grid container>
+    <ThemeProvider theme={themeInputForm}>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <KeyboardDatePicker
+        <DatePicker
+          input
+          inputFormat="MM/yyyy"
           {...field}
           {...props}
           value={selectedDate}
-          onChange={onChange}
+          onChange={handleChange}
           error={isError}
           invalidDateMessage={isError && error}
           helperText={isError && error}
-          variant="standard"
-        />
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              error={isError}
+              invalidDateMessage={isError && error}
+              helperText={isError && error}
+              className="datepicker"
+            />
+          )}
+        ></DatePicker>
       </LocalizationProvider>
-    </Grid>
+    </ThemeProvider>
   );
 };
 

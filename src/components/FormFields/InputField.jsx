@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/system";
 import themeInputForm from "./theme/theme";
 
 const InputField = (props) => {
-  const { errorText, ...rest } = props;
+  const { ...rest } = props;
   const [field, meta] = useField(props);
 
   function renderHelperText() {

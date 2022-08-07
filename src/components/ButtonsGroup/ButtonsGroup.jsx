@@ -23,7 +23,6 @@ const ButtonsGroup = () => {
     }
     // setLocation("/chekcout");
     setShowModal(true);
-    console.log("checkout");
   }, [navigate, user]);
 
   const handleCloseModal = () => {
