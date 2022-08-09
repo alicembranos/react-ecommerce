@@ -9,6 +9,7 @@ import User from "pages/User/User";
 import WishList from "pages/WishList/WishList";
 import Photos from "pages/Photos/Photos";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
+import Contact from "pages/Contact/Contact";
 import NavBar from "components/NavBar/NavBar";
 
 import { AlbumsContextProvider } from "context/AlbumsContext";
@@ -32,6 +33,7 @@ const App = () => {
                 <Route element={<User />} path="user" />
                 <Route element={<WishList />} path="wishlist" />
                 <Route element={<Photos />} path="photos" />
+                <Route element={<Contact />} path="contact" />
                 <Route element={<ErrorPage />} path="*" />
               </Route>
             </Routes>

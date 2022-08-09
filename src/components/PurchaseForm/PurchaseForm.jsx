@@ -19,9 +19,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
-import QontoStepIcon, {
-  ColorlibStepLabel,
-} from "./QontoStepIcon/QontoStepIcon";
+import QontoStepIcon from "./QontoStepIcon/QontoStepIcon";
 import { QontoConnector } from "./QontoStepIcon/QontoStepIcon";
 import { styled } from "@mui/material/styles";
 
