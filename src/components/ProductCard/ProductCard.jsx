@@ -2,6 +2,7 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Link } from "react-router-dom";
 import { findInArrayById } from "services/functions";
+import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import "./ProductCard.css";
 import { useRef } from "react";
@@ -25,6 +26,10 @@ const ProductCard = (props) => {
   };
 
   return (
+    <AnimationOnScroll
+    animateIn="animate__fadeInUp"
+    className="animate__animated animate__bounce animate__slow"
+  >
     <div className="card">
       {existInCart && (
         <p className="card__text-added">
@@ -67,7 +72,8 @@ const ProductCard = (props) => {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+      </AnimationOnScroll>
   );
 };
 

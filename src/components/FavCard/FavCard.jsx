@@ -31,7 +31,7 @@ const FavCard = (props) => {
           style={existInWishList ? { color: "red" } : { color: "" }}
         />
       </button>
-      <Link to={`${fav.id}`}>
+      <Link to={`/detail/${fav.id}`}>
         <img src={fav.img} alt={fav.title} />
       </Link>
       <div className="favCard__body">

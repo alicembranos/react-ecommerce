@@ -3,6 +3,7 @@ import useAlbums from "hooks/useAlbums";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 import SearchBar from "components/SearchBar/SearchBar";
 import GlobalContext from "context/GlobalContext";
+import AlbumsContext from "context/AlbumsContext";
 
 const Shop = () => {
   const {
@@ -11,8 +12,11 @@ const Shop = () => {
     wishList,
     toggleFavProductFromWishList,
   } = useContext(GlobalContext);
-  const [keyword, setKeyword] = useState("");
-  const { loading, albums, search, match } = useAlbums({ keyword });
+  // const [keyword, setKeyword] = useState("");
+  const { loading, albums, search, match, keyword, setKeyword } = useContext(AlbumsContext);
+  console.log(loading, albums, match, search);
+  // const { loading, albums, search, match } = useAlbums({ keyword });
+  // const { loading, search, match } = useAlbums({ keyword });
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
