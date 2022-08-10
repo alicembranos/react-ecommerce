@@ -37,7 +37,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server-auth --watch ./src/data/db.json --delay 1500 --port 3001"
+    "server": "json-server-auth --watch ./src/data/db.json --port 3001"
   },
   "eslintConfig": {
     "extends": [

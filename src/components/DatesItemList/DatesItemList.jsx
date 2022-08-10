@@ -28,15 +28,6 @@ const DatesItemList = () => {
     </div>;
   }
 
-  if (isFetching) {
-    return (
-      <div style={{ color: "aliceblue" }}>
-        <Spinner />
-        Está revalidando
-      </div>
-    );
-  }
-
   return (
     <section className="dates__container">
       <div
