@@ -11,6 +11,18 @@ const AlbumDetail = ({ product }) => {
 
   return (
     <>
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          backgroundImage: `url(${product.img})`,
+          backgroundSize: "cover",
+          opacity: 0.3
+        }}
+      ></div>
       <section className="album__cover">
         <div className="album__coverImage">
           <img src={product.img} alt={product.title} />

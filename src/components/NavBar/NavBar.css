@@ -24,6 +24,7 @@
   height: 10vh;
   padding: 20px;
   color: var(--light-color);
+  z-index: 1;
 }
 
 .logo__div {
@@ -73,6 +74,7 @@
 }
 
 .icons__li a, .icons__li button {
+  border: none;
   background: none;
   color: aliceblue;
   cursor: pointer;

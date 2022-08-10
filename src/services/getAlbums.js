@@ -1,4 +1,4 @@
-import { API_URL } from "./settings";
+import { API_URL_ALBUMS } from "./settings";
 
 const apiResponseToAlbums = (apiResponse) => {
   const { items } = apiResponse;
@@ -17,7 +17,7 @@ const apiResponseToAlbums = (apiResponse) => {
 
 const getAlbums = async () => {
   try {
-    const res = await fetch(API_URL);
+    const res = await fetch(API_URL_ALBUMS);
     const apiResponse = await res.json();
     return apiResponseToAlbums(apiResponse);
   } catch (error) {

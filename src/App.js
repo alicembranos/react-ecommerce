@@ -8,9 +8,11 @@ import Register from "components/Register/Register";
 import User from "pages/User/User";
 import WishList from "pages/WishList/WishList";
 import Photos from "pages/Photos/Photos";
+import Dates from "pages/Dates/Dates";
 import ErrorPage from "pages/ErrorPage/ErrorPage";
 import Contact from "pages/Contact/Contact";
 import NavBar from "components/NavBar/NavBar";
+import "animate.css/animate.min.css";
 
 import { AlbumsContextProvider } from "context/AlbumsContext";
 import { UserContextProvider } from "context/UserContext";
@@ -33,6 +35,7 @@ const App = () => {
                 <Route element={<User />} path="user" />
                 <Route element={<WishList />} path="wishlist" />
                 <Route element={<Photos />} path="photos" />
+                <Route element={<Dates />} path="dates" />
                 <Route element={<Contact />} path="contact" />
                 <Route element={<ErrorPage />} path="*" />
               </Route>

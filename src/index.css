@@ -10,6 +10,7 @@ body {
   /* justify-content: center; */
   min-height: 100vh;
   height: 100%;
+  /* overflow-x: hidden; */
 }
 
 :root {
@@ -45,7 +46,8 @@ body {
 
 .container__cart,
 .photos__sliderWrapper,
-.detail__container {
+.detail__container,
+.dates__container {
   display: flex;
   justify-content: center;
   min-height: 90vh;

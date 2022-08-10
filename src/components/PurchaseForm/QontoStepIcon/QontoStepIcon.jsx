@@ -2,7 +2,6 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { styled, ThemeProvider } from "@mui/material/styles";
 import Check from "@mui/icons-material/Check";
-import { StepLabel, stepLabelClasses } from "@mui/material";
 import StepConnector, {
   stepConnectorClasses,
 } from "@mui/material/StepConnector";
