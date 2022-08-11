@@ -1,8 +1,8 @@
-import { API_URL_USERS } from "./settings";
+import { API_URL } from "./settings";
 
 const login = async ({ ...userForm }) => {
   const { email, password } = userForm;
-  return fetch(`http://localhost:3001/login`, {
+  return fetch(`${API_URL}login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

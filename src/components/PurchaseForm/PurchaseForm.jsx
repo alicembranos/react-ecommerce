@@ -1,3 +1,9 @@
+import { useEffect, useState, useContext } from "react";
+import GlobalContext from "context/GlobalContext";
+import UserContext from "context/UserContext";
+import sendCartUser from "services/sendCartUser";
+import { updateUserOrderList } from "services/functions";
+
 import { Formik, Form } from "formik";
 
 import AddressForm from "./Forms/AddressForm";
@@ -9,7 +15,6 @@ import validationSchema from "./FormModel/validationSchema";
 import formInitialValues from "./FormModel/formInitialValues";
 import checkoutFormModel from "./FormModel/checkoutFormModel";
 
-import "./PurchaseForm.css";
 import {
   Button,
   CircularProgress,
@@ -18,13 +23,19 @@ import {
   Stepper,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
 import QontoStepIcon from "./QontoStepIcon/QontoStepIcon";
 import { QontoConnector } from "./QontoStepIcon/QontoStepIcon";
 import { styled } from "@mui/material/styles";
+import moment from "moment";
+
+import "./PurchaseForm.css";
 
 const steps = ["Shipping Address", "Payment Details", "Review your order"];
 const { formId, formField } = checkoutFormModel;
+
+const generateRandomNumber = () => {
+  return Math.floor(Math.random() * 900000);
+};
 
 const renderStepsProcess = (step) => {
   switch (step) {
@@ -49,19 +60,35 @@ const StyledStepLabel = styled(StepLabel)({
 });
 
 const PurchaseForm = () => {
+  const { cartItems, removeCartItemsFromUser } = useContext(GlobalContext);
+  const { user, setUser } = useContext(UserContext);
   const [activeStep, setActiveStep] = useState(0);
   const currentValidationSchema = validationSchema[activeStep];
   const isLastStep = activeStep === steps.length - 1;
+  const [orderNumber, setOrderNumber] = useState(null);
+
+  useEffect(() => {
+    setOrderNumber(generateRandomNumber());
+  }, []);
 
   const sleep = (ms) => {
     return new Promise((resolve) => setTimeout(resolve, ms));
   };
 
   const submitForm = async (values, actions) => {
+    const orderData = {
+      orderNumber: orderNumber,
+      date: moment().format("L"),
+      cartItems: cartItems,
+    };
+    const usersOrderList = user?.ordersList ?? [];
     await sleep(1000);
     alert(JSON.stringify(values, null, 2));
     actions.setSubmitting(false);
     setActiveStep(activeStep + 1);
+    await sendCartUser(orderData, user.id, usersOrderList);
+    setUser(updateUserOrderList(user, usersOrderList, orderData));
+    removeCartItemsFromUser();
   };
 
   const handleSubmit = async (values, actions) => {
@@ -101,7 +128,7 @@ const PurchaseForm = () => {
         ))}
       </Stepper>
       {activeStep === steps.length ? (
-        <CheckoutSuccess />
+        <CheckoutSuccess orderNumber={orderNumber} />
       ) : (
         <Formik
           initialValues={formInitialValues}

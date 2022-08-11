@@ -26,10 +26,6 @@ const ProductDetail = () => {
                 alignItems: "flex-start",
                 flexDirection: "column",
                 justifyContent: "center",
-                // p: 1,
-                // m: 1,
-                // bgcolor: "black",
-                // borderRadius: 1,
               }}
             >
               <Typography variant="body2">{item.qty} units</Typography>

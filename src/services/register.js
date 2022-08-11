@@ -1,8 +1,8 @@
-import { API_URL_USERS } from "./settings";
+import { API_URL } from "./settings";
 
 const register = async ({ ...userForm }) => {
   const { email, password, firstname, lastname, genre, age } = userForm;
-  return fetch(`${API_URL_USERS}register`, {
+  return fetch(`${API_URL}register`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

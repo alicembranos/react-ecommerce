@@ -1,4 +1,4 @@
-import getWishList from "./getWishList";
+import { assign } from "lodash";
 import patchWishList from "./patchWishlist";
 
 /**
@@ -164,6 +164,28 @@ const removeWishListAtLogout = (state) => {
 };
 
 /**
+ * This function takes in a state object and returns a new state object with an empty array for the
+ * cartItems property.
+ * @param state - the current state of the reducer
+ * @returns The state object is being returned with the cartItems property set to an empty array.
+ */
+const removeCartItems = (state) => {
+  return updateObject(state, { cartItems: [] });
+};
+
+/**
+ * This function takes a user object, an array of orders, and an order object, and returns a new user
+ * object with the orders array updated to include the new order object.
+ * @param user - {
+ * @param ordersList - [{ order: { id: 1, name: 'order1' } }, { order: { id: 2, name: 'order2' } }]
+ * @param order - {
+ * @returns The user object with the ordersList property updated with the new order.
+ */
+const updateUserOrderList = (user, ordersList, order) => {
+  return updateObject(user, { ordersList: [...ordersList, { order }] });
+};
+
+/**
  * It returns the value of the key in localStorage.
  * @param key - The key to store the value under.
  * @returns The value of the key in localStorage.
@@ -181,7 +203,6 @@ function getLocalStorage(key, initialValue) {
 function setLocalStorage(key, item) {
   localStorage.setItem(key, JSON.stringify(item));
 }
-
 
 /**
  * This function takes a wishlist and a userId, and then sends the wishlist to the server.
@@ -205,5 +226,7 @@ export {
   setLocalStorage,
   getWishListAtLogin,
   removeWishListAtLogout,
-  sendWishList
+  sendWishList,
+  removeCartItems,
+  updateUserOrderList
 };

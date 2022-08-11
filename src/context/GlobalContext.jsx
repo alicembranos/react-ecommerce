@@ -4,6 +4,7 @@ import {
   getLocalStorage,
   getWishListAtLogin,
   removeAllItemCart,
+  removeCartItems,
   removeItemCart,
   removeWishListAtLogout,
   sendWishList,
@@ -20,6 +21,7 @@ const ACTIONS = {
   TOGGLE_FAV_IN_WISHLIST: "toggle_fav_in_wishlist",
   LOGIN_WISHLIST: "login_wishList",
   LOGOUT_WISHLIST: "logout_wishList",
+  REMOVE_CARTITEMS: "remove_cartItems",
 };
 
 const initialState = {
@@ -47,6 +49,8 @@ const globalReducer = (state, action) => {
       return getWishListAtLogin(state, action);
     case ACTIONS.LOGOUT_WISHLIST:
       return removeWishListAtLogout(state);
+    case ACTIONS.REMOVE_CARTITEMS:
+      return removeCartItems(state);
     default:
       return state;
   }
@@ -94,6 +98,10 @@ export function GlobalContextProvider({ children }) {
     dispatch({ type: ACTIONS.LOGOUT_WISHLIST });
   };
 
+  const removeCartItemsFromUser = () => {
+    dispatch({ type: ACTIONS.REMOVE_CARTITEMS });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -105,6 +113,7 @@ export function GlobalContextProvider({ children }) {
         toggleFavProductFromWishList,
         getWishListAtLoginByUser,
         removeWishListUserAtLogout,
+        removeCartItemsFromUser,
       }}
     >
       {children}
