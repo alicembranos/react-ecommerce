@@ -18,7 +18,7 @@ const FavGallery = () => {
         />
       ))
     ) : (
-      <DisplayInfo text="There aro no favourites added." />
+      <DisplayInfo text="There are no favourites added." />
     );
 
   return (

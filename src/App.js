@@ -42,7 +42,7 @@ const App = () => {
                 <Route element={<Dates />} path="dates" />
                 <Route element={<Contact />} path="contact" />
                 <Route element={<Profile />} path="profile">
-                  <Route index element={<UserDetail />} path="userDetail" />
+                  <Route index element={<UserDetail />} />
                   <Route element={<UserOrders />} path="userOrder" />
                   <Route element={<UserWishList />} path="userWishlist" />
                 </Route>

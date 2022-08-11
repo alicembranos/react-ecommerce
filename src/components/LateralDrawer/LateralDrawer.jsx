@@ -37,7 +37,7 @@ const selectIcon = (icon) => {
 const navigateRoutes = (text) => {
   switch (text) {
     case "My details":
-      return "userDetail";
+      return "/profile";
     case "My orders":
       return "userOrder";
     case "My wishlist":

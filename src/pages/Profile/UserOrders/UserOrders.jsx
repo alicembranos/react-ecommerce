@@ -8,12 +8,11 @@ const UserOrders = () => {
 
   const orderList = Boolean(user?.ordersList ?? null);
 
-  const display =
-    orderList > 0 ? (
-      (user.ordersList).map((order) => (<OrderList order={order} />) )
-    ) : (
-      <DisplayInfo text="You don't have recents orders." />
-    );
+  const display = orderList ? (
+    user.ordersList.map((order) => <OrderList order={order} />)
+  ) : (
+    <DisplayInfo text="You don't have recents orders." />
+  );
   return (
     <article className="userDetail__article">
       <h2 className="userDetail__title">
