@@ -1,0 +1,40 @@
+.userDetail__article {
+  margin-top: 20px;
+  margin-left: 100px;
+  width: 100%;
+}
+
+.userDetail__title {
+  margin-bottom: 30px;
+  font-family: "Caveat", cursive;
+  color: aliceblue;
+  font-size: 40px;
+}
+
+.userDetail__title span {
+  font-family: "Caveat", cursive;
+  color: #e72db2;
+  padding-right: 10px;
+}
+
+.userdetail__box {
+  padding: 20px 0;
+  color: aliceblue;
+}
+
+.userDetail__subtitle {
+  margin-bottom: 30px;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.userDetail__p {
+  padding: 10px 0;
+  font-size: 20px;
+  color: rgb(155, 149, 149);
+}
+
+.userDetail__p span {
+  font-weight: 700;
+  color: aliceblue;
+}

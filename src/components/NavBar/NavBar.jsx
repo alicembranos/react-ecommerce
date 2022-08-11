@@ -5,6 +5,7 @@ import { Link, Outlet, useNavigate } from "react-router-dom";
 import { addSummaryQuantity } from "services/functions";
 import DisplayItems from "components/DisplayCart/DisplayItems";
 import useUser from "hooks/useUser";
+import { Tooltip } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import PersonIcon from "@mui/icons-material/Person";
@@ -12,6 +13,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import logo from "../../assets/img/gallery/logo.png";
 
 import "./NavBar.css";
+import UserMenu from "./UserMenu/UserMenu";
 
 const NavBar = () => {
   const {
@@ -36,16 +38,16 @@ const NavBar = () => {
     return isLogged ? (
       <div className="navbar__user">
         <p className="navbar__user-text">
-          Hi {user.firstname} {user.lastname}!
+          Hi {user.firstname}!
         </p>
-          <button onClick={logout}>
-            <PersonIcon fontSize="medium" />
-          </button>
+        <UserMenu logout={logout}></UserMenu>
       </div>
     ) : (
-      <button onClick={navigateToLogin}>
-        <AccountCircleIcon fontSize="medium" />
-      </button>
+      <Tooltip title="Login">
+        <button onClick={navigateToLogin}>
+          <AccountCircleIcon fontSize="medium" />
+        </button>
+      </Tooltip>
     );
   };
 
