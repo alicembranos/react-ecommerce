@@ -7,7 +7,6 @@ import themeReviewOrder from "./theme/theme";
 
 const ReviewOrder = () => {
   const { values: formValues } = useFormikContext();
-  console.log(useFormikContext());
   return (
     <ThemeProvider theme={themeReviewOrder}>
       <Typography variant="h6" gutterBottom sx={{textDecoration: 'underline'}}>

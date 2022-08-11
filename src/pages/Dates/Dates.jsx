@@ -5,7 +5,6 @@ getEvents();
 const Dates = () => {
   const fetchData = async () => {
     const data = await getEvents();
-    console.log(data);
   };
 
   fetchData();

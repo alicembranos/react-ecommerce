@@ -10,9 +10,9 @@ const toolTipTextShipping =
   "The actual tax will be calculated based on the applicable state and local sales taxes when your order is shipped.";
 
 export const SummaryCart = ({ cartItems }) => {
-  const initTotalQty = cartItems.length > 0 ? addSummaryQuantity(cartItems) : 0;
+  const initTotalQty = cartItems?.length > 0 ? addSummaryQuantity(cartItems) : 0;
   const initTotalPrice =
-    cartItems.length > 0 ? addSummaryPrice(cartItems) : 0.0;
+    cartItems?.length > 0 ? addSummaryPrice(cartItems) : 0.0;
 
   const [totalQuantity, setTotalQuantity] = useState(initTotalQty);
   const [totalPrice, setTotalPrice] = useState(initTotalPrice);

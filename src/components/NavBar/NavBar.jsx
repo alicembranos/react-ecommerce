@@ -38,9 +38,9 @@ const NavBar = () => {
         <p className="navbar__user-text">
           Hi {user.firstname} {user.lastname}!
         </p>
-        <button onClick={logout}>
-          <PersonIcon fontSize="medium" />
-        </button>
+          <button onClick={logout}>
+            <PersonIcon fontSize="medium" />
+          </button>
       </div>
     ) : (
       <button onClick={navigateToLogin}>

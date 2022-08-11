@@ -1,24 +1,30 @@
-import { useReducer, createContext, useEffect } from "react";
+import { useReducer, createContext, useEffect, useContext } from "react";
 import {
   addItemCart,
   getLocalStorage,
+  getWishListAtLogin,
   removeAllItemCart,
   removeItemCart,
+  removeWishListAtLogout,
+  sendWishList,
   setLocalStorage,
   toggleItemWishList,
 } from "services/functions";
 import swal from "sweetalert";
+import UserContext from "./UserContext";
 
 const ACTIONS = {
   ADD_PRODUCT_TO_CART: "add_product_to_cart",
   REMOVE_PRODUCT_FROM_CART: "remove_product_from_cart",
   REMOVEALL_PRODUCT_FROM_CART: "removeall_product_from_cart",
   TOGGLE_FAV_IN_WISHLIST: "toggle_fav_in_wishlist",
+  LOGIN_WISHLIST: "login_wishList",
+  LOGOUT_WISHLIST: "logout_wishList",
 };
 
 const initialState = {
   cartItems: getLocalStorage("userCart", []),
-  wishList: getLocalStorage("userWishList", []),
+  wishList: [],
 };
 
 const globalReducer = (state, action) => {
@@ -37,6 +43,10 @@ const globalReducer = (state, action) => {
       return removeAllItemCart(state, action);
     case ACTIONS.TOGGLE_FAV_IN_WISHLIST:
       return toggleItemWishList(state, action);
+    case ACTIONS.LOGIN_WISHLIST:
+      return getWishListAtLogin(state, action);
+    case ACTIONS.LOGOUT_WISHLIST:
+      return removeWishListAtLogout(state);
     default:
       return state;
   }
@@ -45,11 +55,18 @@ const globalReducer = (state, action) => {
 export const GlobalContext = createContext({});
 
 export function GlobalContextProvider({ children }) {
+  const { user } = useContext(UserContext);
   const [state, dispatch] = useReducer(globalReducer, initialState);
 
+  console.log(state);
   useEffect(() => {
+    console.log("entro");
+    console.log("entro");
     setLocalStorage("userCart", state.cartItems);
     setLocalStorage("userWishList", state.wishList);
+    if (user && state.wishList.length > 0) {
+      sendWishList(state.wishList, user.id);
+    }
   }, [state]);
 
   //actions
@@ -69,6 +86,14 @@ export function GlobalContextProvider({ children }) {
     dispatch({ type: ACTIONS.TOGGLE_FAV_IN_WISHLIST, payload: product });
   };
 
+  const getWishListAtLoginByUser = (wishListUser) => {
+    dispatch({ type: ACTIONS.LOGIN_WISHLIST, payload: wishListUser });
+  };
+
+  const removeWishListUserAtLogout = () => {
+    dispatch({ type: ACTIONS.LOGOUT_WISHLIST });
+  };
+
   return (
     <GlobalContext.Provider
       value={{
@@ -78,6 +103,8 @@ export function GlobalContextProvider({ children }) {
         removeProductFromCart,
         removeAllProductFromCart,
         toggleFavProductFromWishList,
+        getWishListAtLoginByUser,
+        removeWishListUserAtLogout,
       }}
     >
       {children}

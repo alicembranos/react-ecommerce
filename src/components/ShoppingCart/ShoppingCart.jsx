@@ -13,8 +13,9 @@ const ShoppingCart = () => {
     removeAllProductFromCart,
   } = useContext(GlobalContext);
 
+ 
   const display =
-    cartItems.length > 0 ? (
+    cartItems?.length > 0 ? (
       <DisplayItems
         cartItems={cartItems}
         onAdd={addProductToCart}

@@ -1,3 +1,6 @@
+import getWishList from "./getWishList";
+import patchWishList from "./patchWishlist";
+
 /**
  * It takes an array of objects, and returns the sum of the qty property of each object.
  */
@@ -96,10 +99,6 @@ const removeItemCart = (state, action) => {
  */
 const addItemCart = (state, action) => {
   const exist = findItem(state.cartItems, action.payload);
-
-  // const exist = state.cartItems.find(
-  //   (prodCart) => prodCart.id === action.payload.id
-  // );
   const newArray = exist
     ? state.cartItems.map((prodCart) =>
         prodCart.id === action.payload.id
@@ -119,9 +118,6 @@ const addItemCart = (state, action) => {
  */
 const removeAllItemCart = (state, action) => {
   const exist = findItem(state.cartItems, action.payload);
-  // const exist = state.cartItems.find(
-  //   (prodCart) => prodCart.id === action.payload.id
-  // );
   const newArray =
     exist &&
     state.cartItems.filter((prodCart) => prodCart.id !== action.payload.id);
@@ -137,9 +133,6 @@ const removeAllItemCart = (state, action) => {
  */
 const toggleItemWishList = (state, action) => {
   const exist = findItem(state.wishList, action.payload);
-  // const exist = state.wishList.find(
-  //   (itemWishList) => itemWishList.id === action.payload.id
-  // );
   const newArray = exist
     ? state.wishList.filter(
         (itemWishList) => itemWishList.id !== action.payload.id
@@ -147,6 +140,27 @@ const toggleItemWishList = (state, action) => {
     : [...state.wishList, { ...action.payload }];
 
   return updateObject(state, { wishList: newArray });
+};
+
+/**
+ * If the user is logged in, get the wish list from the database and update the state with the new wish
+ * list.
+ * @param state - the current state of the reducer
+ * @param action - {
+ * @returns The new state object with the new wishList.
+ */
+const getWishListAtLogin = (state, action) => {
+  console.log(state, action);
+  return updateObject(state, { wishList: action.payload });
+};
+
+/**
+ * If the user logs out, remove the wishList from the state.
+ * @param state - the current state of the reducer
+ * @returns The state is being updated with the wishList property being set to an empty array.
+ */
+const removeWishListAtLogout = (state) => {
+  return updateObject(state, { wishList: [] });
 };
 
 /**
@@ -168,6 +182,16 @@ function setLocalStorage(key, item) {
   localStorage.setItem(key, JSON.stringify(item));
 }
 
+
+/**
+ * This function takes a wishlist and a userId, and then sends the wishlist to the server.
+ * @param wishlist - an array of objects
+ * @param userId - the user's id
+ */
+const sendWishList = async (wishlist, userId) => {
+  await patchWishList(wishlist, userId);
+};
+
 export {
   addSummaryPrice,
   addSummaryQuantity,
@@ -179,4 +203,7 @@ export {
   toggleItemWishList,
   getLocalStorage,
   setLocalStorage,
+  getWishListAtLogin,
+  removeWishListAtLogout,
+  sendWishList
 };

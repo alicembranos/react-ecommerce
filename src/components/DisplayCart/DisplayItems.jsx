@@ -5,7 +5,7 @@ const DisplayItems = ({ cartItems, onAdd, onRemove, onRemoveAll }) => {
     <>
       <div className="listItems__container">
       <h2 className="shoppingCart__h2">Shopping Cart</h2>
-        {cartItems.map((item) => (
+        {cartItems && cartItems.map((item) => (
             <ItemCart
               key={item.id}
               item={item}

@@ -2,9 +2,12 @@ import { useCallback, useContext, useState } from "react";
 import loginService from "services/login";
 import registerService from "services/register";
 import UserContext from "context/UserContext";
+import GlobalContext from "context/GlobalContext";
 
 const useUser = () => {
   const { jwt, setJwt, setUser } = useContext(UserContext);
+  const { removeWishListUserAtLogout, getWishListAtLoginByUser } =
+    useContext(GlobalContext);
   const [state, setState] = useState({ loading: false, error: false });
   const [message, setMessage] = useState("Bad credentials");
 
@@ -18,6 +21,7 @@ const useUser = () => {
             setState({ loading: false, error: false });
             setJwt(accessToken);
             setUser(user);
+            getWishListAtLoginByUser(user?.whislist ?? []);
             return;
           }
           setMessage(data);
@@ -34,6 +38,7 @@ const useUser = () => {
   const logout = useCallback(() => {
     setJwt(null);
     setUser(null);
+    removeWishListUserAtLogout();
   }, [setJwt, setUser]);
 
   const register = useCallback(
