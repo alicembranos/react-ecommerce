@@ -62,9 +62,16 @@
   font-family: "Caveat", cursive;
   font-size: 35px;
   padding-bottom: 10px;
-
 }
 .order__numbers {
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+.order__qty {
+  color: #cccc;
+  margin-right: 30px;
+}
+.order__price {
+  color: #cccc;
 }

@@ -22,7 +22,7 @@ const OrderList = ({ order }) => {
             </div>
             <div className="order__numbers">
               <p className="order__qty">Qty: {ord.qty}</p>
-              <p className="order__price">{ord.price}€</p>
+              <p className="order__price">Price/item {ord.price}€</p>
             </div>
           </div>
         </div>
