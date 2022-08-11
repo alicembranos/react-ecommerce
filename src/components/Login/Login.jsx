@@ -15,7 +15,7 @@ const Login = () => {
     useUser();
 
   useEffect(() => {
-    if (isLogged) navigate("/cart");
+    if (isLogged) navigate(-1);
   }, [isLogged, navigate]);
 
   const handleSubmit = (e) => {

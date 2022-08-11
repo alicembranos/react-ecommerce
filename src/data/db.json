@@ -2105,31 +2105,58 @@
       ]
     },
     {
-      "email": "walber@gmail.com",
-      "password": "$2a$10$BS5IFBkkkSV8STmEFQjBDuC3GBjfqXI.sbaAzXWSUL4EXVCKQBiYa",
-      "firstname": "Walber",
-      "lastname": "Melo",
-      "genre": "man",
-      "age": 18,
-      "id": 2
-    },
-    {
-      "email": "pabruli@gmail.com",
-      "password": "$2a$10$wjcdwOn3QpkjMwmFGgldHOB81bfHyU8aL0W7snsY7/YVlAs95tFwS",
-      "firstname": "Paloma",
-      "lastname": "Bruzon",
-      "genre": "",
-      "age": 0,
-      "id": 3
-    },
-    {
       "email": "juancarlos@mail.com",
       "password": "$2a$10$/tIxMyw/KkQy8AZzvStXP.t8TByKvatMnIZi./GZ7UI1Y71mhdZRW",
       "firstname": "Juan Carlos",
       "lastname": "Cabello",
       "genre": "",
-      "age": 0,
+      "age": 28,
       "id": 4
+    },
+    {
+      "email": "carlos@mail.com",
+      "password": "$2a$10$j/lydNsLhLs8wQZFh/wFXOVKVWy4JiRH4aDXEIXqFWxcGhTm9r3zW",
+      "firstname": "Carlos",
+      "lastname": "Velilla",
+      "genre": "",
+      "age": 0,
+      "id": 5,
+      "whislist": [
+        {
+          "id": 4,
+          "title": "Dirty Vegas",
+          "price": 25,
+          "artist": "Dirty Vegas",
+          "img": "https://i.scdn.co/image/ab67616d00001e02d8868b0e78659c2b15bd0e40",
+          "year": 2002
+        }
+      ],
+      "ordersList": [
+        {
+          "orderNumber": 573755,
+          "date": "08/11/2022",
+          "cartItems": [
+            {
+              "id": 1,
+              "title": "100 % Fun",
+              "price": 25,
+              "artist": "Matthew Sweet",
+              "img": "https://i.scdn.co/image/ab67616d00001e0295cff1dd1dd53202a416575d",
+              "year": 1995,
+              "qty": 1
+            },
+            {
+              "id": 2,
+              "title": "÷ (Deluxe)",
+              "price": 20,
+              "artist": "Ed Sheeran",
+              "img": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+              "year": 2017,
+              "qty": 1
+            }
+          ]
+        }
+      ]
     }
   ],
   "images": [

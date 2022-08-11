@@ -6,16 +6,14 @@ import { useOutletContext } from "react-router-dom";
 
 const UserWishList = () => {
   const user = useOutletContext();
-  const { toggleFavProductFromWishList } = useContext(GlobalContext);
-  console.log(user?.whislist);
-  const wishList = Boolean(user?.whislist ?? null);
+  const { toggleFavProductFromWishList, wishList } = useContext(GlobalContext);
 
   const display = wishList ? (
-    user.whislist.map((fav) => (
+    wishList.map((fav) => (
       <FavCard
         key={fav.id}
         fav={fav}
-        wishList={user.whislist}
+        wishList={wishList}
         toggleFavProductFromWishList={toggleFavProductFromWishList}
       />
     ))

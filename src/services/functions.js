@@ -182,7 +182,7 @@ const removeCartItems = (state) => {
  * @returns The user object with the ordersList property updated with the new order.
  */
 const updateUserOrderList = (user, ordersList, order) => {
-  return updateObject(user, { ordersList: [...ordersList, { order }] });
+  return updateObject(user, { ordersList: [...ordersList, { ...order }] });
 };
 
 /**

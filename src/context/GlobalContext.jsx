@@ -62,10 +62,7 @@ export function GlobalContextProvider({ children }) {
   const { user } = useContext(UserContext);
   const [state, dispatch] = useReducer(globalReducer, initialState);
 
-  console.log(state);
   useEffect(() => {
-    console.log("entro");
-    console.log("entro");
     setLocalStorage("userCart", state.cartItems);
     setLocalStorage("userWishList", state.wishList);
     if (user && state.wishList.length > 0) {
