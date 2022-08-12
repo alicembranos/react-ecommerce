@@ -2114,14 +2114,22 @@
       "id": 4
     },
     {
-      "email": "carlos@mail.com",
-      "password": "$2a$10$j/lydNsLhLs8wQZFh/wFXOVKVWy4JiRH4aDXEIXqFWxcGhTm9r3zW",
-      "firstname": "Carlos",
-      "lastname": "Velilla",
+      "email": "alicia@gmail.com",
+      "password": "$2a$10$CNUjAWQ6.K5wNaQQVjOXCu0yMrbdV9J8MERF1K0s5PnRFpYR4WAG2",
+      "firstname": "Alicia",
+      "lastname": "Cembranos",
       "genre": "",
       "age": 0,
-      "id": 5,
+      "id": 6,
       "whislist": [
+        {
+          "id": 3,
+          "title": "40 %",
+          "price": 15,
+          "artist": "Dro X Yani",
+          "img": "https://i.scdn.co/image/ab67616d00001e02ee27b90cd752417737b0db0b",
+          "year": 2020
+        },
         {
           "id": 4,
           "title": "Dirty Vegas",
@@ -2133,7 +2141,60 @@
       ],
       "ordersList": [
         {
-          "orderNumber": 573755,
+          "orderNumber": 541239,
+          "date": "08/11/2022",
+          "cartItems": [
+            {
+              "id": 2,
+              "title": "÷ (Deluxe)",
+              "price": 20,
+              "artist": "Ed Sheeran",
+              "img": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+              "year": 2017,
+              "qty": 2
+            },
+            {
+              "id": 1,
+              "title": "100 % Fun",
+              "price": 25,
+              "artist": "Matthew Sweet",
+              "img": "https://i.scdn.co/image/ab67616d00001e0295cff1dd1dd53202a416575d",
+              "year": 1995,
+              "qty": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "email": "carlos@mail.com",
+      "password": "$2a$10$CBLlPJdvu7xR4xRrTiNBJe62tc23CzzdOMODH5z8p.M2iCQqwAGuu",
+      "firstname": "Carlos",
+      "lastname": "Velilla",
+      "genre": "",
+      "age": 0,
+      "id": 7,
+      "whislist": [
+        {
+          "id": 7,
+          "title": "100 % Mexicano",
+          "price": 25.5,
+          "artist": "La Dinastia",
+          "img": "https://i.scdn.co/image/ab67616d00001e027dcaf4b3e8fe87e174bd1743",
+          "year": 2005
+        },
+        {
+          "id": 6,
+          "title": "Selected Ambient Works Volume II",
+          "price": 25,
+          "artist": "Aphex Twin",
+          "img": "https://i.scdn.co/image/ab67616d00001e0232083f1a325ed4939f1fbecd",
+          "year": 1994
+        }
+      ],
+      "ordersList": [
+        {
+          "orderNumber": 305901,
           "date": "08/11/2022",
           "cartItems": [
             {
@@ -2146,13 +2207,13 @@
               "qty": 1
             },
             {
-              "id": 2,
-              "title": "÷ (Deluxe)",
-              "price": 20,
-              "artist": "Ed Sheeran",
-              "img": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
-              "year": 2017,
-              "qty": 1
+              "id": 3,
+              "title": "40 %",
+              "price": 15,
+              "artist": "Dro X Yani",
+              "img": "https://i.scdn.co/image/ab67616d00001e02ee27b90cd752417737b0db0b",
+              "year": 2020,
+              "qty": 2
             }
           ]
         }

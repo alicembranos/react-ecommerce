@@ -8,9 +8,7 @@ import DateItem from "./DateItem/DateItem";
 const DatesItemList = () => {
   const {
     data: events,
-    status,
-    error,
-    isFetching,
+    status
   } = useQuery(["events"], getEvents);
 
   if (status === "loading") {
