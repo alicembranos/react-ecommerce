@@ -33,8 +33,8 @@ const Item = styled(Box)(() => ({
 const StackItems = () => {
   return (
     <Stack
-      direction="row"
-      spacing={3}
+      direction={{ xs: "column", sm: "row" }}
+      spacing={{ xs: 1, sm: 2, md: 4 }}
       sx={{
         position: "absolute",
         top: "40%",

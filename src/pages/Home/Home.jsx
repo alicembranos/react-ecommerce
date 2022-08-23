@@ -13,6 +13,7 @@ const Home = () => {
           objectFit: "cover",
           height: "100vh",
           width: "100vw",
+          padding:"0"
         }}
         alt="Music Concert"
         src={imgBackground}
