@@ -49,7 +49,7 @@ const StackItems = () => {
         position: "absolute",
         top: {
           xs: "30%",
-          sm: "50%",
+          sm: "60%",
         },
         left: "10%",
         animation: `${lineUp} 3s ease-out`,
