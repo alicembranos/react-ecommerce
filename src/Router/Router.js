@@ -16,6 +16,7 @@ import UserDetail from "pages/Profile/UserDetail.jsx/UserDetail";
 import UserOrders from "pages/Profile/UserOrders/UserOrders";
 import UserWishList from "pages/Profile/UserWishList/UserWishList";
 import NavBar from "components/NavBar/NavBar";
+import AppNavBar from "components/AppBarNav/AppNavBar";
 
 const Router = () => {
   return (
@@ -23,7 +24,8 @@ const Router = () => {
       <Route element={<LoginPage />} path="/login" />
       <Route element={<Register />} path="/signup" />
       <Route element={<Home />} path="/" />
-      <Route path="/" element={<NavBar />}>
+      <Route path="/" element={<AppNavBar />}>
+      {/* <Route path="/" element={<NavBar />}> */}
         <Route element={<Shop />} path="shop" />
         <Route element={<DetailProduct />} path="detail/:id" />
         <Route element={<Cart />} path="cart" />

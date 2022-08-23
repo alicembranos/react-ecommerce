@@ -8,7 +8,6 @@ import useUser from "hooks/useUser";
 import { Tooltip } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import PersonIcon from "@mui/icons-material/Person";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import logo from "../../assets/img/gallery/logo.png";
 

@@ -32,37 +32,37 @@ const useUser = () => {
           console.error(err);
         });
     },
-    [setJwt, setUser]
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
   );
 
   const logout = useCallback(() => {
     setJwt(null);
     setUser(null);
     removeWishListUserAtLogout();
-  }, [setJwt, setUser]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  const register = useCallback(
-    ({ userForm }) => {
-      setState({ loading: true, error: false });
-      registerService(userForm)
-        .then((data) => {
-          if (typeof data === "object") {
-            const { accessToken, user } = data;
-            setState({ loading: false, error: false });
-            setJwt(accessToken);
-            setUser(user);
-            return;
-          }
-          setMessage(data);
-          setState({ loading: false, error: true });
-        })
-        .catch((err) => {
-          setState({ loading: false, error: true });
-          console.error(err);
-        });
-    },
-    [setJwt, setUser]
-  );
+  const register = useCallback(({ userForm }) => {
+    setState({ loading: true, error: false });
+    registerService(userForm)
+      .then((data) => {
+        if (typeof data === "object") {
+          const { accessToken, user } = data;
+          setState({ loading: false, error: false });
+          setJwt(accessToken);
+          setUser(user);
+          return;
+        }
+        setMessage(data);
+        setState({ loading: false, error: true });
+      })
+      .catch((err) => {
+        setState({ loading: false, error: true });
+        console.error(err);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return {
     isLogged: Boolean(jwt),
