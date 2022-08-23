@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import imgBackground from "assets/img/gallery/home-img.jpg";
+import logo from "assets/img/gallery/logo.png";
 import SocialMedia from "components/SocialMedia/SocialMedia";
 import StackItems from "components/StackItems/StackItems";
 
@@ -7,19 +8,17 @@ const Home = () => {
   return (
     <>
       <Box
-        component="img"
         sx={{
-          display: "flex",
-          objectFit: "cover",
-          height: "100vh",
-          width: "100vw",
-          padding:"0"
+          backgroundImage: `url(${imgBackground})`,
+          backgroundSize: "cover",
+          minHeight: "100vh",
+          height: "100%",
         }}
-        alt="Music Concert"
-        src={imgBackground}
-      ></Box>
-      <SocialMedia></SocialMedia>
-      <StackItems></StackItems>
+      >
+        <img src={logo} alt="Logo" className="logo-img"/>
+        <SocialMedia />
+        <StackItems />
+      </Box>
     </>
   );
 };

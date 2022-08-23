@@ -7,10 +7,8 @@
 body {
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   min-height: 100vh;
   height: 100%;
-  /* overflow-x: hidden; */
 }
 
 :root {
@@ -121,4 +119,38 @@ body {
 .contact-image {
   height: 400px;
   width: 400px;
+}
+
+.logo-img{
+  position: absolute;
+  left: 30px;
+  top:30px;
+  width: 150px;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 360px) {
+
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 601px) {
+  .logo-img{
+    left: 20px;
+    top:20px;
+    width: 150px;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (max-width: 1024px) {
+  .logo-img{
+    left: 100px;
+    top:50px;
+    width: 200px;
+  }
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1900px) {
 }

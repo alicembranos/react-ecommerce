@@ -20,7 +20,7 @@ const lineUp = keyframes`
   transform: translateY(0%);
 }`;
 
-const Item = styled(Box)(() => ({
+const Item = styled(Box)((props) => ({
   position: "relative",
   padding: "1.5rem",
   background: "none",
@@ -28,6 +28,16 @@ const Item = styled(Box)(() => ({
   fontWeight: "700",
   fontSize: "30px",
   cursor: "pointer",
+  [props.theme.breakpoints.up("xs")]: {
+    padding: "1rem 1.5rem",
+    fontSize: "25px",
+  },
+  [props.theme.breakpoints.up("md")]: {
+
+  },
+  [props.theme.breakpoints.up("lg")]: {
+
+  },
 }));
 
 const StackItems = () => {
@@ -37,7 +47,10 @@ const StackItems = () => {
       spacing={{ xs: 1, sm: 2, md: 4 }}
       sx={{
         position: "absolute",
-        top: "40%",
+        top: {
+          xs: "30%",
+          sm: "50%",
+        },
         left: "10%",
         animation: `${lineUp} 3s ease-out`,
         WebkitAnimation: `-webkit-animation: ${lineUp} 5s ease-out `,
