@@ -10,13 +10,35 @@
 
 .favGallery__h2 {
   font-size: 20px;
-  margin: 10px;
-  padding: 20px;
+  margin: 50px 10px 10px 10px;
+  padding-top:20px;
 }
 
 .favList__items {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 820px) {
+  .wishList-wrap {
+    padding: 40px 20px;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
+
 }

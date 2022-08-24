@@ -2038,12 +2038,44 @@
       "id": 1,
       "whislist": [
         {
+          "id": 1,
+          "title": "100 % Fun",
+          "price": 25,
+          "artist": "Matthew Sweet",
+          "img": "https://i.scdn.co/image/ab67616d00001e0295cff1dd1dd53202a416575d",
+          "year": 1995
+        },
+        {
+          "id": 2,
+          "title": "÷ (Deluxe)",
+          "price": 20,
+          "artist": "Ed Sheeran",
+          "img": "https://i.scdn.co/image/ab67616d00001e02ba5db46f4b838ef6027e6f96",
+          "year": 2017
+        },
+        {
+          "id": 4,
+          "title": "Dirty Vegas",
+          "price": 25,
+          "artist": "Dirty Vegas",
+          "img": "https://i.scdn.co/image/ab67616d00001e02d8868b0e78659c2b15bd0e40",
+          "year": 2002
+        },
+        {
           "id": 5,
           "title": "Konpa Essentials (100 % Haïtian Music)",
           "price": 30,
           "artist": "Various Artists",
           "img": "https://i.scdn.co/image/ab67616d00001e021f80e211ee3e1ff080225638",
           "year": 2008
+        },
+        {
+          "id": 6,
+          "title": "Selected Ambient Works Volume II",
+          "price": 25,
+          "artist": "Aphex Twin",
+          "img": "https://i.scdn.co/image/ab67616d00001e0232083f1a325ed4939f1fbecd",
+          "year": 1994
         }
       ],
       "ordersList": [
