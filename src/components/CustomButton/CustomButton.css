@@ -15,7 +15,6 @@
 }
 
 .btn-dark{
-  /* background-image: linear-gradient(to right, var(--backgroundColor) 0%, #8307b9 51%, var(--backgroundColor) 100%); */
   background: #8307b9;
   color:aliceblue;
 }

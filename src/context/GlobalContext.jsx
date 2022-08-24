@@ -68,7 +68,7 @@ export function GlobalContextProvider({ children }) {
     if (user && state.wishList.length > 0) {
       sendWishList(state.wishList, user.id);
     }
-  }, [state]);
+  }, [state, user]);
 
   //actions
   const addProductToCart = (product) => {

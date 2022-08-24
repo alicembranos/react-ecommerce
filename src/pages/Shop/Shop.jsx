@@ -1,5 +1,4 @@
-import { useCallback, useState, useContext } from "react";
-import useAlbums from "hooks/useAlbums";
+import { useCallback, useContext } from "react";
 import ProductsGallery from "components/ProductsGallery/ProductsGallery";
 import SearchBar from "components/SearchBar/SearchBar";
 import GlobalContext from "context/GlobalContext";
@@ -12,19 +11,19 @@ const Shop = () => {
     wishList,
     toggleFavProductFromWishList,
   } = useContext(GlobalContext);
-  // const [keyword, setKeyword] = useState("");
-  const { loading, albums, search, match, keyword, setKeyword } = useContext(AlbumsContext);
-  // const { loading, albums, search, match } = useAlbums({ keyword });
-  // const { loading, search, match } = useAlbums({ keyword });
+  const { loading, albums, search, match, keyword, setKeyword } =
+    useContext(AlbumsContext);
 
   const handleSubmit = useCallback((e) => {
     e.preventDefault();
     const value = document.getElementById("search").value;
     setKeyword(value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = useCallback((e) => {
     setKeyword(e.target.value);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

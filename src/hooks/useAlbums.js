@@ -1,13 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import getAlbums from "services/getAlbums";
-import AlbumsContext from "context/AlbumsContext";
 
 const useAlbums = ({ keyword }) => {
   const [loading, setLoading] = useState(false);
-  const [ albums, setAlbums ]= useState([]);
+  const [albums, setAlbums] = useState([]);
   const [search, setSearch] = useState([]);
   const [match, setMatch] = useState(true);
-  // const { albums, setAlbums } = useContext(AlbumsContext);
 
   useEffect(() => {
     setLoading(true);

@@ -21,10 +21,8 @@
   margin: 20px;
 }
 
-
 /*!SMALL DEVICES MEDIA QUERIES */
 @media only screen and (max-width: 480px) {
-
 }
 
 /*!TABLETS DEVICES*/
@@ -40,5 +38,4 @@
 
 /*!EXTRA LARGE DEVICES*/
 @media only screen and (min-width: 1200px) {
-
 }

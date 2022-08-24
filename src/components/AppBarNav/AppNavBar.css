@@ -40,7 +40,7 @@
 
 .navbar__user-text {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   font-family: "Caveat", cursive;
   color: #e72db2;
   font-weight: 700;

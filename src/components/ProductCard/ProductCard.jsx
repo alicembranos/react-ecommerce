@@ -8,7 +8,7 @@ import UserContext from "context/UserContext";
 import "./ProductCard.css";
 
 const ProductCard = (props) => {
-  const { user, jwt } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { product, onAdd, cartItems, wishList, toggleFavProductFromWishList } =
     props;
   const existInCart = findInArrayById(cartItems, product);
