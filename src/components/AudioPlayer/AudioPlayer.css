@@ -7,6 +7,10 @@
   width: 100%;
 }
 
+.audioButtons {
+  display: flex;
+}
+
 .forwardBackward {
   display: flex;
   align-items: center;
@@ -41,11 +45,10 @@
   opacity: 0.7;
 }
 
-.managePlayer{
-display: flex;
-justify-content: space-around;
-align-items: center;
-
+.managePlayer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .currentTime,
@@ -59,7 +62,7 @@ align-items: center;
   margin-right: 20px;
 }
 
-.duration{
+.duration {
   margin-left: 20px;
 }
 
@@ -125,18 +128,7 @@ align-items: center;
 
 /* knobby - chrome and safari */
 .progressBar::-webkit-slider-thumb {
-  /* -webkit-appearance: none;
-  height: 13px;
-  width: 13px;
-  border-radius: 50%;
-  border: none;
-  background-color: var(--knobby);
-  cursor: pointer;
-  position: relative;
-  margin: -2px 0 0 0;
-  z-index: 3;
-  box-sizing: border-box; */
-  opacity:0;
+  opacity: 0;
 }
 
 /* knobby while dragging - chrome and safari */
@@ -147,20 +139,34 @@ align-items: center;
 
 /* knobby - firefox */
 .progressBar::-moz-range-thumb {
-  /* height: 15px;
-  width: 15px;
-  border-radius: 50%;
-  border: transparent;
-  background-color: var(--knobby);
-  cursor: pointer;
-  position: relative;
-  z-index: 3;
-  box-sizing: border-box; */
-  opacity:0;
+  opacity: 0;
 }
 
 /* knobby while dragging - firefox */
 .progressBar:active::-moz-range-thumb {
   transform: scale(1.2);
   background: var(--selectedKnobby);
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+  .audioPlayer {
+    flex-direction: column;
+  }
+
+  .audioButtons {
+    margin-bottom: 10px;
+  }
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 820px) {
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (max-width: 1024px) {
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (max-width: 1200px) {
 }

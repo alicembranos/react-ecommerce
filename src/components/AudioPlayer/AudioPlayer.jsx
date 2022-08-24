@@ -115,21 +115,23 @@ const AudioPlayer = ({ audioTrack, classHide }) => {
         preload="metadata"
         onLoadedMetadata={handleDuration}
       ></audio>
-      <button className="forwardBackward" onClick={backThirty}>
-        <KeyboardArrowLeftOutlinedIcon fontSize="medium" />
-        30
-      </button>
-      <button className="playPause" onClick={togglePlayPause}>
-        {isPlaying ? (
-          <PauseOutlinedIcon fontSize="large" />
-        ) : (
-          <PlayArrowOutlinedIcon fontSize="large" />
-        )}
-      </button>
-      <button className="forwardBackward" onClick={forwardThirty}>
-        30
-        <KeyboardArrowRightOutlinedIcon fontSize="medium" />
-      </button>
+      <div className="audioButtons">
+        <button className="forwardBackward" onClick={backThirty}>
+          <KeyboardArrowLeftOutlinedIcon fontSize="medium" />
+          30
+        </button>
+        <button className="playPause" onClick={togglePlayPause}>
+          {isPlaying ? (
+            <PauseOutlinedIcon fontSize="large" />
+          ) : (
+            <PlayArrowOutlinedIcon fontSize="large" />
+          )}
+        </button>
+        <button className="forwardBackward" onClick={forwardThirty}>
+          30
+          <KeyboardArrowRightOutlinedIcon fontSize="medium" />
+        </button>
+      </div>
 
       <div className="managePlayer">
         <div className="currentTime">{calculateTime(currentTime)}</div>

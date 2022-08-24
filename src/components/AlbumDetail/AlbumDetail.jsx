@@ -20,6 +20,7 @@ const AlbumDetail = ({ product }) => {
           bottom: 0,
           backgroundImage: `url(${product.img})`,
           backgroundSize: "cover",
+          backgroundAttachment:"fixed",
           opacity: 0.3
         }}
       ></div>
