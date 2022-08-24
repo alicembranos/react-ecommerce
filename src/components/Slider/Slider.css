@@ -1,8 +1,10 @@
 .swiper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
+  min-height: 100vh;
   height: 100%;
-  /* padding-top: 50px; */
-  padding-bottom: 50px;
 }
 
 .swiper-slide {
@@ -15,4 +17,20 @@
 .swiper-slide img {
   display: block;
   width: 100%;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 768px) {
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (max-width: 1024px) {
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (max-width: 1900px) {
 }

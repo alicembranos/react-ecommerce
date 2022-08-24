@@ -13,7 +13,7 @@
   width: 80%;
   display: flex;
   justify-content: space-around;
-  padding: 20px;
+  padding: 90px 20px 20px 20px;
   color: aliceblue;
 }
 
@@ -25,9 +25,6 @@
 
 .listItems__container {
   padding: 20px;
-  /* width: 60%; */
-  /* max-height: 80%; */
-  /* overflow-y: auto; */
 }
 
 /* ===== Scrollbar CSS ===== */
@@ -50,4 +47,39 @@
   background-color: #1b0b21;
   border-radius: 0px;
   border: 21px none #ffffff;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+  .shoppingCart__h2{
+    font-size: 20px;
+  }
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 820px) {
+  .shoppingCart__container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+  .shoppingCart__container{
+    width: 100%;
+  }
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
+  .shoppingCart__container{
+    width: 80%;
+  }
+
+  .listItems__container {
+    width: 50%;
+  }
+
 }
