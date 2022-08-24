@@ -8,11 +8,18 @@ const Contact = () => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "row",
+          flexDirection: {
+            xs: "column",
+            sm: "row",
+          },
           justifyContent: "center",
           alignItems: "center",
           minHeight: "90vh",
-          padding: "90px",
+          padding: {
+            xs: "90px 20px 20px 20px",
+            sm: "90px 20px 20px 20px",
+            md: "90px",
+          },
         }}
       >
         <Box
@@ -57,9 +64,9 @@ const Contact = () => {
           item
           sx={{
             color: "white",
-            maxWidth: "600px",
+            maxWidth: { sm: "300px", md: "600px" },
             textAlign: "center",
-            padding: "25px 100px",
+            padding: { sm: "25px", md: "25px 100px" },
           }}
         >
           <img src={logo} alt="Logo" className="contact-image" />

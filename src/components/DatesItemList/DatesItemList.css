@@ -61,3 +61,33 @@
   -webkit-box-shadow: inset 10px 10px 50px #fff;
   box-shadow: inset 10px 10px 50px #fff;
 }
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 768px) {
+  .list-item-band {
+    font-size: 30px;
+  }
+
+  .list-item-text1{
+    flex-direction: column;
+  }
+
+  .list-item-date{
+    margin-bottom: 5px;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (max-width: 1024px) {
+
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (max-width: 1200px) {
+
+}

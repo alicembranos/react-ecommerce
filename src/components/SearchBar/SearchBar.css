@@ -22,6 +22,7 @@
     #ffcc70 100%
   );
   margin-right: 25px;
+  margin-bottom: 15px;
   filter: brightness(120%);
 }
 
@@ -68,4 +69,28 @@
   line-height: 55px;
   color: #57025e;
   cursor: pointer;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 768px) {
+  .search__form {
+    width: 300px;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (max-width: 1024px) {
+  .search__form {
+    width: 400px;
+  }
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (max-width: 1200px) {
+
 }
