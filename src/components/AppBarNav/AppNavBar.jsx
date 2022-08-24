@@ -77,8 +77,8 @@ const AppNavBar = (props) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
-  const navigateToLogin = () => {
-    navigate("/login");
+  const handleMenuItem = () => {
+    isLogged ? navigate("profile") : navigate("/login");
   };
 
   /**
@@ -139,8 +139,8 @@ const AppNavBar = (props) => {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={navigateToLogin}>Profile</MenuItem>
-      <MenuItem onClick={navigateToLogin}>My account</MenuItem>
+      <MenuItem onClick={handleMenuItem}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuItem}>My account</MenuItem>
       {isLogged && <MenuItem onClick={logout}>Log out</MenuItem>}
     </Menu>
   );
