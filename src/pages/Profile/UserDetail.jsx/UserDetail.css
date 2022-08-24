@@ -1,6 +1,7 @@
 .userDetail__article {
   margin-top: 20px;
-  margin-left: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
   width: 100%;
 }
 
@@ -37,4 +38,30 @@
 .userDetail__p span {
   font-weight: 700;
   color: aliceblue;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 820px) {
+  .userDetail__title {
+    font-size: 30px;
+  }
+  .userDetail__subtitle {
+    font-size: 20px;
+  }
+
+  .userDetail__p {
+    font-size: 15px;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
 }

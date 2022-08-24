@@ -1,3 +1,24 @@
 .fav__container{
     display: flex;
+    flex-wrap: wrap;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+    .fav__container{
+        flex-direction: column;
+    }
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 820px) {
+
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
 }

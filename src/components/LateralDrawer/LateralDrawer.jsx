@@ -15,7 +15,7 @@ import themeDrawer from "./theme/theme";
 import { useNavigate } from "react-router-dom";
 import useUser from "hooks/useUser";
 
-const drawerWidth = 240;
+const drawerWidth = 180;
 
 const selectIcon = (icon) => {
   switch (icon) {
@@ -64,11 +64,11 @@ const PermanentDrawerLeft = () => {
       <Drawer
         sx={{
           position: "absolute",
-          height: "90vh",
-          width: drawerWidth,
+          margin: 2,
+          width: { xs:60, sm:drawerWidth },
           flexShrink: 0,
           "& .MuiDrawer-paper": {
-            width: drawerWidth,
+            width: { xs:60, sm:drawerWidth },
             boxSizing: "border-box",
           },
         }}
@@ -84,7 +84,10 @@ const PermanentDrawerLeft = () => {
                 }}
               >
                 <ListItemIcon>{selectIcon(text)}</ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText
+                  primary={text}
+                  sx={{ display: { xs: "none", sm: "block" } }}
+                />
               </ListItemButton>
             </ListItem>
           ))}
@@ -95,7 +98,10 @@ const PermanentDrawerLeft = () => {
             <ListItem key={text} disablePadding>
               <ListItemButton onClick={() => logout()}>
                 <ListItemIcon>{selectIcon(text)}</ListItemIcon>
-                <ListItemText primary={text} />
+                <ListItemText
+                  primary={text}
+                  sx={{ display: { xs: "none", sm: "block" } }}
+                />
               </ListItemButton>
             </ListItem>
           ))}

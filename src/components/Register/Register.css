@@ -15,14 +15,8 @@
 }
 
 .form {
-  height: 100%;
-  width: 100%;
-  max-width: 350px;
-  min-height: 300px;
-  width: 100%;
-  max-height: 600px;
-  min-height: 500px;
-  height: 100%;
+  width: 80vw;
+  height: 80vh;
   border-radius: 3rem;
 }
 
@@ -54,6 +48,10 @@
   background-color: rgb(44, 42, 42);
   border-radius: 2rem;
   z-index: -1;
+}
+
+.form-content{
+  overflow-y: auto;
 }
 
 .form-group {
@@ -212,4 +210,27 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
     -webkit-text-fill-color: #fff !important;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (min-width: 821px) {
+  .form{
+    width: 30vw;
+    height: 80vh;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+  .form{
+    height: 70vh;
+  }
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
 }

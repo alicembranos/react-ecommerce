@@ -15,14 +15,8 @@
 }
 
 .form {
-  height: 100%;
-  width: 100%;
-  max-width: 350px;
-  min-height: 300px;
-  width: 100%;
-  max-height: 600px;
-  min-height: 500px;
-  height: 100%;
+  width: 80vw;
+  height: 80vh;
   border-radius: 3rem;
 }
 
@@ -54,6 +48,10 @@
   background-color: rgb(44, 42, 42);
   border-radius: 2rem;
   z-index: -1;
+}
+
+.form-content{
+  overflow-y: auto;
 }
 
 .form-group {
@@ -150,7 +148,7 @@
   cursor: pointer;
 }
 
-.form-text span:hover{
+.form-text span:hover {
   text-decoration: underline;
 }
 
@@ -173,4 +171,25 @@
   color: rgb(218, 4, 4);
   text-align: center;
   letter-spacing: 0.3px;
+}
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (min-width: 820px) {
+  .form {
+    width: 30vw;
+    height: 70vh;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
 }

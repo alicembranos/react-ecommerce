@@ -75,3 +75,53 @@
 .order__price {
   color: #cccc;
 }
+
+/*!SMALL DEVICES MEDIA QUERIES */
+@media only screen and (max-width: 480px) {
+  .order__id {
+    flex-direction: column;
+    padding: 0;
+  }
+  .order__date {
+    margin-left: 0;
+  }
+}
+
+/*!TABLETS DEVICES*/
+@media only screen and (max-width: 820px) {
+  .order__container {
+    min-width: 100%;
+    margin: 20px 40px 0 0;
+    padding: 20px;
+    background: #390b48;
+    border-radius: 20px;
+  }
+  .order__detail {
+    flex-direction: column;
+  }
+  .order__image {
+    width: 100px;
+    height: 100px;
+  }
+  .order__products {
+    margin-left: 0;
+  }
+  .order__title {
+    font-size: 20px;
+    padding-top: 10px;
+  }
+  .order__subtitle {
+    font-size: 15px;
+  }
+  .order__numbers {
+    font-size: 15px;
+  }
+}
+
+/*!DESKTOP DEVICES*/
+@media only screen and (min-width: 1024px) {
+}
+
+/*!EXTRA LARGE DEVICES*/
+@media only screen and (min-width: 1200px) {
+}

@@ -8,7 +8,7 @@ const themeDrawer = createTheme({
           "&.MuiDrawer-docked": {
             position: "relative",
             "& .MuiDrawer-paper": {
-              height: "400px",
+              height: "300px",
             },
           },
         },
@@ -22,7 +22,6 @@ const themeDrawer = createTheme({
             position: "relative",
             background: "#390b48",
             color: "aliceblue",
-            margin: "20px",
             borderRadius: "20px",
           },
         },
@@ -32,6 +31,7 @@ const themeDrawer = createTheme({
       styleOverrides: {
         root: {
           color: "aliceblue",
+          minWidth: "30px",
         },
       },
     },

@@ -26,7 +26,6 @@ import { addSummaryQuantity } from "services/functions";
 import useUser from "hooks/useUser";
 import UserContext from "context/UserContext";
 import { Link, Outlet, useNavigate } from "react-router-dom";
-import { getDisplayName } from "@mui/utils";
 
 const drawerWidth = 200;
 const navItems = ["Home", "Shop", "Contact"];
@@ -42,18 +41,11 @@ const AppNavBar = (props) => {
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   //get global context and user context
-  const {
-    wishList,
-    cartItems,
-    addProductToCart,
-    removeProductFromCart,
-    removeAllProductFromCart,
-  } = useContext(GlobalContext);
+  const { wishList, cartItems } = useContext(GlobalContext);
   const totalCartItems = addSummaryQuantity(cartItems).toString();
   const totalWishItems = addSummaryQuantity(wishList).toString();
   const { isLogged, logout } = useUser();
   const { user } = useContext(UserContext);
-  const [isHovering, setIsHovering] = useState(false);
   const navigate = useNavigate();
 
   const handleDrawerToggle = () => {
