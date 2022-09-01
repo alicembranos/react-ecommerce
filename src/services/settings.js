@@ -1,5 +1,5 @@
-export const API_URL_ALBUMS = "https://backend-ecommerce-du7glvgpu-alicembranos.vercel.app/albums";
-export const API_URL_IMAGES = "https://backend-ecommerce-du7glvgpu-alicembranos.vercel.app/images";
-export const API_URL_USERS = "https://backend-ecommerce-du7glvgpu-alicembranos.vercel.app/user/";
-export const API_URL = "https://backend-ecommerce-du7glvgpu-alicembranos.vercel.app/";
-export const API_URL_CONCERTS = "https://backend-ecommerce-du7glvgpu-alicembranos.vercel.app/concerts";
+export const API_URL_ALBUMS = "http://localhost:3002/albums";
+export const API_URL_IMAGES = "http://localhost:3002/images";
+export const API_URL_USERS = "http://localhost:3002/user/";
+export const API_URL = "http://localhost:3002/";
+export const API_URL_CONCERTS = "http://localhost:3002/concerts";

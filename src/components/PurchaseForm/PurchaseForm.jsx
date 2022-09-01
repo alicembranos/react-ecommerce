@@ -86,7 +86,7 @@ const PurchaseForm = () => {
     alert(JSON.stringify(values, null, 2));
     actions.setSubmitting(false);
     setActiveStep(activeStep + 1);
-    await sendCartUser(orderData, user.id, usersOrderList);
+    await sendCartUser(orderData, user, usersOrderList);
     setUser(updateUserOrderList(user, usersOrderList, orderData));
     removeCartItemsFromUser();
   };

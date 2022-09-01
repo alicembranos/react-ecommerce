@@ -1,16 +1,18 @@
 import { API_URL_USERS } from "./settings";
 
-const sendCartUser = async (ordersList, userId, userOrdersList) => {
-  const ordersListObject = {
+const sendCartUser = async (ordersList, user, userOrdersList) => {
+  const ordersListUser = {
+    user,
     ordersList: [...userOrdersList, { ...ordersList }],
   };
   try {
-    const response = await fetch(`${API_URL_USERS}${userId}`, {
+    const response = await fetch(`${API_URL_USERS}updateOrderList`, {
       method: "PATCH",
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-type": "application/json; charset=UTF-8",
       },
-      body: JSON.stringify(ordersListObject),
+      body: JSON.stringify(ordersListUser),
     });
 
     if (response.ok) {

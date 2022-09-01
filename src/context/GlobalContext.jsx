@@ -66,7 +66,7 @@ export function GlobalContextProvider({ children }) {
     setLocalStorage("userCart", state.cartItems);
     setLocalStorage("userWishList", state.wishList);
     if (user && state.wishList.length > 0) {
-      sendWishList(state.wishList, user.id);
+      sendWishList(state.wishList, user);
     }
   }, [state, user]);
 

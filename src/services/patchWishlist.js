@@ -1,17 +1,19 @@
 import { API_URL_USERS } from "./settings";
 
-const patchWishList = async (arrayWishList, userId) => {
-  const wishlitObject = {
-    whislist: [...arrayWishList ],
+const patchWishList = async (arrayWishList, user) => {
+  const wishlitUser = {
+    user,
+    wishlist: [...arrayWishList],
   };
-
+  console.log(wishlitUser);
   try {
-    const response = await fetch(`${API_URL_USERS}${userId}`, {
+    const response = await fetch(`${API_URL_USERS}update`, {
       method: "PATCH",
       headers: {
+        "Access-Control-Allow-Origin": "*",
         "Content-type": "application/json; charset=UTF-8",
       },
-      body: JSON.stringify(wishlitObject),
+      body: JSON.stringify(wishlitUser),
     });
 
     if (response.ok) {

@@ -208,8 +208,8 @@ function setLocalStorage(key, item) {
  * @param wishlist - an array of objects
  * @param userId - the user's id
  */
-const sendWishList = async (wishlist, userId) => {
-  await patchWishList(wishlist, userId);
+const sendWishList = async (wishlist, user) => {
+  await patchWishList(wishlist, user);
 };
 
 export {
