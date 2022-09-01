@@ -21,7 +21,7 @@ const useUser = () => {
             setState({ loading: false, error: false });
             setJwt(accessToken);
             setUser(user);
-            getWishListAtLoginByUser(user?.whislist ?? []);
+            getWishListAtLoginByUser(user?.wishlist ?? []);
             return;
           }
           setMessage(data);
@@ -47,6 +47,7 @@ const useUser = () => {
     setState({ loading: true, error: false });
     registerService(userForm)
       .then((data) => {
+        console.log(data);
         if (typeof data === "object") {
           const { accessToken, user } = data;
           setState({ loading: false, error: false });

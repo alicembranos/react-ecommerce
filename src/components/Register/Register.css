@@ -212,6 +212,10 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: #fff !important;
 }
 
+.formGroup-rb > label {
+  margin-right: 10px;
+}
+
 /*!SMALL DEVICES MEDIA QUERIES */
 @media only screen and (max-width: 480px) {
 }

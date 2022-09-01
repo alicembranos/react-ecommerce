@@ -9,7 +9,9 @@ const UserOrders = () => {
   const orderList = Boolean(user?.ordersList ?? null);
 
   const display = orderList ? (
-    user.ordersList.map((order) => <OrderList order={order} />)
+    user.ordersList.map((order) => (
+      <OrderList order={order} />
+    ))
   ) : (
     <DisplayInfo text="You don't have recents orders." />
   );

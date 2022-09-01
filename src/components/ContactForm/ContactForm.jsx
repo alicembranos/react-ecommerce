@@ -65,7 +65,7 @@ const ContactForm = () => {
             </Grid>
           </Grid>
           <Button
-            loading={isSubmitting}
+            loading={isSubmitting.toString()}
             disabled={isSubmitting}
             type="submit"
             variant="contained"

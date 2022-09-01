@@ -13,7 +13,6 @@ const ShoppingCart = () => {
     removeAllProductFromCart,
   } = useContext(GlobalContext);
 
- 
   const display =
     cartItems?.length > 0 ? (
       <DisplayItems
@@ -23,7 +22,7 @@ const ShoppingCart = () => {
         onRemoveAll={removeAllProductFromCart}
       />
     ) : (
-      <DisplayInfo text="There aro no items in your bag." />
+      <DisplayInfo text="There are no items in your bag." />
     );
 
   return (

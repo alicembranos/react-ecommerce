@@ -5,10 +5,12 @@ import CustomButton from "components/CustomButton/CustomButton";
 import "./ButtonsGroup.css";
 import ModalPortal from "components/Modal/Modal";
 import PurchaseForm from "components/PurchaseForm/PurchaseForm";
+import GlobalContext from "context/GlobalContext";
 
 const ButtonsGroup = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { user } = useContext(UserContext);
+  const { cartItems } = useContext(GlobalContext);
   const [showModal, setShowModal] = useState(false);
 
   const navigateToShop = useCallback(() => {
@@ -30,6 +32,7 @@ const ButtonsGroup = () => {
     <>
       <div className="buttons__container">
         <CustomButton
+          disable={cartItems.length > 0 ? false : true}
           value="Check out"
           onClick={navigateToBuyProcess}
           className="btn-dark"

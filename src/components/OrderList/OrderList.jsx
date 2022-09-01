@@ -2,7 +2,7 @@ import "./OrderList.css";
 
 const OrderList = ({ order }) => {
   return (
-    <div className="order__container">
+    <div key={ order.orderNumber} className="order__container">
       <div className="order__id">
         <p className="order__number">
           Order: <span>#{order.orderNumber}</span>
@@ -11,7 +11,7 @@ const OrderList = ({ order }) => {
       </div>
       <hr />
       {order.cartItems.map((ord) => (
-        <div className="order__detail">
+        <div className="order__detail" key={ord.id}>
           <div className="order__image">
             <img src={ord.img} alt={ord.title} />
           </div>

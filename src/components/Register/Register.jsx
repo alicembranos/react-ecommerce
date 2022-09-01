@@ -15,8 +15,7 @@ const Register = () => {
     password: "",
     firstname: "",
     lastname: "",
-    genre: "",
-    age: 0,
+    genre: ""
   });
 
   const { register, isLogged, isLogginLoading, hasLoginError, message } =
@@ -33,8 +32,10 @@ const Register = () => {
   };
 
   const handleChange = ({ target }) => {
-    const { name, value } = target;
-    setUserForm({ ...userForm, [name]: value });
+    const { name, value, type, checked } = target;
+    setUserForm((prevUserForm) => {
+      return { ...prevUserForm, [name]: type === "checkbox" ? checked : value };
+    });
   };
 
   return (
@@ -101,19 +102,21 @@ const Register = () => {
                 <input
                   className="register__rb"
                   type="radio"
-                  name="gender"
-                  value="woman"
+                  name="genre"
+                  value="Woman"
                   id="woman"
+                  checked={userForm.genre === "Woman"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="woman">Woman</label>
-              </div>
-              <div className="formGroup-rb">
                 <input
                   className="register__rb"
                   type="radio"
-                  name="gender"
-                  value="man"
+                  name="genre"
+                  value="Man"
                   id="man"
+                  checked = {userForm.genre === "Man"}
+                  onChange={handleChange}
                 />
                 <label htmlFor="man">Man</label>
               </div>
