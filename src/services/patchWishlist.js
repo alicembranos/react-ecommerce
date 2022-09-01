@@ -10,7 +10,6 @@ const patchWishList = async (arrayWishList, user) => {
     const response = await fetch(`${API_URL_USERS}update`, {
       method: "PATCH",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-type": "application/json; charset=UTF-8",
       },
       body: JSON.stringify(wishlitUser),

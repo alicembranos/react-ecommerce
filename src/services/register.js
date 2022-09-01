@@ -5,7 +5,6 @@ const register = async ({ ...userForm }) => {
   return fetch(`${API_URL_USERS}register`, {
     method: "POST",
     headers: {
-      "Access-Control-Allow-Origin": "*",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({

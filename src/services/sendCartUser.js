@@ -9,7 +9,6 @@ const sendCartUser = async (ordersList, user, userOrdersList) => {
     const response = await fetch(`${API_URL_USERS}updateOrderList`, {
       method: "PATCH",
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-type": "application/json; charset=UTF-8",
       },
       body: JSON.stringify(ordersListUser),
