@@ -12,8 +12,10 @@
     <img src="https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white" alt="Youtube Badge" width="7%"/>
   </a>
 </div>
+
+## Demo
   
-<!--[Trello clone](https://github.com/knowankit/trello-clone/blob/develop/demo.gif)-->
+![Voizz Music](https://github.com/alicembranos/react-ecommerce/blob/main/src/assets/img/gallery/voizz-presentation.gif)
 
 ## Overview
 
